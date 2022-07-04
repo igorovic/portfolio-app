@@ -4,10 +4,13 @@ specifiers:
   '@mantine/core': ^4.2.12
   '@mantine/hooks': ^4.2.12
   '@mantine/next': ^4.2.12
+  '@next-auth/upstash-redis-adapter': ^3.0.0
   '@reduxjs/toolkit': ^1.8.3
+  '@tabler/icons': ^1.72.0
   '@types/node': 18.0.1
   '@types/react': 18.0.14
   '@types/react-redux': ^7.1.24
+  '@upstash/redis': ^1.7.0
   autoprefixer: ^10.4.7
   daisyui: ^2.18.0
   eslint: 8.19.0
@@ -28,7 +31,10 @@ dependencies:
   '@mantine/core': 4.2.12_wdb3rr2njcgmme3e6xq2hdnqny
   '@mantine/hooks': 4.2.12_react@18.2.0
   '@mantine/next': 4.2.12_muqif7h354ymqrue2lt3frhvw4
+  '@next-auth/upstash-redis-adapter': 3.0.0_byt2xnbmn2fki4exdbimx7xnju
   '@reduxjs/toolkit': 1.8.3_kkwg4cbsojnjnupd3btipussee
+  '@tabler/icons': 1.72.0_biqbaboplfbrettd7655fr4n2y
+  '@upstash/redis': 1.7.0
   daisyui: 2.18.0_ugi4xkrfysqkt4c4y6hkyfj344
   next: 12.2.0_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.8.0_ibk74344frpbgai2qebyob7ezi
@@ -263,6 +269,17 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - '@types/react'
+    dev: false
+
+  /@next-auth/upstash-redis-adapter/3.0.0_byt2xnbmn2fki4exdbimx7xnju:
+    resolution: {integrity: sha512-MQIM03nJKNkr9KK0AWH4rDuFeCTaFtvD++l30hfJIyPZUV4STL4GX3TYTbOEOgCcw/AiGHTLhNXGk5/CDJJ3kg==}
+    peerDependencies:
+      '@upstash/redis': ^1.0.1
+      next-auth: ^4.0.1
+    dependencies:
+      '@upstash/redis': 1.7.0
+      next-auth: 4.8.0_ibk74344frpbgai2qebyob7ezi
+      uuid: 8.3.2
     dev: false
 
   /@next/env/12.2.0:
@@ -553,6 +570,21 @@ packages:
       tslib: 2.4.0
     dev: false
 
+  /@tabler/icons/1.72.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-ZWi0Xn2utBor8ryZYFxx+BGV9mmdyiJYN1Nq/Koj3bp88VBh7mF4VNGN8oVIVml9s1rsD/D9I/z/WA7QrdRxsg==}
+    peerDependencies:
+      react: ^16.x || 17.x || 18.x
+      react-dom: ^16.x || 17.x || 18.x
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /@types/hoist-non-react-statics/3.3.1:
     resolution: {integrity: sha512-iMIqiko6ooLrTh1joXodJK5X9xeEALT1kM5G3ZLhD3hszxBdIEd5C75U834D9mLcINgD4OyZf5uQXjkuYydWvA==}
     dependencies:
@@ -654,6 +686,14 @@ packages:
       '@typescript-eslint/types': 5.30.4
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@upstash/redis/1.7.0:
+    resolution: {integrity: sha512-KSSBO3XpmkKxfdWXclW1DFmfz/LyQ0cZnr6M4F5bMJXU21bIjF1IOyDfT7TAI9p/aaPF3U0klvFKbadNirUQMQ==}
+    dependencies:
+      isomorphic-fetch: 3.0.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.7.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1908,6 +1948,15 @@ packages:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
     dev: true
 
+  /isomorphic-fetch/3.0.0:
+    resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
+    dependencies:
+      node-fetch: 2.6.7
+      whatwg-fetch: 3.6.2
+    transitivePeerDependencies:
+      - encoding
+    dev: false
+
   /jose/4.8.3:
     resolution: {integrity: sha512-7rySkpW78d8LBp4YU70Wb7+OTgE3OwAALNVZxhoIhp4Kscp+p/fBkdpxGAMKxvCAMV4QfXBU9m6l9nX/vGwd2g==}
     dev: false
@@ -2152,6 +2201,18 @@ packages:
 
   /node-addon-api/5.0.0:
     resolution: {integrity: sha512-CvkDw2OEnme7ybCykJpVcKH+uAOLV2qLqiyla128dN9TkEWfrYmxG6C2boDe5KcNQqZF3orkqzGgOMvZ/JNekA==}
+    dev: false
+
+  /node-fetch/2.6.7:
+    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
     dev: false
 
   /node-releases/2.0.5:
@@ -2985,6 +3046,10 @@ packages:
     dependencies:
       is-number: 7.0.0
 
+  /tr46/0.0.3:
+    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
+    dev: false
+
   /tsconfig-paths/3.14.1:
     resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}
     dependencies:
@@ -3133,6 +3198,21 @@ packages:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /webidl-conversions/3.0.1:
+    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
+    dev: false
+
+  /whatwg-fetch/3.6.2:
+    resolution: {integrity: sha512-bJlen0FcuU/0EMLrdbJ7zOnW6ITZLrZMIarMUVmdKtsGvZna8vxKYaexICWPfZ8qwf9fzNq+UEIZrnSaApt6RA==}
+    dev: false
+
+  /whatwg-url/5.0.0:
+    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
+    dependencies:
+      tr46: 0.0.3
+      webidl-conversions: 3.0.1
     dev: false
 
   /which-boxed-primitive/1.0.2:
