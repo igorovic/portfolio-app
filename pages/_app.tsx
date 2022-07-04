@@ -2,12 +2,17 @@ import "../styles/globals.css";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
-import store from "app/store";
-
-function MyApp({ Component, pageProps }: AppProps) {
+import store from "lib/app/store";
+import { MantineProvider } from "@mantine/core";
+import { SessionProvider } from "next-auth/react";
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <Provider store={store}>
-      <Component {...pageProps} />
+      <MantineProvider withGlobalStyles withNormalizeCSS={false}>
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+        </SessionProvider>
+      </MantineProvider>
     </Provider>
   );
 }

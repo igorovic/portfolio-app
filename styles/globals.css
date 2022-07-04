@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    height: 100vh;
+  }
+  #__next{
+    height: 100%;
+  }
   h1 {
     @apply text-xl;
   }
