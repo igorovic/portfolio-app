@@ -1,0 +1,19 @@
+{
+    "eslint.enable": true,
+    "eslint.debug": false,
+    "eslint.nodePath": "${workspaceFolder}/node_modules",
+    "eslint.probe": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "html",
+        "vue",
+        "markdown",
+        "typescript"
+    ],
+    "eslint.validate": [
+        "typescript",
+        "typescriptreact"
+    ]
+}
