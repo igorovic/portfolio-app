@@ -22,6 +22,11 @@
   
 }
 @layer components {
-  
+  .drawer-section-title{
+    @apply text-base md:text-lg font-semibold text-gray-700;
+  }
+  .mantine-ActionIcon-outline{
+    @apply border-gray-300;
+  }
 }
 

@@ -15,6 +15,21 @@ let config = {
     DEBUG_NAMESPACES: String(process.env.DEBUG_NAMESPACES),
     CYPRESS: process.env.CYPRESS,
   },
+  // react-router-dom SPA config
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/app/:path*',
+  //       destination: '/app/:path*',
+  //       locale: false
+  //     },
+  //     {
+  //       source: '/:locale/app/:path*',
+  //       destination: '/app/:path*',
+  //       locale: false
+  //     },
+  //   ];
+  // },
 };
 
 if (!isDev) {
