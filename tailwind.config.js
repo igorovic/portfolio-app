@@ -1,3 +1,4 @@
+const twColors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -6,7 +7,11 @@ module.exports = {
   ],
 
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        ...twColors
+      }
+    },
     container: {
       center: true,
     },

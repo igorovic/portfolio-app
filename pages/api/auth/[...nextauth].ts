@@ -17,10 +17,10 @@ export default NextAuth({
   adapter: UpstashRedisAdapter(redis, { baseKeyPrefix: "portfolio:" }),
   providers: [
     // OAuth authentication providers...
-    AppleProvider({
+    /* AppleProvider({
       clientId: process.env.APPLE_ID ?? "",
       clientSecret: process.env.APPLE_SECRET ?? "",
-    }),
+    }), */
     FacebookProvider({
       clientId: process.env.FACEBOOK_ID ?? "",
       clientSecret: process.env.FACEBOOK_SECRET ?? "",
@@ -31,8 +31,15 @@ export default NextAuth({
     }),
     // Passwordless / email sign in
     EmailProvider({
-      server: process.env.MAIL_SERVER,
-      from: "NextAuth.js <no-reply@example.com>",
+      server: {
+        host: process.env.EMAIL_SERVER_HOST,
+        port: process.env.EMAIL_SERVER_PORT,
+        auth: {
+          user: process.env.EMAIL_SERVER_USER,
+          pass: process.env.EMAIL_SERVER_PASSWORD,
+        },
+      },
+      from: process.env.EMAIL_FROM,
     }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID,

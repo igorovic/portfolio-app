@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.mantine-Button-filled {
+  background-color: #228be6;
+}
+
 @layer base {
   body {
     height: 100vh;
@@ -12,6 +17,11 @@
   h1 {
     @apply text-xl;
   }
+
+  
+  
 }
 @layer components {
+  
 }
+
