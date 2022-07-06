@@ -1,4 +1,4 @@
-import { WheelEventHandler } from "react";
+import { useState, WheelEventHandler } from "react";
 import { useCallback } from "react";
 import DropZone from "./dropzone/DropZone";
 
@@ -10,8 +10,12 @@ import { useRef } from "react";
 
 type ParsedImage = {
   url: string;
-  probe: ProbeResult;
+  meta: ProbeResult;
 };
+
+function clearCanvas(ctx: CanvasRenderingContext2D) {
+  ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
+}
 
 function drawImage(
   ctx: CanvasRenderingContext2D,
@@ -20,8 +24,8 @@ function drawImage(
 ) {
   const image = new Image();
   image.src = parsedImage.url;
-  image.width = parsedImage.probe?.width;
-  image.height = parsedImage.probe?.height;
+  image.width = parsedImage.meta.width;
+  image.height = parsedImage.meta.height;
   if (zoomFactor < 1) {
     /**
      * Clear the previous image artifacts
@@ -44,17 +48,21 @@ function drawImage(
       image,
       0,
       0,
-      parsedImage.probe?.width,
-      parsedImage.probe?.height,
+      image.width,
+      image.height,
       0,
       0,
-      ctx.canvas.width * zoomFactor,
-      ctx.canvas.height * zoomFactor
+      image.width * zoomFactor,
+      image.height * zoomFactor
     );
   };
 }
 
 function MediaPreview() {
+  const [canvasDimensions, setCanvasDimensions] = useState({
+    width: 300,
+    height: 300,
+  });
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContextRef = useRef<CanvasRenderingContext2D | null | undefined>(
     null
@@ -65,17 +73,21 @@ function MediaPreview() {
   const onDrop = useCallback(async (files: FileList) => {
     const fu: ParsedImage[] = [];
     const ctx = canvasRef.current?.getContext("2d");
+    let meta: ProbeResult | undefined;
     for (let idx = 0; idx < files.length; idx++) {
       const file = files[idx];
 
-      const probe: ProbeResult = imageParser(
-        Buffer.from(await file.arrayBuffer())
-      );
-      fu.push({ url: URL.createObjectURL(file), probe });
-      imageRef.current = { url: URL.createObjectURL(file), probe };
+      meta = imageParser(Buffer.from(await file.arrayBuffer())) as ProbeResult;
+      fu.push({ url: URL.createObjectURL(file), meta });
+      imageRef.current = { url: URL.createObjectURL(file), meta };
     }
     canvasContextRef.current = ctx;
+    setCanvasDimensions({
+      width: meta?.width as ProbeResult["width"],
+      height: meta?.height as ProbeResult["height"],
+    });
     if (ctx && imageRef.current) {
+      clearCanvas(ctx);
       drawImage(ctx, imageRef.current);
     }
   }, []);
@@ -101,8 +113,6 @@ function MediaPreview() {
     );
   };
 
-  const canvasWidth = imageRef.current?.probe.width;
-  const canvasHeight = imageRef.current?.probe.height;
   return (
     <div className="h-full">
       <h2>Image Preview</h2>
@@ -112,9 +122,9 @@ function MediaPreview() {
           <canvas
             ref={canvasRef}
             id="image-preview"
-            className="w-full h-full"
-            width={canvasWidth}
-            height={canvasHeight}
+            //className="w-full"
+            width={canvasDimensions.width}
+            height={canvasDimensions.height}
             onWheel={canvasZoom}
           ></canvas>
         </div>
