@@ -5,11 +5,19 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-
+  safelist: [
+    "border-2",
+    {
+      pattern: /mantine-.*/
+    }
+  ],
   theme: {
     extend: {
       colors: {
         ...twColors
+      },
+      gridTemplateColumns: {
+        "2-hugl": "min-content 1fr"
       }
     },
     container: {

@@ -1,11 +1,15 @@
 {
-  "name": "base",
-  "private": true,
+  "name": "portfolio-app",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igorovic/portfolio-app"
   },
   "dependencies": {
     "@mantine/core": "^4.2.12",
@@ -15,19 +19,24 @@
     "@reduxjs/toolkit": "^1.8.3",
     "@tabler/icons": "^1.72.0",
     "@upstash/redis": "^1.7.0",
+    "clsx": "^1.2.1",
     "daisyui": "^2.18.0",
     "next": "12.2.0",
     "next-auth": "^4.8.0",
     "next-i18next": "^11.0.0",
     "nodemailer": "^6.7.6",
+    "probe-image-size": "^7.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
-    "sharp": "^0.30.7"
+    "react-router-dom": "6",
+    "sharp": "^0.30.7",
+    "use-debounce": "^8.0.1"
   },
   "devDependencies": {
-    "@types/node": "18.0.1",
-    "@types/react": "18.0.14",
+    "@types/node": "18.0.3",
+    "@types/probe-image-size": "^7.2.0",
+    "@types/react": "18.0.15",
     "@types/react-redux": "^7.1.24",
     "autoprefixer": "^10.4.7",
     "eslint": "8.19.0",
