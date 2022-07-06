@@ -15,6 +15,11 @@ let config = {
     DEBUG_NAMESPACES: String(process.env.DEBUG_NAMESPACES),
     CYPRESS: process.env.CYPRESS,
   },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
   // react-router-dom SPA config
   // async rewrites() {
   //   return [

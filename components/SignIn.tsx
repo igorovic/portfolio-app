@@ -26,7 +26,7 @@ MenuControl.displayName = "MenuControl";
 function SignIn() {
   const { data: session } = useSession();
   const { t } = useTranslation("common");
-  console.debug(session?.user);
+
   if (session) {
     return (
       <Menu control={<MenuControl user={session?.user} />}>
