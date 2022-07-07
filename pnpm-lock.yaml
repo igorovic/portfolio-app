@@ -17,6 +17,7 @@ specifiers:
   daisyui: ^2.18.1
   eslint: 8.19.0
   eslint-config-next: 12.2.0
+  jotai: ^1.7.3
   next: 12.2.0
   next-auth: ^4.9.0
   next-i18next: ^11.0.0
@@ -42,6 +43,7 @@ dependencies:
   '@upstash/redis': 1.7.0
   clsx: 1.2.1
   daisyui: 2.18.1_ugi4xkrfysqkt4c4y6hkyfj344
+  jotai: 1.7.3_react@18.2.0
   next: 12.2.0_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.9.0_mnimnj2pdeccz5uivmdmoly3tq
   next-i18next: 11.0.0_24lkarzjpo3wcmj2o6qyrkug4y
@@ -1993,6 +1995,43 @@ packages:
 
   /jose/4.8.3:
     resolution: {integrity: sha512-7rySkpW78d8LBp4YU70Wb7+OTgE3OwAALNVZxhoIhp4Kscp+p/fBkdpxGAMKxvCAMV4QfXBU9m6l9nX/vGwd2g==}
+    dev: false
+
+  /jotai/1.7.3_react@18.2.0:
+    resolution: {integrity: sha512-7oyKS1cUlwO8bLvhrSrw3/G2tiprmUjt0eK19z4LMiyScsaeqnFwcr+3xaM6N8Ej6iGd0MmBlGhQsmJcnV6+Fw==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      '@babel/template': '*'
+      '@urql/core': '*'
+      immer: '*'
+      optics-ts: '*'
+      react: '>=16.8'
+      react-query: '*'
+      valtio: '*'
+      wonka: '*'
+      xstate: '*'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
+      '@urql/core':
+        optional: true
+      immer:
+        optional: true
+      optics-ts:
+        optional: true
+      react-query:
+        optional: true
+      valtio:
+        optional: true
+      wonka:
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /js-tokens/4.0.0:

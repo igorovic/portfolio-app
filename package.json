@@ -21,6 +21,7 @@
     "@upstash/redis": "^1.7.0",
     "clsx": "^1.2.1",
     "daisyui": "^2.18.1",
+    "jotai": "^1.7.3",
     "next": "12.2.0",
     "next-auth": "^4.9.0",
     "next-i18next": "^11.0.0",

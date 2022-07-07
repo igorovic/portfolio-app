@@ -1,5 +1,5 @@
 import React, { WheelEventHandler } from "react";
-import { useContextState } from "./store";
+import { useImage, useImageIsLoading } from "./store";
 import { ParsedImage } from "./types";
 
 function clearCanvas(ctx: CanvasRenderingContext2D) {
@@ -13,6 +13,7 @@ interface CanvasProps {
 const Canvas = ({ image }: CanvasProps) => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
   const imageRef = React.useRef<HTMLImageElement>();
+  const [, setImageIsLoading] = useImageIsLoading();
   const cc = () => canvasRef.current?.getContext("2d");
   const refreshCanvas = (img: HTMLImageElement) => {
     cc()?.drawImage(
@@ -38,7 +39,9 @@ const Canvas = ({ image }: CanvasProps) => {
       currentImage.onload = () => {
         refreshCanvas(currentImage);
         imageRef.current = currentImage;
+        setImageIsLoading(false);
       };
+      currentImage.onerror = () => setImageIsLoading(false);
     }
     if (currentImage && currentImage.src !== image?.url) {
       currentImage.src = image?.url ?? "";
@@ -87,6 +90,7 @@ const Canvas = ({ image }: CanvasProps) => {
       ref={canvasRef}
       id="image-preview"
       className="w-full h-full border"
+      // need to set width and height otherwise image is distorted
       width={cc()?.canvas.clientWidth}
       height={cc()?.canvas.clientHeight}
       onWheel={canvasZoom}
