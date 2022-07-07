@@ -1,7 +1,8 @@
 import React from "react";
+import { ParsedImage } from "./types";
 
 interface State {
-  unsplashImageW: string;
+  currentImage: ParsedImage | null;
 }
 
 interface Action {
@@ -10,21 +11,16 @@ interface Action {
 }
 
 const defaultState: State = {
-  unsplashImageW: "",
+  currentImage: null,
 };
 type ContextType = [State, React.Dispatch<Action>];
 
 const reducer: React.Reducer<State, Action> = (state, action) => {
   switch (action.type) {
-    case "SET_UNSPLASH_IMAGE_WIDTH":
+    case "SET_CURRENT_IMAGE":
       return {
         ...state,
-        unsplashImageW: action.payload,
-      };
-    case "RESET":
-      return {
-        ...state,
-        unsplashImageW: "",
+        currentImage: action.payload,
       };
     default:
       return state;
@@ -44,3 +40,12 @@ function StateProvider({ children }: React.PropsWithChildren<any>) {
 export default StateProvider;
 
 export const useContextState = () => React.useContext<ContextType>(Context);
+
+export const useDispatch = () => React.useContext<ContextType>(Context)[1];
+
+export const useImage = () => {
+  const { currentImage } = React.useContext<ContextType>(Context)[0];
+  return React.useState(() => {
+    return currentImage;
+  });
+};

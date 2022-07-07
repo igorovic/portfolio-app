@@ -1,21 +1,28 @@
-import { Stack, Title, UnstyledButton } from "@mantine/core";
+import { Stack, Title, Button } from "@mantine/core";
 import { useContextState } from "./store";
 
 function UnspashRandomImage() {
-  const [state, dispatch] = useContextState();
-  console.debug(state);
-  const setImageSise = (size: string) =>
-    dispatch({ type: "SET_UNSPLASH_IMAGE_WIDTH", payload: size });
+  const [_, dispatch] = useContextState();
+  const setImage = (width: number, height: number) =>
+    dispatch({
+      type: "SET_CURRENT_IMAGE",
+      payload: {
+        url: `https://source.unsplash.com/random/${width}x${height}`,
+        meta: { width, height },
+      },
+    });
   return (
     <Stack>
-      <Title>Select random image</Title>
-      <UnstyledButton onClick={() => setImageSise("1024x800")}>
+      <Title order={3}>Select random image</Title>
+      <Button variant="subtle" onClick={() => setImage(1024, 800)}>
         1024x800
-      </UnstyledButton>
-      <UnstyledButton onClick={() => setImageSise("600x800")}>
+      </Button>
+      <Button variant="subtle" onClick={() => setImage(600, 800)}>
         600x800
-      </UnstyledButton>
-      <p>selected {state.unsplashImageW}</p>
+      </Button>
+      <Button variant="subtle" onClick={() => setImage(300, 300)}>
+        300x300
+      </Button>
     </Stack>
   );
 }
