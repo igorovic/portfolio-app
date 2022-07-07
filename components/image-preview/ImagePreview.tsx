@@ -1,12 +1,15 @@
 import { useState, WheelEventHandler } from "react";
 import { useCallback } from "react";
-import DropZone from "./dropzone/DropZone";
+import DropZone from "../dropzone/DropZone";
 
 //@ts-ignore
 import imageParser from "probe-image-size/sync";
 import type { ProbeResult } from "probe-image-size";
 
 import { useRef } from "react";
+import UnspashRandomImage from "./UnspashRandomImage";
+import { useContextState } from "./store";
+import { useEffect } from "react";
 
 type ParsedImage = {
   url: string;
@@ -23,7 +26,6 @@ function drawImage(
   zoomFactor: number = 1
 ) {
   const image = new Image();
-  image.src = parsedImage.url;
   image.width = parsedImage.meta.width;
   image.height = parsedImage.meta.height;
   if (zoomFactor < 1) {
@@ -56,13 +58,11 @@ function drawImage(
       image.height * zoomFactor
     );
   };
+  image.src = parsedImage.url;
 }
 
-function MediaPreview() {
-  const [canvasDimensions, setCanvasDimensions] = useState({
-    width: 300,
-    height: 300,
-  });
+function ImagePreview() {
+  const [state, dispatch] = useContextState();
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const canvasContextRef = useRef<CanvasRenderingContext2D | null | undefined>(
     null
@@ -70,27 +70,29 @@ function MediaPreview() {
   const imageRef = useRef<ParsedImage | null>(null);
   const zoomFactorRef = useRef(1);
 
-  const onDrop = useCallback(async (files: FileList) => {
-    const fu: ParsedImage[] = [];
-    const ctx = canvasRef.current?.getContext("2d");
-    let meta: ProbeResult | undefined;
-    for (let idx = 0; idx < files.length; idx++) {
-      const file = files[idx];
+  const onDrop = useCallback(
+    async (files: FileList) => {
+      dispatch({ type: "RESET" });
+      const fu: ParsedImage[] = [];
+      const ctx = canvasRef.current?.getContext("2d");
+      let meta: ProbeResult | undefined;
+      for (let idx = 0; idx < files.length; idx++) {
+        const file = files[idx];
 
-      meta = imageParser(Buffer.from(await file.arrayBuffer())) as ProbeResult;
-      fu.push({ url: URL.createObjectURL(file), meta });
-      imageRef.current = { url: URL.createObjectURL(file), meta };
-    }
-    canvasContextRef.current = ctx;
-    setCanvasDimensions({
-      width: meta?.width as ProbeResult["width"],
-      height: meta?.height as ProbeResult["height"],
-    });
-    if (ctx && imageRef.current) {
-      clearCanvas(ctx);
-      drawImage(ctx, imageRef.current);
-    }
-  }, []);
+        meta = imageParser(
+          Buffer.from(await file.arrayBuffer())
+        ) as ProbeResult;
+        fu.push({ url: URL.createObjectURL(file), meta });
+        imageRef.current = { url: URL.createObjectURL(file), meta };
+      }
+      canvasContextRef.current = ctx;
+      if (ctx && imageRef.current) {
+        clearCanvas(ctx);
+        drawImage(ctx, imageRef.current);
+      }
+    },
+    [dispatch]
+  );
 
   const canvasZoom: WheelEventHandler<HTMLCanvasElement> = (e) => {
     if (!canvasContextRef.current || !imageRef.current) return;
@@ -113,18 +115,40 @@ function MediaPreview() {
     );
   };
 
+  if (state.unsplashImageW) {
+    const [width, height] = state.unsplashImageW.split("x");
+    const url = `https://source.unsplash.com/random/${state.unsplashImageW}`;
+    console.debug(url);
+    imageRef.current = {
+      url,
+      // anyway we need only width and height
+      meta: { width: parseInt(width), height: parseInt(height) } as ProbeResult,
+    };
+  }
+  if (canvasContextRef.current && imageRef.current) {
+    drawImage(
+      canvasContextRef.current,
+      imageRef.current,
+      zoomFactorRef.current
+    );
+  }
+
   return (
     <div className="h-full">
       <h2>Image Preview</h2>
+
       <div className="grid grid-cols-2-hugl h-full">
-        <DropZone onDrop={onDrop} label="drag and drop an image here" />
+        <div>
+          <DropZone onDrop={onDrop} label="drag and drop an image here" />
+          <UnspashRandomImage />
+        </div>
         <div className="px-2 relative h-full">
           <canvas
             ref={canvasRef}
             id="image-preview"
-            //className="w-full"
-            width={canvasDimensions.width}
-            height={canvasDimensions.height}
+            className="w-full h-full"
+            width={canvasContextRef.current?.canvas.clientWidth}
+            height={canvasContextRef.current?.canvas.clientHeight}
             onWheel={canvasZoom}
           ></canvas>
         </div>
@@ -133,4 +157,4 @@ function MediaPreview() {
   );
 }
 
-export default MediaPreview;
+export default ImagePreview;
