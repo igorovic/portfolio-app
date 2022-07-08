@@ -22,7 +22,7 @@ export default NextAuth({
       clientSecret: process.env.APPLE_SECRET ?? "",
     }), */
     FacebookProvider({
-      clientId: process.env.FACEBOOK_ID ?? "",
+      clientId: process.env.FACEBOOK_APP_ID ?? "",
       clientSecret: process.env.FACEBOOK_SECRET ?? "",
     }),
     GoogleProvider({

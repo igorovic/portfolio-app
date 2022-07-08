@@ -1,5 +1,6 @@
 import { Navbar, NavbarProps } from "@mantine/core";
 import { useTranslation } from "next-i18next";
+import { Accordion } from "@mantine/core";
 
 import NavLink from "./NavLink";
 import { useNavbarOpened } from "./store";
@@ -14,8 +15,17 @@ function AppShellNavbar(props: AppShellNavbarProps) {
 
   return (
     <Navbar hidden={!opened} p="xs" {...props}>
-      <span className="drawer-section-title">{t("Media files")}</span>
-      <Navbar.Section>{links}</Navbar.Section>
+      {/* <span className="drawer-section-title">{t("Media files")}</span> */}
+      <Navbar.Section>
+        <Accordion>
+          <Accordion.Item sx={{ border: 0 }} label="Media files">
+            {links}
+          </Accordion.Item>
+          <Accordion.Item sx={{ border: 0 }} label="Socials">
+            <span>coming soon</span>
+          </Accordion.Item>
+        </Accordion>
+      </Navbar.Section>
     </Navbar>
   );
 }
