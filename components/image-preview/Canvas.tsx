@@ -1,101 +1,43 @@
 import React, { WheelEventHandler } from "react";
-import { useImage, useImageIsLoading } from "./store";
-import { ParsedImage } from "./types";
 
-function clearCanvas(ctx: CanvasRenderingContext2D) {
-  ctx.clearRect(0, 0, ctx.canvas.clientWidth, ctx.canvas.clientHeight);
-}
+import CanvasContextProvider from "./CanvasContext";
 
-interface CanvasProps {
-  image: ParsedImage | null;
-}
-
-const Canvas = ({ image }: CanvasProps) => {
+function Canvas2({ children }: React.PropsWithChildren<any>) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
-  const imageRef = React.useRef<HTMLImageElement>();
-  const [, setImageIsLoading] = useImageIsLoading();
   const cc = () => canvasRef.current?.getContext("2d");
-  const refreshCanvas = (img: HTMLImageElement) => {
-    cc()?.drawImage(
-      img,
-      0,
-      0,
-      img.width,
-      img.height,
-      0,
-      0,
-      img.width * zoomFactor,
-      img.height * zoomFactor
-    );
-  };
-  let zoomFactor = 1;
-
-  React.useEffect(() => {
-    const currentImage = new Image();
-
-    if (currentImage) {
-      currentImage.width = image?.meta.width ?? 300;
-      currentImage.height = image?.meta.height ?? 300;
-      currentImage.onload = () => {
-        refreshCanvas(currentImage);
-        imageRef.current = currentImage;
-        setImageIsLoading(false);
-      };
-      currentImage.onerror = () => setImageIsLoading(false);
-    }
-    if (currentImage && currentImage.src !== image?.url) {
-      currentImage.src = image?.url ?? "";
-    }
-  });
+  const [zoom, setZoom] = React.useState(1);
 
   const canvasZoom: WheelEventHandler<HTMLCanvasElement> = (e) => {
-    const ctx = cc();
-    if (!ctx) return;
-    const previousFactor = zoomFactor;
-    if (e.deltaY < 0) {
-      zoomFactor = zoomFactor - 0.025;
-    } else {
-      zoomFactor = zoomFactor + 0.025;
-    }
-    if (zoomFactor <= 0.1) {
-      zoomFactor = 0.1;
-    } else if (zoomFactor > 2) {
-      zoomFactor = 2;
-    }
-    const ref = imageRef.current;
-    if (ref) {
-      if (zoomFactor < previousFactor) {
-        /**
-         * Clear the previous image artifacts
-         */
-        ctx.clearRect(
-          ref.width * zoomFactor,
-          0,
-          ctx.canvas.width,
-          ctx.canvas.height
-        );
-        ctx.clearRect(
-          0,
-          ref.height * zoomFactor,
-          ctx.canvas.width,
-          ctx.canvas.height
-        );
+    const step = 0.025;
+    setZoom((previous) => {
+      if (e.deltaY < 0) {
+        if (previous - step < 0.1) return 0.1;
+        else return previous - step;
+      } else {
+        if (previous + step > 2) return 2;
+        else return previous + step;
       }
-      refreshCanvas(ref);
-    }
+    });
   };
 
   return (
-    <canvas
-      ref={canvasRef}
-      id="image-preview"
-      className="w-full h-full border"
-      // need to set width and height otherwise image is distorted
-      width={cc()?.canvas.clientWidth}
-      height={cc()?.canvas.clientHeight}
-      onWheel={canvasZoom}
-    ></canvas>
+    <>
+      <p>zoom: {Math.round(zoom * 100)}% scroll to change zoom</p>
+      <canvas
+        ref={canvasRef}
+        id="image-preview"
+        className="w-full h-full border"
+        // need to set width and height otherwise image is distorted
+        width={cc()?.canvas.clientWidth}
+        height={cc()?.canvas.clientHeight}
+        onWheel={canvasZoom}
+      >
+        <CanvasContextProvider value={{ canvas: canvasRef.current, zoom }}>
+          {children}
+        </CanvasContextProvider>
+      </canvas>
+    </>
   );
-};
-Canvas.displayName = "Canvas";
-export default Canvas;
+}
+Canvas2.displayName = "Canvas2";
+export default Canvas2;

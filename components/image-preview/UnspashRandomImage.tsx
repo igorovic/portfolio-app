@@ -1,4 +1,5 @@
-import { Stack, Title, Button } from "@mantine/core";
+import { Button } from "@mantine/core";
+import React from "react";
 import { useImage, useImageIsLoading } from "./store";
 
 interface BtnLoadImageProps {
@@ -9,19 +10,30 @@ interface BtnLoadImageProps {
 const BtnLoadImage = ({ text, width, height }: BtnLoadImageProps) => {
   const [_, setImageState] = useImage();
   const [imageIsLoading, setImageIsLoading] = useImageIsLoading();
-  const setImage = (width: number, height: number) => {
+  const [loading, setLoading] = React.useState(false);
+  const setImage = async (width: number, height: number) => {
     setImageIsLoading(true);
+    setLoading(true);
+    let url = `https://source.unsplash.com/random/${width}x${height}`;
+    const resp = await fetch(url);
+    if (resp.redirected) {
+      url = resp.url;
+    }
     setImageState({
-      url: `https://source.unsplash.com/random/${width}x${height}`,
-      //@ts-ignore
+      url,
       meta: { width, height },
     });
   };
+
+  if (!imageIsLoading && loading) {
+    setLoading(false);
+  }
+
   return (
     <Button
       variant="subtle"
       disabled={imageIsLoading}
-      loading={imageIsLoading}
+      loading={loading}
       onClick={() => setImage(width, height)}
     >
       {text}
@@ -29,15 +41,17 @@ const BtnLoadImage = ({ text, width, height }: BtnLoadImageProps) => {
   );
 };
 
-function UnspashRandomImage() {
+function UnslpashRandomImage() {
   return (
-    <Stack>
-      <Title order={3}>Select random image</Title>
-      <BtnLoadImage text="1024x800" width={1024} height={800} />
-      <BtnLoadImage text="600x800" width={600} height={800} />
-      <BtnLoadImage text="300x300" width={300} height={300} />
-    </Stack>
+    <div>
+      <p>Select random image from unsplash.com</p>
+      <div className="flex gap-1">
+        <BtnLoadImage text="1024x800" width={1024} height={800} />
+        <BtnLoadImage text="600x800" width={600} height={800} />
+        <BtnLoadImage text="300x300" width={300} height={300} />
+      </div>
+    </div>
   );
 }
 
-export default UnspashRandomImage;
+export default UnslpashRandomImage;

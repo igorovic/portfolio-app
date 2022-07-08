@@ -1,5 +1,4 @@
-import type { ProbeResult } from "probe-image-size";
-export type ParsedImage = {
+export type ImageWithMeta = {
   url: string;
-  meta: ProbeResult;
+  meta: { width: number; height: number };
 };
