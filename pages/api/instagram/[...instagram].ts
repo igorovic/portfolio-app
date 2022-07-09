@@ -28,7 +28,7 @@ export default async function handler(
   try {
     if (route === "authorize") {
       const params: InstagramAuthorizeQueryParams = {
-        client_id: process.env.INSTAGRAM_APP_ID ?? "",
+        client_id: String(process.env.INSTAGRAM_APP_ID),
         redirect_uri: `https://${domain}/api/instagram/callback`,
         scope: "user_profile,user_media",
         response_type: "code",
@@ -43,8 +43,8 @@ export default async function handler(
     } else if (route === "callback") {
       if (code && sessionCookie) {
         const body: InstagramAccessTokenQueryParams = {
-          client_id: process.env.INSTAGRAM_APP_ID ?? "",
-          client_secret: process.env.INSTAGRAM_SECRET ?? "",
+          client_id: String(process.env.INSTAGRAM_APP_ID),
+          client_secret: String(process.env.INSTAGRAM_SECRET),
           redirect_uri: `https://${domain}/api/instagram/callback`,
           code,
           grant_type: "authorization_code",
