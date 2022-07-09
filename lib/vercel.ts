@@ -7,7 +7,7 @@ export function getDomain() {
         return process.env.VERCEL_URL;
       }
     } else {
-      return process.env.VERCEL_URL;
+      return "portfolio-app-git-dev-dyve-dev.vercel.app";
     }
   } else {
     return "localhost";
