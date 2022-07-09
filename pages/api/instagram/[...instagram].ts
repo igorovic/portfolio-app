@@ -9,6 +9,7 @@ import {
 } from "lib/instagram/types";
 import cookie from "cookie";
 import { instagramAccessTokenKey } from "lib/instagram/utils";
+import { logtail } from "lib/logtail";
 type Query = {
   instagram: string[];
   code?: string;
@@ -34,6 +35,7 @@ export default async function handler(
         response_type: "code",
         state: "1",
       };
+      logtail.debug("instagram authorize", params);
       const urlParams = new URLSearchParams(params);
       const url = new URL(
         `/oauth/authorize?${urlParams.toString()}`,
