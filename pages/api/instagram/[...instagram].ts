@@ -9,6 +9,7 @@ import {
 } from "lib/instagram/types";
 import cookie from "cookie";
 import { instagramAccessTokenKey } from "lib/instagram/utils";
+import { logtail } from "lib/logtail";
 type Query = {
   instagram: string[];
   code?: string;
@@ -21,18 +22,20 @@ export default async function handler(
   const { instagram, code } = req.query as Query;
   const route = instagram[0];
   const sessionCookie =
-    req.cookies["__Secure-next-auth"] || req.cookies["next-auth.session-token"];
+    req.cookies["__Secure-next-auth.session-token"] ||
+    req.cookies["next-auth.session-token"];
   const instagramUidCookieName = "dyve-instagram-uid";
   const domain = getDomain();
   try {
     if (route === "authorize") {
       const params: InstagramAuthorizeQueryParams = {
-        client_id: process.env.INSTAGRAM_APP_ID ?? "",
+        client_id: String(process.env.INSTAGRAM_APP_ID),
         redirect_uri: `https://${domain}/api/instagram/callback`,
         scope: "user_profile,user_media",
         response_type: "code",
         state: "1",
       };
+      logtail.debug("instagram authorize", params);
       const urlParams = new URLSearchParams(params);
       const url = new URL(
         `/oauth/authorize?${urlParams.toString()}`,
@@ -42,8 +45,8 @@ export default async function handler(
     } else if (route === "callback") {
       if (code && sessionCookie) {
         const body: InstagramAccessTokenQueryParams = {
-          client_id: process.env.INSTAGRAM_APP_ID ?? "",
-          client_secret: process.env.INSTAGRAM_SECRET ?? "",
+          client_id: String(process.env.INSTAGRAM_APP_ID),
+          client_secret: String(process.env.INSTAGRAM_SECRET),
           redirect_uri: `https://${domain}/api/instagram/callback`,
           code,
           grant_type: "authorization_code",
