@@ -55,10 +55,10 @@ function Instagram() {
         </>
       ) : null}
       <div className="grid grid-cols-4 gap-2">
-        {data?.data?.map((media) => {
+        {data?.data?.map((media, idx) => {
           if (media.media_type === "IMAGE") {
             return (
-              <div key={media.id}>
+              <div key={media.id + idx}>
                 <Image
                   src={media.media_url}
                   alt={media.id}

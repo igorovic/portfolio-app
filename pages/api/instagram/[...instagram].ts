@@ -20,7 +20,8 @@ export default async function handler(
 ) {
   const { instagram, code } = req.query as Query;
   const route = instagram[0];
-  const sessionCookie = req.cookies["next-auth.session-token"];
+  const sessionCookie =
+    req.cookies["__Secure-next-auth"] || req.cookies["next-auth.session-token"];
   const instagramUidCookieName = "dyve-instagram-uid";
   const domain = getDomain();
   try {
