@@ -12,7 +12,9 @@ import { client as redis } from "lib/redis";
 import { redisPrefix } from "contants";
 
 export default NextAuth({
-  adapter: UpstashRedisAdapter(redis, { baseKeyPrefix: redisPrefix }),
+  adapter: UpstashRedisAdapter(redis, {
+    baseKeyPrefix: redisPrefix,
+  }),
   providers: [
     // OAuth authentication providers...
     /* AppleProvider({
