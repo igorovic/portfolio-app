@@ -9,7 +9,7 @@ class MyDocument extends Document {
       <Html data-theme="light">
         <Head>
           <link rel="icon" type="image/png" href="/favicon.png" />
-          <meta name="description" content="base project" />
+          <meta name="description" content="dyve.ch demo app" />
         </Head>
         <body>
           <Main />

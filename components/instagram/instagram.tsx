@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import Image from "next/image";
 import type { InstagramMedia } from "lib/instagram";
-import { Button } from "@mantine/core";
+import { Button, Loader } from "@mantine/core";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
 import { useTranslation } from "next-i18next";
@@ -24,7 +24,11 @@ function Instagram() {
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });
+  const loading = !data && !error;
   console.debug("instagram media", data);
+  if (loading) {
+    return <Loader />;
+  }
   if (data?.error && data?.code === "ACCESSTOKEN_MISSING") {
     return (
       <p>
