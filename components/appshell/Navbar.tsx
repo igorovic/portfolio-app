@@ -13,6 +13,10 @@ function AppShellNavbar(props: AppShellNavbarProps) {
     (props) => <NavLink key={props.href} {...props} />
   );
 
+  const socialLinks = [{ text: "Instagram", href: "/app/instagram" }].map(
+    (props) => <NavLink key={props.href} {...props} />
+  );
+
   return (
     <Navbar hidden={!opened} p="xs" {...props}>
       {/* <span className="drawer-section-title">{t("Media files")}</span> */}
@@ -22,7 +26,7 @@ function AppShellNavbar(props: AppShellNavbarProps) {
             {links}
           </Accordion.Item>
           <Accordion.Item sx={{ border: 0 }} label="Socials">
-            <span>coming soon</span>
+            {socialLinks}
           </Accordion.Item>
         </Accordion>
       </Navbar.Section>

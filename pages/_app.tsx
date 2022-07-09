@@ -5,15 +5,21 @@ import { appWithTranslation } from "next-i18next";
 import store from "lib/app/store";
 import { MantineProvider } from "@mantine/core";
 import { SessionProvider } from "next-auth/react";
+import Head from "next/head";
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
-    <Provider store={store}>
-      <MantineProvider withGlobalStyles withNormalizeCSS={false}>
-        <SessionProvider session={session}>
-          <Component {...pageProps} />
-        </SessionProvider>
-      </MantineProvider>
-    </Provider>
+    <>
+      <Head>
+        <title>demo dyve.ch</title>
+      </Head>
+      <Provider store={store}>
+        <MantineProvider withGlobalStyles withNormalizeCSS={false}>
+          <SessionProvider session={session}>
+            <Component {...pageProps} />
+          </SessionProvider>
+        </MantineProvider>
+      </Provider>
+    </>
   );
 }
 

@@ -5,16 +5,14 @@ import GoogleProvider from "next-auth/providers/google";
 import EmailProvider from "next-auth/providers/email";
 
 import { UpstashRedisAdapter } from "@next-auth/upstash-redis-adapter";
-import { Redis, RedisConfigNodejs } from "@upstash/redis";
+
 import GitHubProvider from "next-auth/providers/github";
 
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_URL,
-  token: process.env.UPSTASH_REDIS_TOKEN,
-} as RedisConfigNodejs);
+import { client as redis } from "lib/redis";
+import { redisPrefix } from "contants";
 
 export default NextAuth({
-  adapter: UpstashRedisAdapter(redis, { baseKeyPrefix: "portfolio:" }),
+  adapter: UpstashRedisAdapter(redis, { baseKeyPrefix: redisPrefix }),
   providers: [
     // OAuth authentication providers...
     /* AppleProvider({
