@@ -21,7 +21,7 @@ let config = {
     },
   },
   images: {
-    domains: ["scontent.cdninstagram.com"]
+    domains: ["scontent.cdninstagram.com", "cdninstagram.com"]
   }
   // react-router-dom SPA config
   // async rewrites() {
