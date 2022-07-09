@@ -20,6 +20,9 @@ let config = {
       allowFutureImage: true,
     },
   },
+  images: {
+    domains: ["scontent.cdninstagram.com"]
+  }
   // react-router-dom SPA config
   // async rewrites() {
   //   return [

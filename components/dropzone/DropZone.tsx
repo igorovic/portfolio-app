@@ -11,8 +11,8 @@ function DropZone({ onDrop, label }: DropZoneProps) {
   return (
     <div
       className={clsx(
-        "w-24 h-24 border p-2 border-gray-400 grid content-center rounded-md relative",
-        dragOver && "border-blue-300 border-2"
+        "w-24 h-24 p-2 border-gray-400 grid content-center rounded-md relative",
+        dragOver ? "border-blue-300 border-2" : "border"
       )}
     >
       <span className="text-sm text-gray-600">

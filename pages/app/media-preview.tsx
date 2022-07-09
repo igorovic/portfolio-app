@@ -5,14 +5,17 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
-const MediaPreview = dynamic(() => import("../../components/MediaPreview"), {
-  suspense: true,
-});
+const ImagePreview = dynamic(
+  () => import("../../components/image-preview/ImagePreview"),
+  {
+    suspense: true,
+  }
+);
 const MediaPreviewPage: NextPage<any> = () => {
   return (
     <AppShellLayout>
       <Suspense fallback={<p>...loading</p>}>
-        <MediaPreview />
+        <ImagePreview />
       </Suspense>
     </AppShellLayout>
   );

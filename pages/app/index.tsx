@@ -5,6 +5,13 @@ import {
 } from "next";
 import AppShellLayout from "components/layout/appshellLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { Provider } from "jotai";
+import { useAtomsDebugValue } from "jotai/devtools";
+
+const DebugAtoms = () => {
+  useAtomsDebugValue();
+  return null;
+};
 
 const AppBase: NextPage<any> = () => {
   return (
