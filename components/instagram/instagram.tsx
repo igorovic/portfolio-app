@@ -61,6 +61,7 @@ function Instagram() {
               <div key={media.id + idx}>
                 <Image
                   src={media.media_url}
+                  loader={({ src }) => src}
                   alt={media.id}
                   width={400}
                   height={400}
