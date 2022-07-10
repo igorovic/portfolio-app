@@ -8,7 +8,8 @@ import { Suspense } from "react";
 const TetrisGame = dynamic(
   () => import("../../../components/games/tetris/Tetris"),
   {
-    suspense: true,
+    suspense: false,
+    ssr: false,
   }
 );
 const TetrisPage: NextPage<any> = () => {
