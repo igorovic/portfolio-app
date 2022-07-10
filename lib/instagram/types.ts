@@ -19,3 +19,13 @@ export interface InstagramAccessTokenResponse {
   access_token?: string;
   user_id?: number;
 }
+
+export interface InstagramLonglivedAccessToeknQueryParams
+  extends Record<string, string> {
+  grant_type: "ig_exchange_token";
+  client_secret: string;
+  /**
+   * short lived access_token
+   */
+  access_token: string;
+}
