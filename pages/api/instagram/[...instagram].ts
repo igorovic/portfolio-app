@@ -1,14 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { instagramClient, instagramApiUrl, getUserMedia } from "lib/instagram";
-import { client as upstash } from "lib/redis";
+import {
+  instagramClient,
+  instagramApiUrl,
+  getUserMedia,
+  instagramGraphClient,
+  getProfile,
+} from "lib/instagram";
+
 import { getDomain } from "lib/vercel";
 import {
   InstagramAuthorizeQueryParams,
   InstagramAccessTokenQueryParams,
   InstagramAccessTokenResponse,
+  InstagramLonglivedAccessToeknQueryParams,
 } from "lib/instagram/types";
 import cookie from "cookie";
-import { instagramAccessTokenKey } from "lib/instagram/utils";
 import { logtail } from "lib/logtail";
 type Query = {
   instagram: string[];
@@ -25,6 +31,7 @@ export default async function handler(
     req.cookies["__Secure-next-auth.session-token"] ||
     req.cookies["next-auth.session-token"];
   const instagramUidCookieName = "dyve-instagram-uid";
+  const instagramAccessTokenCookieName = "dyve.instagram-token";
   const domain = getDomain();
   try {
     if (route === "authorize") {
@@ -35,7 +42,9 @@ export default async function handler(
         response_type: "code",
         state: "1",
       };
-      logtail.debug("instagram authorize", params);
+      logtail.debug("instagram authorize", {
+        InstagramAuthorizeQueryParams: params,
+      });
       const urlParams = new URLSearchParams(params);
       const url = new URL(
         `/oauth/authorize?${urlParams.toString()}`,
@@ -43,7 +52,7 @@ export default async function handler(
       );
       return res.status(302).redirect(url.toString());
     } else if (route === "callback") {
-      if (code && sessionCookie) {
+      if (code) {
         const body: InstagramAccessTokenQueryParams = {
           client_id: String(process.env.INSTAGRAM_APP_ID),
           client_secret: String(process.env.INSTAGRAM_SECRET),
@@ -62,47 +71,67 @@ export default async function handler(
           }
         );
         if (R.data?.access_token) {
-          await upstash.set(
-            instagramAccessTokenKey(sessionCookie),
-            R.data.access_token,
-            {
-              ex: 3600,
-            }
-          );
-          const instacookie = cookie.serialize(
-            instagramUidCookieName,
-            String(R.data?.user_id),
-            {
-              httpOnly: false,
-              sameSite: "lax",
-              path: "/",
-            }
-          );
+          const params: InstagramLonglivedAccessToeknQueryParams = {
+            grant_type: "ig_exchange_token",
+            client_secret: String(process.env.INSTAGRAM_SECRET),
+            access_token: R.data.access_token,
+          };
+          const A = await instagramGraphClient.get("/access_token", { params });
 
-          res.setHeader("Set-Cookie", instacookie);
-          return res.status(302).redirect("/app/instagram");
+          if (A.data) {
+            const { access_token, expires_in } = A.data;
+            const instaUserCookie = cookie.serialize(
+              instagramUidCookieName,
+              String(R.data?.user_id),
+              {
+                httpOnly: false,
+                sameSite: "lax",
+                path: "/",
+              }
+            );
+
+            const instaTokenCookie = cookie.serialize(
+              instagramAccessTokenCookieName,
+              access_token,
+              {
+                secure: true,
+                httpOnly: true,
+                path: "/",
+                expires: new Date(
+                  new Date().getTime() + (expires_in - 600) * 1000
+                ),
+              }
+            );
+
+            res.setHeader("Set-Cookie", instaUserCookie);
+            res.setHeader("Set-Cookie", instaTokenCookie);
+            return res.status(302).redirect("/app/instagram");
+          }
         }
       }
     } else if (route === "mymedia") {
-      if (sessionCookie) {
-        const instagramUid = req.cookies[instagramUidCookieName] ?? "";
-        const access_token = await upstash.get<string>(
-          instagramAccessTokenKey(sessionCookie)
-        );
-        if (!access_token) {
-          return res.json({
-            error: "Missing Instagram access token",
-            code: "ACCESSTOKEN_MISSING",
-          });
-        }
-        const media = await getUserMedia(instagramUid, access_token || "");
-        return res.json({ data: media });
-      } else {
-        return res.status(400).json({
-          error: "This api requires authentication",
-          code: "AUTHENTICATION_REQUIRED",
+      const instagramUid = req.cookies[instagramUidCookieName] ?? "";
+      const instagramToken = req.cookies[instagramAccessTokenCookieName] ?? "";
+
+      if (!instagramToken) {
+        return res.json({
+          error: "Missing Instagram access token",
+          code: "ACCESSTOKEN_MISSING",
         });
       }
+      const media = await getUserMedia(instagramUid, instagramToken || "");
+      return res.json({ data: media });
+    } else if (route === "me") {
+      const instagramToken = req.cookies[instagramAccessTokenCookieName] ?? "";
+
+      if (!instagramToken) {
+        return res.json({
+          error: "Missing Instagram access token",
+          code: "ACCESSTOKEN_MISSING",
+        });
+      }
+      const { data } = await getProfile(instagramToken);
+      return res.json({ data });
     }
   } catch (err: any) {
     console.debug(err?.response?.data);

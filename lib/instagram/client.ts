@@ -20,6 +20,13 @@ export interface InstagramMedia {
   permalink: string;
   timestamp: string;
   username: string;
+  caption?: string;
+}
+
+export interface InstagramUser {
+  id: string;
+  username?: string;
+  account_type?: "BUSINESS" | "MEDIA_CREATOR" | "PERSONAL";
 }
 
 export async function getMedia(
@@ -59,4 +66,10 @@ export async function getUserMedia(
     media = _media.filter(Boolean) as InstagramMedia[];
   }
   return media;
+}
+
+export async function getProfile(access_token: string) {
+  return instagramGraphClient.get<InstagramUser>("/me", {
+    params: { access_token, fields: "username,account_type" },
+  });
 }

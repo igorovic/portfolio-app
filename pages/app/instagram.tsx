@@ -30,6 +30,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
         "common",
         "footer",
         "appshell",
+        "instagram",
       ])),
       // Will be passed to the page component as props
     },
