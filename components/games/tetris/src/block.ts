@@ -7,8 +7,8 @@ export function drawBlock(ctx: CanvasRenderingContext2D) {
 export class Block {
   x: number = 0;
   y: number = 0;
-  w: number = 32;
-  h: number = 32;
+  w: number = 30;
+  h: number = 30;
   ctx: CanvasRenderingContext2D;
   constructor(ctx: CanvasRenderingContext2D, width?: number, height?: number) {
     this.ctx = ctx;
@@ -17,14 +17,20 @@ export class Block {
   }
   draw() {
     console.debug("draw", this.x, this.y, this.w, this.h);
-    this.ctx.beginPath();
+    this.ctx.strokeRect(this.x, this.y, this.w, this.h);
+    /* this.ctx.beginPath();
     this.ctx.rect(this.x, this.y, this.w, this.h);
-    this.ctx.stroke();
+    this.ctx.stroke(); */
   }
 
   moveRight() {
-    this.ctx.clearRect(this.x, this.y, this.w, this.h);
+    this.ctx.clearRect(this.x, this.y, this.w + 2, this.h + 2);
     this.x += 32;
+    this.draw();
+  }
+  moveLeft() {
+    this.ctx.clearRect(this.x, this.y, this.w + 2, this.h + 2);
+    this.x -= 32;
     this.draw();
   }
 }

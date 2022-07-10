@@ -1,8 +1,11 @@
+import { Button } from "@mantine/core";
 import Script from "next/script";
 import React from "react";
+import { TetrisEngine } from "./src/engine";
 
 function Game(/* { children }: React.PropsWithChildren<unknown> */) {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
+  const tetris = new TetrisEngine({ canvasId: "tetris" });
 
   return (
     <>
@@ -13,7 +16,8 @@ function Game(/* { children }: React.PropsWithChildren<unknown> */) {
         height={800}
         className="border"
       ></canvas>
-      <Script
+      <Button onClick={() => tetris.start()}>start</Button>
+      {/* <Script
         type="module"
         src="/tetris/engine.js"
         onLoad={() => {
@@ -22,7 +26,7 @@ function Game(/* { children }: React.PropsWithChildren<unknown> */) {
             window["TeTris"].initialize("tetris");
           }
         }}
-      ></Script>
+      ></Script> */}
     </>
   );
 }
