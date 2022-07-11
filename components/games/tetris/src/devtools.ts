@@ -1,10 +1,13 @@
 import { Block } from "./block";
+import { TetrisEngine } from "./engine";
 import { MaybeContext } from "./types";
 
 export class DevTools {
   ctx: MaybeContext;
-  constructor(ctx: MaybeContext) {
+  engine: TetrisEngine;
+  constructor(ctx: MaybeContext, engine: TetrisEngine) {
     this.ctx = ctx;
+    this.engine = engine;
   }
 
   clearCanvas() {
@@ -32,5 +35,9 @@ export class DevTools {
       new Block(this.ctx, { style: { fill: "#c2d0fc", paddingRatio: 0.25 } })
     );
     B.render();
+  }
+
+  showGameMatrix() {
+    console.debug(this.engine.matrix);
   }
 }

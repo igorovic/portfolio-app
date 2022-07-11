@@ -19,6 +19,9 @@ function Tetris() {
             <Button onClick={() => tetris.devtools.drawNestedBlocks()}>
               draw nested blocks
             </Button>
+            <Button onClick={() => tetris.devtools.showGameMatrix()}>
+              debug matrix
+            </Button>
           </div>
         ) : null}
       </div>

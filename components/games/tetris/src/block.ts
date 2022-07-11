@@ -16,6 +16,8 @@ export class Block {
   p: number;
   // border radius
   r: number;
+  canvasW: number;
+  canvasH: number;
   ctx: CanvasRenderingContext2D;
   parent: Block | null = null;
   children: Array<Block> = [];
@@ -26,8 +28,10 @@ export class Block {
   ) {
     this.ctx = ctx;
     this.options = options as BlockOptions & typeof defaultOptions;
-    const blockW = Math.round(this.ctx.canvas.clientWidth / 10);
-    const blockH = Math.round(this.ctx.canvas.clientHeight / 20);
+    this.canvasW = this.ctx.canvas.clientWidth;
+    this.canvasH = this.ctx.canvas.clientHeight;
+    const blockW = this.canvasW / 10;
+    const blockH = this.canvasH / 20;
     this.w = blockW;
     this.h = blockH;
     this.p = blockW * this.options.style.paddingRatio;
@@ -69,6 +73,7 @@ export class Block {
     this.ctx.clearRect(this.x, this.y, this.w, this.h);
     this.children.forEach((c) => c.clearSelf());
   }
+
   render() {
     if (this.parent) {
       const constraints = this.parent.constraints;
@@ -77,7 +82,7 @@ export class Block {
       this.w = constraints.w;
       this.h = constraints.h;
     }
-    //this.clearSelf();
+
     this.ctx.beginPath();
     this.ctx.moveTo(this.topLeft.x + this.r, this.topLeft.y);
     this.ctx.lineTo(this.topRight.x - this.r, this.topRight.y);
@@ -108,19 +113,6 @@ export class Block {
     this.ctx.fillStyle = this.options.style.fill;
     this.ctx.fill();
     this.children.forEach((c) => c.render());
-
-    // this.ctx.fillStyle = "#c2d0fc";
-    // this.ctx.beginPath();
-    // this.ctx.ellipse(
-    //   this.w / 2,
-    //   this.h / 2,
-    //   this.w / 4.5,
-    //   this.h / 4.5,
-    //   Math.PI * 2,
-    //   0,
-    //   Math.PI * 2
-    // );
-    // this.ctx.fill();
   }
 
   appendChild(C: Block) {
