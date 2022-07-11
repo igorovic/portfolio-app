@@ -8,7 +8,7 @@ specifiers:
   '@next-auth/upstash-redis-adapter': ^3.0.0
   '@reduxjs/toolkit': ^1.8.3
   '@rollup/plugin-typescript': ^8.3.3
-  '@tabler/icons': ^1.73.0
+  '@tabler/icons': ^1.74.0
   '@types/cookie': ^0.5.1
   '@types/node': 18.0.3
   '@types/probe-image-size': ^7.2.0
@@ -49,7 +49,7 @@ dependencies:
   '@mantine/next': 4.2.12_2gqzyayxaiqf33ltv5ghxbozne
   '@next-auth/upstash-redis-adapter': 3.0.0_3opaj5mnfvhnukl3427pyzpezm
   '@reduxjs/toolkit': 1.8.3_kkwg4cbsojnjnupd3btipussee
-  '@tabler/icons': 1.73.0_biqbaboplfbrettd7655fr4n2y
+  '@tabler/icons': 1.74.0_biqbaboplfbrettd7655fr4n2y
   '@upstash/redis': 1.7.0
   axios: 0.27.2
   clsx: 1.2.1
@@ -671,8 +671,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@tabler/icons/1.73.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-MhAHFzVj79ZWlAIRD++7Mk55PZsdlEdkfkjO3DD257mqj8iJZQRAQtkx2UFJXVs2mMrcOUu1qtj4rlVC8BfnKA==}
+  /@tabler/icons/1.74.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-kzoA8YTogdn6CBY4C0eopOZxAsWsSAQouHdydNhr6nFj4LZXHIStYGSt0R9B05fHSBVMic0d6ZRbpKuxMFqsWQ==}
     peerDependencies:
       react: ^16.x || 17.x || 18.x
       react-dom: ^16.x || 17.x || 18.x
