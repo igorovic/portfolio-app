@@ -1,5 +1,5 @@
 import { Brick } from "./block";
-import { BlockOptions, CanvasContext } from "../types";
+import { CanvasContext } from "../types";
 
 export function basic(ctx: CanvasContext) {
   const B = new Brick(ctx);
