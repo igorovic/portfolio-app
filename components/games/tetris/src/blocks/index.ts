@@ -1,4 +1,4 @@
-import { Brick } from "./block";
+import { Brick } from "./brick";
 import { CanvasContext } from "../types";
 
 export function basic(ctx: CanvasContext) {

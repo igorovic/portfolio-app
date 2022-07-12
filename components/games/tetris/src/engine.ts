@@ -1,4 +1,4 @@
-import { Brick } from "./blocks/block";
+import { Brick } from "./blocks/brick";
 import { basic } from "./blocks";
 import { DevTools } from "./devtools";
 import { CanvasContext, Maybe, MaybeContext } from "./types";
