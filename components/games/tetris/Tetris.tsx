@@ -13,6 +13,12 @@ function Tetris() {
         {process.env.NODE_ENV !== "production" ? (
           <div className="absolute top-16 right-0 mx-2 flex flex-col gap-2">
             <p className="font-semibold test-base">DevTools</p>
+            <Button onClick={() => tetris.devtools.drawBlock()}>
+              draw Block
+            </Button>
+            <Button onClick={() => tetris.devtools.drawBlockWithChild()}>
+              draw Block with child
+            </Button>
             <Button onClick={() => tetris.devtools.drawBrick()}>
               draw Brick
             </Button>

@@ -23,18 +23,19 @@ export class Block {
     this.options = options;
     this.canvasW = this.ctx.canvas.clientWidth;
     this.canvasH = this.ctx.canvas.clientHeight;
-    this.w = this.canvasW / 10;
-    this.h = this.canvasH / 20;
-    this.pt = 0;
-    this.pb = 0;
-    this.pl = 0;
-    this.pr = 0;
+    this.w = this.canvasW;
+    this.h = this.canvasH;
+    this.pt = this.options?.padding ?? 0;
+    this.pb = this.options?.padding ?? 0;
+    this.pl = this.options?.padding ?? 0;
+    this.pr = this.options?.padding ?? 0;
   }
+
   get X() {
-    return this.x + this.pl;
+    return (this.parent ? this.parent.topLeft.x : this.x) + this.pl;
   }
   get Y() {
-    return this.y + this.pt;
+    return (this.parent ? this.parent.topLeft.y : this.y) + this.pt;
   }
   get W() {
     return this.w - this.pl - this.pr;
@@ -62,11 +63,11 @@ export class Block {
   get constraints(): Constraints {
     return { x: this.X, y: this.Y, w: this.W, h: this.H };
   }
-  clearSelf() {
+  /* clearSelf() {
     // TODO: does not properly clear self
     this.ctx.clearRect(this.x, this.y, this.w, this.h);
     this.children.forEach((c) => c.clearSelf());
-  }
+  } */
 
   render() {
     console.warn("Not implemented");
@@ -78,11 +79,6 @@ export class Block {
 
   appendChild(C: Block) {
     C.parent = this;
-    const constraints = this.constraints;
-    this.x = constraints.x;
-    this.y = constraints.y;
-    this.w = constraints.w / (this.children.length + 1);
-    this.h = constraints.h;
     this.children.push(C);
   }
 

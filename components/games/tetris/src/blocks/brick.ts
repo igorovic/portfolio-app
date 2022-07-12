@@ -19,13 +19,12 @@ export class Brick extends Block {
     super(ctx, options);
     this.ctx = ctx;
     this._options = { ...defaultOptions, ...options } as BrickOptions;
-
-    this.pl =
-      (this.parent ? this.parent.W : this.w) * this._options.style.paddingRatio;
-    this.pr = this.pl;
-    this.pt =
-      (this.parent ? this.parent.H : this.h) * this._options.style.paddingRatio;
-    this.pb = this.pt;
+    this.w = this.canvasW / 10;
+    this.h = this.canvasH / 20;
+    this.pl = 2;
+    this.pr = 2;
+    this.pt = 2;
+    this.pb = 2;
     this.r = this.w * 0.05;
   }
 

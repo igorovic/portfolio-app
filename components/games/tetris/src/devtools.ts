@@ -3,6 +3,7 @@ import { Brick } from "./blocks/brick";
 import { TetrisEngine } from "./engine";
 import { MaybeContext } from "./types";
 import { Brick2 } from "./blocks";
+import { Block } from "./blocks/block";
 
 export class DevTools {
   ctx: MaybeContext;
@@ -20,6 +21,38 @@ export class DevTools {
       this.ctx.canvas.clientWidth,
       this.ctx.canvas.clientHeight
     );
+  }
+
+  drawBlock() {
+    if (!this.ctx) return;
+    const B = new Block(this.ctx);
+    B.render = () => {
+      B.ctx.rect(...B.topLeft.xy, ...B.bottomRight.xy);
+      B.ctx.fillStyle = "#cecece";
+      B.ctx.fill();
+    };
+    console.debug(B);
+    B.render();
+  }
+  drawBlockWithChild() {
+    if (!this.ctx) return;
+    const B = new Block(this.ctx, { padding: 16 });
+    B.render = () => {
+      B.ctx.rect(...B.topLeft.xy, ...B.bottomRight.xy);
+      B.ctx.fillStyle = "#cecece";
+      B.ctx.fill();
+    };
+
+    const B2 = new Block(this.ctx);
+    B2.render = () => {
+      B2.ctx.rect(...B2.topLeft.xy, ...B2.bottomRight.xy);
+      B2.ctx.fillStyle = "#ac00fe";
+      B2.ctx.fill();
+    };
+    B.appendChild(B2);
+    console.debug(B);
+    B.render();
+    B.renderChildren();
   }
 
   drawBrick() {
