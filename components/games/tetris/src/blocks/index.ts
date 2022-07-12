@@ -1,10 +1,10 @@
-import { Block } from "./block";
+import { Brick } from "./block";
 import { BlockOptions, CanvasContext } from "../types";
 
 export function basic(ctx: CanvasContext) {
-  const B = new Block(ctx);
+  const B = new Brick(ctx);
   B.appendChild(
-    new Block(ctx, {
+    new Brick(ctx, {
       style: { fill: "#c2d0fc", paddingRatio: 0.25 },
     })
   );
@@ -12,6 +12,6 @@ export function basic(ctx: CanvasContext) {
 }
 
 export function Line(ctx: CanvasContext) {
-  const B1 = new Block(ctx);
-  const B2 = new Block(ctx);
+  const B1 = new Brick(ctx);
+  const B2 = new Brick(ctx);
 }

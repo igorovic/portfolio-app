@@ -1,4 +1,4 @@
-import { Block } from "./blocks/block";
+import { Brick } from "./blocks/block";
 import { TetrisEngine } from "./engine";
 import { MaybeContext } from "./types";
 
@@ -23,16 +23,16 @@ export class DevTools {
   drawBlock() {
     if (!this.ctx) return;
     this.clearCanvas();
-    const B = new Block(this.ctx);
+    const B = new Brick(this.ctx);
     B.render();
   }
 
   drawNestedBlocks() {
     if (!this.ctx) return;
     this.clearCanvas();
-    const B = new Block(this.ctx);
+    const B = new Brick(this.ctx);
     B.appendChild(
-      new Block(this.ctx, { style: { fill: "#c2d0fc", paddingRatio: 0.25 } })
+      new Brick(this.ctx, { style: { fill: "#c2d0fc", paddingRatio: 0.25 } })
     );
     B.render();
   }

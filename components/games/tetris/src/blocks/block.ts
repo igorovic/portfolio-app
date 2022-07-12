@@ -11,7 +11,7 @@ const defaultOptions = {
   },
 };
 
-export class Block {
+export class Brick {
   x: number = 0;
   y: number = 0;
   w: number = 32;
@@ -23,8 +23,8 @@ export class Block {
   canvasW: number;
   canvasH: number;
   ctx: CanvasRenderingContext2D;
-  parent: Block | null = null;
-  children: Array<Block> = [];
+  parent: Brick | null = null;
+  children: Array<Brick> = [];
   options: BlockOptions & typeof defaultOptions;
   constructor(ctx: CanvasRenderingContext2D, options: BlockOptions = {}) {
     this.ctx = ctx;
@@ -121,7 +121,7 @@ export class Block {
     this.children.forEach((c) => c.render());
   }
 
-  appendChild(C: Block) {
+  appendChild(C: Brick) {
     C.parent = this;
     this.children.push(C);
   }

@@ -1,11 +1,11 @@
-import { Block } from "./blocks/block";
+import { Brick } from "./blocks/block";
 
 class GameEngine {
   state: "RUNNING" | "PAUSED" | "STOPPED" = "STOPPED";
   id: string = "";
 
   interval: number | undefined;
-  blocks: Map<string, Block>;
+  blocks: Map<string, Brick>;
   getCtx() {
     const C = document.getElementById(this.id);
     if (C) {
@@ -53,7 +53,7 @@ class GameEngine {
     window.clearInterval(this.interval);
   }
   constructor() {
-    this.blocks = new Map<string, Block>();
+    this.blocks = new Map<string, Brick>();
   }
 }
 //@ts-ignore

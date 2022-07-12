@@ -1,4 +1,4 @@
-import { Block } from "./blocks/block";
+import { Brick } from "./blocks/block";
 import { basic } from "./blocks";
 import { DevTools } from "./devtools";
 import { CanvasContext, Maybe, MaybeContext } from "./types";
@@ -9,7 +9,7 @@ export type TetrisEngineOptions = {
 
 type LineIndex = number;
 type ColIndex = number;
-type Cols = Map<ColIndex, Block | null>;
+type Cols = Map<ColIndex, Brick | null>;
 type Matrix = Map<LineIndex, Cols>;
 
 export class TetrisEngine {
@@ -24,7 +24,7 @@ export class TetrisEngine {
   lateralStepTimestamp: number = 0;
   startTimestamp: number = 0;
   previousTimestamp: number = 0;
-  blocks = new Map<string, Block>();
+  blocks = new Map<string, Brick>();
   matrix: Matrix;
 
   constructor(options: TetrisEngineOptions) {
@@ -82,15 +82,15 @@ export class TetrisEngine {
     }
   }
 
-  touchRightEdge(block: Maybe<Block>) {
+  touchRightEdge(block: Maybe<Brick>) {
     if (!block || !this.ctx) return false;
     return block.x + block.w >= this.ctx.canvas.clientWidth;
   }
-  touchLeftEdge(block: Maybe<Block>) {
+  touchLeftEdge(block: Maybe<Brick>) {
     if (!block) return false;
     return 0 >= block.x;
   }
-  touchBottom(block: Maybe<Block>) {
+  touchBottom(block: Maybe<Brick>) {
     if (!block || !this.ctx) return false;
     return block.y + block.h >= this.ctx.canvas.clientHeight;
   }
