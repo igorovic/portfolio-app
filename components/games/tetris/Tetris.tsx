@@ -13,11 +13,17 @@ function Tetris() {
         {process.env.NODE_ENV !== "production" ? (
           <div className="absolute top-16 right-0 mx-2 flex flex-col gap-2">
             <p className="font-semibold test-base">DevTools</p>
-            <Button onClick={() => tetris.devtools.drawBlock()}>
-              draw block
+            <Button onClick={() => tetris.devtools.drawBrick()}>
+              draw Brick
             </Button>
-            <Button onClick={() => tetris.devtools.drawNestedBlocks()}>
-              draw nested blocks
+            <Button onClick={() => tetris.devtools.drawBrick2()}>
+              draw Brick2
+            </Button>
+            <Button onClick={() => tetris.devtools.drawLine()}>
+              draw line
+            </Button>
+            <Button onClick={() => tetris.devtools.debugCurrentBlock()}>
+              debug currentBlock
             </Button>
             <Button onClick={() => tetris.devtools.showGameMatrix()}>
               debug matrix

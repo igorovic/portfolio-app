@@ -1,94 +1,35 @@
-import { BlockOptions, Constraints, isCanvasSize, XY } from "../types";
+import { BlockOptions } from "../types";
+import { Block } from "./block";
 
 const defaultOptions = {
   style: {
     fill: "#4d76f2",
     paddingRatio: 0.05,
   },
-  canvas: {
-    cols: 10,
-    rows: 20,
-  },
 };
 
-export class Brick {
-  x: number = 0;
-  y: number = 0;
-  w: number = 32;
-  h: number = 32;
-  // padding
-  p: number;
+type BrickOptions = BlockOptions & typeof defaultOptions;
+
+export class Brick extends Block {
   // border radius
   r: number;
-  canvasW: number;
-  canvasH: number;
-  ctx: CanvasRenderingContext2D;
-  parent: Brick | null = null;
-  children: Array<Brick> = [];
-  options: BlockOptions & typeof defaultOptions;
-  constructor(ctx: CanvasRenderingContext2D, options: BlockOptions = {}) {
-    this.ctx = ctx;
-    this.options = { ...defaultOptions, ...options } as BlockOptions &
-      typeof defaultOptions;
-    this.canvasW = this.ctx.canvas.clientWidth;
-    this.canvasH = this.ctx.canvas.clientHeight;
-    if (isCanvasSize(this.options.canvas)) {
-      this.canvasW = this.options.canvas.w;
-      this.canvasH = this.options.canvas.h;
-    }
-    const blockW = this.canvasW / this.options.canvas.cols;
-    const blockH = this.canvasH / this.options.canvas.rows;
-    this.w = blockW;
-    this.h = blockH;
-    this.p = blockW * this.options.style.paddingRatio;
-    this.r = blockW * 0.05;
-  }
-  get X() {
-    return this.x + this.p;
-  }
-  get Y() {
-    return this.y + this.p;
-  }
-  get W() {
-    return this.w - 2 * this.p;
-  }
-  get H() {
-    return this.h - 2 * this.p;
-  }
-  get topLeft(): XY {
-    return { x: this.X, y: this.Y, xy: [this.X, this.Y] };
-  }
-  get topRight(): XY {
-    return { x: this.X + this.W, y: this.Y, xy: [this.X + this.W, this.Y] };
-  }
-  get bottomRight(): XY {
-    return {
-      x: this.X + this.W,
-      y: this.Y + this.H,
-      xy: [this.X + this.W, this.Y + this.H],
-    };
-  }
-  get bottomLeft(): XY {
-    return { x: this.X, y: this.Y + this.H, xy: [this.X, this.Y + this.H] };
-  }
+  _options: BrickOptions;
 
-  get constraints(): Constraints {
-    return { x: this.X, y: this.Y, w: this.W, h: this.H };
-  }
-  clearSelf() {
-    this.ctx.clearRect(this.x, this.y, this.w, this.h);
-    this.children.forEach((c) => c.clearSelf());
+  constructor(ctx: CanvasRenderingContext2D, options: BlockOptions = {}) {
+    super(ctx, options);
+    this.ctx = ctx;
+    this._options = { ...defaultOptions, ...options } as BrickOptions;
+
+    this.pl =
+      (this.parent ? this.parent.W : this.w) * this._options.style.paddingRatio;
+    this.pr = this.pl;
+    this.pt =
+      (this.parent ? this.parent.H : this.h) * this._options.style.paddingRatio;
+    this.pb = this.pt;
+    this.r = this.w * 0.05;
   }
 
   render() {
-    if (this.parent) {
-      const constraints = this.parent.constraints;
-      this.x = constraints.x;
-      this.y = constraints.y;
-      this.w = constraints.w;
-      this.h = constraints.h;
-    }
-
     this.ctx.beginPath();
     this.ctx.moveTo(this.topLeft.x + this.r, this.topLeft.y);
     this.ctx.lineTo(this.topRight.x - this.r, this.topRight.y);
@@ -116,23 +57,8 @@ export class Brick {
       this.topLeft.y
     );
     this.ctx.closePath();
-    this.ctx.fillStyle = this.options.style.fill;
+    this.ctx.fillStyle = this._options.style.fill;
     this.ctx.fill();
-    this.children.forEach((c) => c.render());
-  }
-
-  appendChild(C: Brick) {
-    C.parent = this;
-    this.children.push(C);
-  }
-
-  moveRight(x: number) {
-    this.x += x;
-  }
-  moveLeft(x: number) {
-    this.x -= x;
-  }
-  moveDown(y: number) {
-    this.y += y;
+    super.renderChildren();
   }
 }

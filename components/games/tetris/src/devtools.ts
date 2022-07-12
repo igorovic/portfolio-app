@@ -1,6 +1,8 @@
+import { Line } from "./blocks/line";
 import { Brick } from "./blocks/brick";
 import { TetrisEngine } from "./engine";
 import { MaybeContext } from "./types";
+import { Brick2 } from "./blocks";
 
 export class DevTools {
   ctx: MaybeContext;
@@ -20,24 +22,34 @@ export class DevTools {
     );
   }
 
-  drawBlock() {
+  drawBrick() {
     if (!this.ctx) return;
     this.clearCanvas();
     const B = new Brick(this.ctx);
     B.render();
   }
 
-  drawNestedBlocks() {
+  drawBrick2() {
     if (!this.ctx) return;
     this.clearCanvas();
-    const B = new Brick(this.ctx);
-    B.appendChild(
-      new Brick(this.ctx, { style: { fill: "#c2d0fc", paddingRatio: 0.25 } })
-    );
+    const B = new Brick2(this.ctx);
+    console.debug(B);
     B.render();
   }
 
   showGameMatrix() {
     console.debug(this.engine.matrix);
+  }
+
+  drawLine() {
+    if (!this.ctx) return;
+    this.clearCanvas();
+    const L = new Line(this.ctx);
+    console.debug(L);
+    L.render();
+  }
+
+  debugCurrentBlock() {
+    console.debug("currentBlock", this.engine.blocks.get("currentBlock"));
   }
 }

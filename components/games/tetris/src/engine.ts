@@ -1,5 +1,5 @@
-import { Brick } from "./blocks/brick";
-import { basic } from "./blocks";
+import type { Block } from "./blocks/block";
+import { Brick2 } from "./blocks";
 import { DevTools } from "./devtools";
 import { CanvasContext, Maybe, MaybeContext } from "./types";
 
@@ -9,7 +9,7 @@ export type TetrisEngineOptions = {
 
 type LineIndex = number;
 type ColIndex = number;
-type Cols = Map<ColIndex, Brick | null>;
+type Cols = Map<ColIndex, Brick2 | null>;
 type Matrix = Map<LineIndex, Cols>;
 
 export class TetrisEngine {
@@ -24,7 +24,7 @@ export class TetrisEngine {
   lateralStepTimestamp: number = 0;
   startTimestamp: number = 0;
   previousTimestamp: number = 0;
-  blocks = new Map<string, Brick>();
+  blocks = new Map<string, Block>();
   matrix: Matrix;
 
   constructor(options: TetrisEngineOptions) {
@@ -70,7 +70,7 @@ export class TetrisEngine {
       this.state = "INITIALIZED";
     }
     if (this.state === "INITIALIZED") {
-      if (this.ctx) this.blocks.set("currentBlock", basic(this.ctx));
+      if (this.ctx) this.blocks.set("currentBlock", new Brick2(this.ctx));
     }
     if (this.state !== "RUNNING") {
       console.info("start");
@@ -82,15 +82,15 @@ export class TetrisEngine {
     }
   }
 
-  touchRightEdge(block: Maybe<Brick>) {
+  touchRightEdge(block: Maybe<Block>) {
     if (!block || !this.ctx) return false;
     return block.x + block.w >= this.ctx.canvas.clientWidth;
   }
-  touchLeftEdge(block: Maybe<Brick>) {
+  touchLeftEdge(block: Maybe<Block>) {
     if (!block) return false;
     return 0 >= block.x;
   }
-  touchBottom(block: Maybe<Brick>) {
+  touchBottom(block: Maybe<Block>) {
     if (!block || !this.ctx) return false;
     return block.y + block.h >= this.ctx.canvas.clientHeight;
   }
@@ -123,8 +123,9 @@ export class TetrisEngine {
         this.verticalStepTimestamp = 0;
       }
       currentBlock?.render();
+
       if (this.touchBottom(currentBlock)) {
-        this.blocks.set("currentBlock", basic(this.ctx as CanvasContext));
+        this.blocks.set("currentBlock", new Brick2(this.ctx as CanvasContext));
       }
     }
 

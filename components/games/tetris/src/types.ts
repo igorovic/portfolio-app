@@ -25,7 +25,7 @@ export type BlockOptions = {
     x: number;
     y: number;
   };
-  canvas?: CanvasRowsCols | CanvasSize | CanvasSizeRowsCols;
+  //canvas?: CanvasRowsCols | CanvasSize | CanvasSizeRowsCols;
   style?: {
     fill?: string;
     paddingRatio?: number;
