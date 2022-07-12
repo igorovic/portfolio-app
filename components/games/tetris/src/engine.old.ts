@@ -1,4 +1,4 @@
-import { Block } from "./block";
+import { Block } from "./blocks/block";
 
 class GameEngine {
   state: "RUNNING" | "PAUSED" | "STOPPED" = "STOPPED";

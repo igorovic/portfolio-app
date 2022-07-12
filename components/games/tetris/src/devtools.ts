@@ -1,4 +1,4 @@
-import { Block } from "./block";
+import { Block } from "./blocks/block";
 import { TetrisEngine } from "./engine";
 import { MaybeContext } from "./types";
 

@@ -1,9 +1,13 @@
-import { BlockOptions, Constraints, XY } from "./types";
+import { BlockOptions, Constraints, isCanvasSize, XY } from "../types";
 
 const defaultOptions = {
   style: {
     fill: "#4d76f2",
     paddingRatio: 0.05,
+  },
+  canvas: {
+    cols: 10,
+    rows: 20,
   },
 };
 
@@ -22,16 +26,18 @@ export class Block {
   parent: Block | null = null;
   children: Array<Block> = [];
   options: BlockOptions & typeof defaultOptions;
-  constructor(
-    ctx: CanvasRenderingContext2D,
-    options: BlockOptions = defaultOptions
-  ) {
+  constructor(ctx: CanvasRenderingContext2D, options: BlockOptions = {}) {
     this.ctx = ctx;
-    this.options = options as BlockOptions & typeof defaultOptions;
+    this.options = { ...defaultOptions, ...options } as BlockOptions &
+      typeof defaultOptions;
     this.canvasW = this.ctx.canvas.clientWidth;
     this.canvasH = this.ctx.canvas.clientHeight;
-    const blockW = this.canvasW / 10;
-    const blockH = this.canvasH / 20;
+    if (isCanvasSize(this.options.canvas)) {
+      this.canvasW = this.options.canvas.w;
+      this.canvasH = this.options.canvas.h;
+    }
+    const blockW = this.canvasW / this.options.canvas.cols;
+    const blockH = this.canvasH / this.options.canvas.rows;
     this.w = blockW;
     this.h = blockH;
     this.p = blockW * this.options.style.paddingRatio;
