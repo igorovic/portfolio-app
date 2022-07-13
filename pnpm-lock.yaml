@@ -14,7 +14,7 @@ specifiers:
   '@types/probe-image-size': ^7.2.0
   '@types/react': 18.0.15
   '@types/react-redux': ^7.1.24
-  '@upstash/redis': ^1.8.0
+  '@upstash/redis': ^1.9.0
   autoprefixer: ^10.4.7
   axios: ^0.27.2
   clsx: ^1.2.1
@@ -47,10 +47,10 @@ dependencies:
   '@mantine/core': 4.2.12_bhlenwkd723lhai3utuqqpcmru
   '@mantine/hooks': 4.2.12_react@18.2.0
   '@mantine/next': 4.2.12_2gqzyayxaiqf33ltv5ghxbozne
-  '@next-auth/upstash-redis-adapter': 3.0.0_dx5cyqtj5qkfpf2vo3oawbjwty
+  '@next-auth/upstash-redis-adapter': 3.0.0_e5wc3scf4fky6tokbrxmnchl4y
   '@reduxjs/toolkit': 1.8.3_kkwg4cbsojnjnupd3btipussee
   '@tabler/icons': 1.74.0_biqbaboplfbrettd7655fr4n2y
-  '@upstash/redis': 1.8.0
+  '@upstash/redis': 1.9.0
   axios: 0.27.2
   clsx: 1.2.1
   cookie: 0.5.0
@@ -343,13 +343,13 @@ packages:
     engines: {node: '>= 10'}
     dev: false
 
-  /@next-auth/upstash-redis-adapter/3.0.0_dx5cyqtj5qkfpf2vo3oawbjwty:
+  /@next-auth/upstash-redis-adapter/3.0.0_e5wc3scf4fky6tokbrxmnchl4y:
     resolution: {integrity: sha512-MQIM03nJKNkr9KK0AWH4rDuFeCTaFtvD++l30hfJIyPZUV4STL4GX3TYTbOEOgCcw/AiGHTLhNXGk5/CDJJ3kg==}
     peerDependencies:
       '@upstash/redis': ^1.0.1
       next-auth: ^4.0.1
     dependencies:
-      '@upstash/redis': 1.8.0
+      '@upstash/redis': 1.9.0
       next-auth: 4.9.0_mnimnj2pdeccz5uivmdmoly3tq
       uuid: 8.3.2
     dev: false
@@ -813,8 +813,8 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@upstash/redis/1.8.0:
-    resolution: {integrity: sha512-5R9hUBzxWS9OMeRd2KrbEUI/i+y5tjlu45sDrdURAAOSpVLbdSEpwMnN1ExH+ABKJ7uWUmgMJdByW/N3HJewGQ==}
+  /@upstash/redis/1.9.0:
+    resolution: {integrity: sha512-S4BLRVTx1wEMx2m06ejYbCW5rzqSfxGgmCsWzbYrY7JMYjkWgdr8LkBpP5ZvnvfWoq+eXCCOST9bhpIM7HKnMw==}
     dependencies:
       isomorphic-fetch: 3.0.0
     transitivePeerDependencies:
