@@ -1,7 +1,7 @@
-import { Line } from "./blocks/line";
-import { Brick } from "./blocks/brick";
+import Line from "./blocks/line";
+import Brick from "./blocks/brick";
 import { TetrisEngine } from "./engine";
-import { Brick2 } from "./blocks";
+
 import { Block } from "./blocks/block";
 import { BlockOptions } from "./types";
 
@@ -89,18 +89,11 @@ export class DevTools {
   }
 
   drawBrick() {
+    this.clearCanvas();
     const ctx = this.engine.context;
     this.clearCanvas();
-    const B = new Brick(ctx);
-    B.render();
-  }
-
-  drawBrick2() {
-    const ctx = this.engine.context;
-    this.clearCanvas();
-    const B = new Brick2(ctx);
-    console.debug(B);
-    B.render();
+    const B = Brick(ctx);
+    B.render(ctx);
   }
 
   // showGameMatrix() {
@@ -110,9 +103,9 @@ export class DevTools {
   drawLine() {
     const ctx = this.engine.context;
     this.clearCanvas();
-    const L = new Line(ctx);
+    const L = Line(ctx);
     console.debug(L);
-    L.render();
+    L.render(ctx);
   }
 
   debugCurrentBlock() {

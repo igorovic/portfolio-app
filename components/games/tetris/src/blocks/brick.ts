@@ -1,60 +1,23 @@
-//@ts-nocheck
 import { BlockOptions } from "../types";
 import { Block } from "./block";
 
-const defaultOptions = {
-  style: {
-    fill: "#4d76f2",
-    paddingRatio: 0.05,
-  },
-};
-
-type BrickOptions = BlockOptions & typeof defaultOptions;
-
-export class Brick extends Block {
-  // border radius
-  r: number;
-  _options: BrickOptions;
-
-  constructor(ctx: CanvasRenderingContext2D, options: BlockOptions = {}) {
-    super(ctx, options);
-    this.ctx = ctx;
-    this._options = { ...defaultOptions, ...options } as BrickOptions;
-    this.w = options.width ?? this.canvasW / 10;
-    this.h = options.height ?? this.canvasH / 20;
-    this.r = this.w * 0.05;
-  }
-
-  render() {
-    this.ctx.beginPath();
-    this.ctx.moveTo(this.topLeft.x + this.r, this.topLeft.y);
-    this.ctx.lineTo(this.topRight.x - this.r, this.topRight.y);
-    this.ctx.quadraticCurveTo(
-      ...this.topRight.xy,
-      this.topRight.x,
-      this.topRight.y + this.r
-    );
-    this.ctx.lineTo(this.bottomRight.x, this.bottomRight.y - this.r);
-    this.ctx.quadraticCurveTo(
-      ...this.bottomRight.xy,
-      this.bottomRight.x - this.r,
-      this.bottomRight.y
-    );
-    this.ctx.lineTo(this.bottomLeft.x + this.r, this.bottomLeft.y);
-    this.ctx.quadraticCurveTo(
-      ...this.bottomLeft.xy,
-      this.bottomLeft.x,
-      this.bottomLeft.y - this.r
-    );
-    this.ctx.lineTo(this.topLeft.x, this.topLeft.y + this.r);
-    this.ctx.quadraticCurveTo(
-      ...this.topLeft.xy,
-      this.topLeft.x + this.r,
-      this.topLeft.y
-    );
-    this.ctx.closePath();
-    this.ctx.fillStyle = this._options.style.fill;
-    this.ctx.fill();
-    super.renderChildren();
-  }
+function Brick(ctx: CanvasRenderingContext2D, params: BlockOptions = {}) {
+  const options: BlockOptions = {
+    shape: "squareRounded",
+    width: ctx.canvas.clientWidth / 10,
+    height: ctx.canvas.clientHeight / 20,
+    cornerRadius: (ctx.canvas.clientWidth / 10) * 0.15,
+    style: { fill: "#4d76f2" },
+    padding: 2,
+  };
+  const brick = new Block({ ...options, ...params }, [
+    new Block({
+      ...options,
+      style: { fill: "#c2d0fc" },
+      padding: 16,
+    }),
+  ]);
+  return brick;
 }
+
+export default Brick;

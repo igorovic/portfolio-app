@@ -21,7 +21,7 @@ type CanvasSize = {
 type CanvasSizeRowsCols = CanvasRowsCols & CanvasSize;
 
 export type BlockOptions = {
-  shape: "squareRounded" | "square";
+  shape?: "squareRounded" | "square";
   position?: {
     x: number;
     y: number;

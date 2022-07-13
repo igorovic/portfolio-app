@@ -41,30 +41,42 @@ export class Block {
   }
 
   get X(): number {
+    if (this.parent) {
+      return this.parent.X + this.pl;
+    }
     return this.x + this.pl;
   }
   get Y(): number {
+    if (this.parent) {
+      return this.parent.Y + this.pt;
+    }
     return this.y + this.pt;
   }
-  get W(): number {
+  get w(): number {
     let _w = 0;
     if (this.parent) {
       _w = this.parent.topRight.x - this.parent.topLeft.x;
     } else {
       _w = this.options.width ?? 0;
     }
-    _w = _w - this.pl - this.pr;
-    return Math.max(0, _w);
+    return _w;
   }
-  get H(): number {
+
+  get h(): number {
     let _h = 0;
     if (this.parent) {
       _h = this.parent.bottomLeft.y - this.parent.topLeft.y;
     } else {
       _h = this.options.height ?? 0;
     }
-    _h = _h - this.pl - this.pr;
-    return Math.max(0, _h);
+    return _h;
+  }
+
+  get W(): number {
+    return Math.max(0, this.w - this.pl - this.pr);
+  }
+  get H(): number {
+    return Math.max(0, this.h - this.pl - this.pr);
   }
   get topLeft(): XY {
     return { x: this.X, y: this.Y, xy: [this.X, this.Y] };
@@ -88,19 +100,14 @@ export class Block {
     this.children.forEach((c) => c.render(ctx));
   }
 
-  // appendChild(C: Block) {
-  //   C.parent = this;
-  //   this.children.push(C);
-  // }
-
-  // moveRight(x: number) {
-  //   this.x += x;
-  // }
-  // moveLeft(x: number) {
-  //   this.x -= x;
-  // }
-  // moveDown(y: number) {
-  //   this.y += y;
-  // }
+  moveRight(x: number) {
+    this.x += x;
+  }
+  moveLeft(x: number) {
+    this.x -= x;
+  }
+  moveDown(y: number) {
+    this.y += y;
+  }
   name: string = "Block";
 }

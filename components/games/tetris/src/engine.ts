@@ -1,5 +1,5 @@
-import type { Block as BuildingBlock } from "./blocks/block";
-import { Brick2 } from "./blocks";
+import type { Block } from "./blocks/block";
+import Brick from "./blocks/brick";
 import { DevTools } from "./devtools";
 import { Maybe } from "./types";
 
@@ -9,7 +9,7 @@ export type TetrisEngineOptions = {
 
 type LineIndex = number;
 type ColIndex = number;
-type Cols = Map<ColIndex, Brick2 | null>;
+type Cols = Map<ColIndex, Block | null>;
 type Matrix = Map<LineIndex, Cols>;
 
 export class TetrisEngine {
@@ -25,7 +25,7 @@ export class TetrisEngine {
   lateralStepTimestamp: number = 0;
   startTimestamp: number = 0;
   previousTimestamp: number = 0;
-  blocks = new Map<string, BuildingBlock>();
+  blocks = new Map<string, Block>();
   //matrix: Matrix;
 
   // constructor(options: TetrisEngineOptions) {
@@ -50,6 +50,7 @@ export class TetrisEngine {
     }
   };
   initialize(canvasId: string) {
+    this.state = "INITIALIZED";
     const canvas = document.getElementById(canvasId) as HTMLCanvasElement;
     const ctx = canvas?.getContext("2d");
     if (!ctx) {
@@ -60,6 +61,7 @@ export class TetrisEngine {
     document.addEventListener("keyup", this.keyup);
   }
   dispose() {
+    this.state = "IDLE";
     document.removeEventListener("keydown", this.keydown);
     document.removeEventListener("keyup", this.keyup);
   }
@@ -74,75 +76,70 @@ export class TetrisEngine {
   get context(): CanvasRenderingContext2D {
     return this.ctx;
   }
-  // start_pause() {
-  //   if (this.state === "IDLE") {
-  //     console.debug("initialize");
-  //     this.initialize();
-  //     this.state = "INITIALIZED";
-  //   }
-  //   if (this.state === "INITIALIZED") {
-  //     if (this.ctx) this.blocks.set("currentBlock", new Brick2(this.ctx));
-  //   }
-  //   if (this.state !== "RUNNING") {
-  //     console.info("start");
-  //     this.state = "RUNNING";
-  //     window.requestAnimationFrame(this.gameLoop);
-  //   } else {
-  //     console.info("pause");
-  //     this.state = "PAUSED";
-  //   }
-  // }
+  start_pause() {
+    if (this.state === "INITIALIZED") {
+      if (this.ctx) this.blocks.set("currentBlock", Brick(this.ctx));
+    }
+    if (this.state !== "RUNNING") {
+      console.info("start");
+      this.state = "RUNNING";
+      window.requestAnimationFrame(this.gameLoop);
+    } else {
+      console.info("pause");
+      this.state = "PAUSED";
+    }
+  }
 
-  // touchRightEdge(block: Maybe<Block>) {
-  //   if (!block || !this.ctx) return false;
-  //   return block.x + block.w >= this.ctx.canvas.clientWidth;
-  // }
-  // touchLeftEdge(block: Maybe<Block>) {
-  //   if (!block) return false;
-  //   return 0 >= block.x;
-  // }
-  // touchBottom(block: Maybe<Block>) {
-  //   if (!block || !this.ctx) return false;
-  //   return block.y + block.h >= this.ctx.canvas.clientHeight;
-  // }
+  touchRightEdge(block: Maybe<Block>) {
+    if (!block || !this.ctx) return false;
+    return block.x + block.w >= this.ctx.canvas.clientWidth;
+  }
+  touchLeftEdge(block: Maybe<Block>) {
+    if (!block) return false;
+    return 0 >= block.x;
+  }
+  touchBottom(block: Maybe<Block>) {
+    if (!block || !this.ctx) return false;
+    return block.y + block.h >= this.ctx.canvas.clientHeight;
+  }
 
-  // gameLoop: FrameRequestCallback = (timestamp) => {
-  //   if (this.startTimestamp === 0) {
-  //     this.startTimestamp = timestamp;
-  //   }
-  //   this.verticalStepTimestamp += timestamp - this.previousTimestamp;
-  //   this.lateralStepTimestamp += timestamp - this.previousTimestamp;
-  //   if (this.previousTimestamp !== timestamp && this.state === "RUNNING") {
-  //     const currentBlock = this.blocks.get("currentBlock");
-  //     this.clearAll();
+  gameLoop: FrameRequestCallback = (timestamp) => {
+    if (this.startTimestamp === 0) {
+      this.startTimestamp = timestamp;
+    }
+    this.verticalStepTimestamp += timestamp - this.previousTimestamp;
+    this.lateralStepTimestamp += timestamp - this.previousTimestamp;
+    if (this.previousTimestamp !== timestamp && this.state === "RUNNING") {
+      const currentBlock = this.blocks.get("currentBlock");
+      this.clearAll();
 
-  //     // lateral movements
-  //     if (this.lateralStepTimestamp >= this.xStepTimeLapse) {
-  //       if (this.movX === "r" && !this.touchRightEdge(currentBlock)) {
-  //         currentBlock?.moveRight(currentBlock.w);
-  //       } else if (this.movX === "l" && !this.touchLeftEdge(currentBlock)) {
-  //         currentBlock?.moveLeft(currentBlock.w);
-  //       }
-  //       this.lateralStepTimestamp = 0;
-  //     }
-  //     // Vertical movements
-  //     if (
-  //       !this.touchBottom(currentBlock) &&
-  //       this.verticalStepTimestamp >= this.yStepTimeLapse
-  //     ) {
-  //       currentBlock?.moveDown(currentBlock.h);
-  //       this.verticalStepTimestamp = 0;
-  //     }
-  //     currentBlock?.render();
+      // lateral movements
+      if (this.lateralStepTimestamp >= this.xStepTimeLapse) {
+        if (this.movX === "r" && !this.touchRightEdge(currentBlock)) {
+          currentBlock?.moveRight(currentBlock.w);
+        } else if (this.movX === "l" && !this.touchLeftEdge(currentBlock)) {
+          currentBlock?.moveLeft(currentBlock.w);
+        }
+        this.lateralStepTimestamp = 0;
+      }
+      // Vertical movements
+      if (
+        !this.touchBottom(currentBlock) &&
+        this.verticalStepTimestamp >= this.yStepTimeLapse
+      ) {
+        currentBlock?.moveDown(currentBlock.h);
+        this.verticalStepTimestamp = 0;
+      }
+      currentBlock?.render(this.context);
 
-  //     if (this.touchBottom(currentBlock)) {
-  //       this.blocks.set("currentBlock", new Brick2(this.ctx as CanvasContext));
-  //     }
-  //   }
+      if (this.touchBottom(currentBlock)) {
+        this.blocks.set("currentBlock", Brick(this.ctx));
+      }
+    }
 
-  //   this.previousTimestamp = timestamp;
-  //   window.requestAnimationFrame(this.gameLoop);
-  // };
+    this.previousTimestamp = timestamp;
+    window.requestAnimationFrame(this.gameLoop);
+  };
 }
 
 const engine = new TetrisEngine();

@@ -2,6 +2,8 @@ import { Block } from "./block";
 
 export function render(ctx: CanvasRenderingContext2D, block: Block) {
   switch (true) {
+    case block.options.shape === undefined:
+      break;
     case block.options.shape === "square":
       ctx.rect(block.X, block.Y, block.W, block.H);
       if (block.options.style?.fill) {
