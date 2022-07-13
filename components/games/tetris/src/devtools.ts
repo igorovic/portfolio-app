@@ -1,86 +1,116 @@
 import { Line } from "./blocks/line";
 import { Brick } from "./blocks/brick";
 import { TetrisEngine } from "./engine";
-import { MaybeContext } from "./types";
 import { Brick2 } from "./blocks";
 import { Block } from "./blocks/block";
+import { BlockOptions } from "./types";
 
 export class DevTools {
-  ctx: MaybeContext;
   engine: TetrisEngine;
-  constructor(ctx: MaybeContext, engine: TetrisEngine) {
-    this.ctx = ctx;
+  constructor(engine: TetrisEngine) {
     this.engine = engine;
   }
 
   clearCanvas() {
-    if (!this.ctx) return;
-    this.ctx.clearRect(
+    this.engine.context.clearRect(
       0,
       0,
-      this.ctx.canvas.clientWidth,
-      this.ctx.canvas.clientHeight
+      this.engine.context.canvas.clientWidth,
+      this.engine.context.canvas.clientHeight
     );
   }
 
-  drawBlock() {
-    if (!this.ctx) return;
-    const B = new Block(this.ctx);
-    B.render = () => {
-      B.ctx.rect(...B.topLeft.xy, ...B.bottomRight.xy);
-      B.ctx.fillStyle = "#cecece";
-      B.ctx.fill();
-    };
+  drawSquare() {
+    this.clearCanvas();
+    const ctx = this.engine.context;
+    const B = new Block({
+      shape: "square",
+      width: ctx.canvas.clientWidth / 10,
+      height: ctx.canvas.clientHeight / 20,
+      style: { fill: "#00af00" },
+    });
     console.debug(B);
-    B.render();
+    B.render(ctx);
   }
-  drawBlockWithChild() {
-    if (!this.ctx) return;
-    const B = new Block(this.ctx, { padding: 16 });
-    B.render = () => {
-      console.debug(...B.topLeft.xy, B.W, B.H);
-      B.ctx.rect(...B.topLeft.xy, B.W, B.H);
-      B.ctx.fillStyle = "#00ff00";
-      B.ctx.fill();
-    };
 
-    const B2 = new Block(this.ctx, { padding: 16 });
-    B2.render = () => {
-      console.debug(...B2.topLeft.xy, B2.W, B2.H);
-      B2.ctx.rect(...B2.topLeft.xy, B2.W, B2.H);
-      B2.ctx.fillStyle = "#ac00fe";
-      B2.ctx.fill();
+  drawRoundedSquare() {
+    this.clearCanvas();
+    const ctx = this.engine.context;
+    const options: BlockOptions = {
+      shape: "squareRounded",
+      width: ctx.canvas.clientWidth / 10,
+      height: ctx.canvas.clientHeight / 20,
+      cornerRadius: (ctx.canvas.clientWidth / 10) * 0.15,
+      style: { fill: "#00af00" },
     };
-    B.appendChild(B2);
+    const B = new Block(options);
     console.debug(B);
-    console.debug("B2", B2);
-    B.render();
-    B.renderChildren();
+    B.render(ctx);
+    const B2 = new Block({
+      ...options,
+      position: {
+        x: ctx.canvas.clientWidth / 10 + 22,
+        y: 0,
+      },
+    });
+    console.debug(B2);
+    B2.render(ctx);
+    const B3 = new Block({
+      ...options,
+      position: {
+        x: (ctx.canvas.clientWidth / 10) * 3,
+        y: 0,
+      },
+      padding: 4,
+    });
+    B3.name = "square-rounded-with-padding";
+    console.debug(B3);
+    B3.render(ctx);
+  }
+
+  drawBlockWithChild() {
+    this.clearCanvas();
+    const ctx = this.engine.context;
+    const options: BlockOptions = {
+      shape: "squareRounded",
+      width: ctx.canvas.clientWidth / 10,
+      height: ctx.canvas.clientHeight / 20,
+      cornerRadius: (ctx.canvas.clientWidth / 10) * 0.15,
+      style: { fill: "#00af00" },
+      padding: 6,
+    };
+    const C1 = new Block({
+      ...options,
+      style: { fill: "#ac0120" },
+    });
+    const B = new Block(options, [C1]);
+    B.render(ctx);
+    console.debug(B);
   }
 
   drawBrick() {
-    if (!this.ctx) return;
+    const ctx = this.engine.context;
     this.clearCanvas();
-    const B = new Brick(this.ctx);
+    const B = new Brick(ctx);
     B.render();
   }
 
   drawBrick2() {
-    if (!this.ctx) return;
+    const ctx = this.engine.context;
     this.clearCanvas();
-    const B = new Brick2(this.ctx);
+    const B = new Brick2(ctx);
     console.debug(B);
     B.render();
   }
 
-  showGameMatrix() {
-    console.debug(this.engine.matrix);
-  }
+  // showGameMatrix() {
+  //   console.debug(this.engine.matrix);
+  // }
 
   drawLine() {
-    if (!this.ctx) return;
+    const ctx = this.engine.context;
     this.clearCanvas();
-    const L = new Line(this.ctx);
+    const L = new Line(ctx);
     console.debug(L);
     L.render();
   }

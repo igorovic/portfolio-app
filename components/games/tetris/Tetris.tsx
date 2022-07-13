@@ -1,38 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@mantine/core";
 import Game from "./Game";
-import { TetrisEngine } from "./src/engine";
+import tetris, { devtools } from "./src/engine";
 function Tetris() {
-  const tetris = new TetrisEngine({ canvasId: "tetris" });
+  useEffect(() => {
+    tetris.initialize("tetris");
+    return () => {
+      tetris.dispose();
+    };
+  });
   return (
     <div>
       <h2>Tetris</h2>
       <div className="p-2 bg-slate-300 w-min rounded-md">
         <Game width={700} />
-        <Button onClick={() => tetris.start_pause()}>start</Button>
+        <Button /* onClick={() => tetris.start_pause()} */>start</Button>
         {process.env.NODE_ENV !== "production" ? (
           <div className="absolute top-16 right-0 mx-2 flex flex-col gap-2">
             <p className="font-semibold test-base">DevTools</p>
-            <Button onClick={() => tetris.devtools.drawBlock()}>
-              draw Block
+            <Button onClick={() => devtools.drawSquare()}>draw square</Button>
+            <Button onClick={() => devtools.drawRoundedSquare()}>
+              draw rounded square
             </Button>
-            <Button onClick={() => tetris.devtools.drawBlockWithChild()}>
+            <Button onClick={() => devtools.drawBlockWithChild()}>
               draw Block with child
             </Button>
-            <Button onClick={() => tetris.devtools.drawBrick()}>
-              draw Brick
-            </Button>
-            <Button onClick={() => tetris.devtools.drawBrick2()}>
-              draw Brick2
-            </Button>
-            <Button onClick={() => tetris.devtools.drawLine()}>
-              draw line
-            </Button>
-            <Button onClick={() => tetris.devtools.debugCurrentBlock()}>
+            <Button onClick={() => devtools.drawBrick()}>draw Brick</Button>
+            <Button onClick={() => devtools.drawBrick2()}>draw Brick2</Button>
+            <Button onClick={() => devtools.drawLine()}>draw line</Button>
+            <Button onClick={() => devtools.debugCurrentBlock()}>
               debug currentBlock
-            </Button>
-            <Button onClick={() => tetris.devtools.showGameMatrix()}>
-              debug matrix
             </Button>
           </div>
         ) : null}

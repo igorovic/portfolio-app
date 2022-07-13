@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Brick2 } from ".";
 import { BlockOptions } from "../types";
 import { Block } from "./block";

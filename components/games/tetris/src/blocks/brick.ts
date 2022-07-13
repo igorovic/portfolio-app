@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { BlockOptions } from "../types";
 import { Block } from "./block";
 
