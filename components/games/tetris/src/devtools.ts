@@ -38,19 +38,22 @@ export class DevTools {
     if (!this.ctx) return;
     const B = new Block(this.ctx, { padding: 16 });
     B.render = () => {
-      B.ctx.rect(...B.topLeft.xy, ...B.bottomRight.xy);
-      B.ctx.fillStyle = "#cecece";
+      console.debug(...B.topLeft.xy, B.W, B.H);
+      B.ctx.rect(...B.topLeft.xy, B.W, B.H);
+      B.ctx.fillStyle = "#00ff00";
       B.ctx.fill();
     };
 
-    const B2 = new Block(this.ctx);
+    const B2 = new Block(this.ctx, { padding: 16 });
     B2.render = () => {
-      B2.ctx.rect(...B2.topLeft.xy, ...B2.bottomRight.xy);
+      console.debug(...B2.topLeft.xy, B2.W, B2.H);
+      B2.ctx.rect(...B2.topLeft.xy, B2.W, B2.H);
       B2.ctx.fillStyle = "#ac00fe";
       B2.ctx.fill();
     };
     B.appendChild(B2);
     console.debug(B);
+    console.debug("B2", B2);
     B.render();
     B.renderChildren();
   }

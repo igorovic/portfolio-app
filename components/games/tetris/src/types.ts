@@ -25,8 +25,15 @@ export type BlockOptions = {
     x: number;
     y: number;
   };
-
+  width?: number;
+  height?: number;
   padding?: number;
+  paddings?: {
+    pt: number;
+    pb: number;
+    pl: number;
+    pr: number;
+  };
 
   style?: {
     fill?: string;

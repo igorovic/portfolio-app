@@ -13,11 +13,13 @@ export class Line extends Block {
   orientation: LineOrientation = "horizontal";
 
   constructor(ctx: CanvasRenderingContext2D, options: BlockOptions = {}) {
-    super(ctx, options);
+    super(ctx, { ...options, height: ctx.canvas.clientHeight / 20 });
     this._options = { ...defaultOptions, ...options } as LineOptions;
 
     for (let i = 0; i < this._options.length; i++) {
-      const B = new Brick2(this.ctx);
+      const B = new Brick2(this.ctx, {
+        width: this.ctx.canvas.clientWidth / 10 / this._options.length,
+      });
       this.appendChild(B);
     }
   }

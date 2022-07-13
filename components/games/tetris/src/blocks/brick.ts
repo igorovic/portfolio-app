@@ -19,12 +19,8 @@ export class Brick extends Block {
     super(ctx, options);
     this.ctx = ctx;
     this._options = { ...defaultOptions, ...options } as BrickOptions;
-    this.w = this.canvasW / 10;
-    this.h = this.canvasH / 20;
-    this.pl = 2;
-    this.pr = 2;
-    this.pt = 2;
-    this.pb = 2;
+    this.w = options.width ?? this.canvasW / 10;
+    this.h = options.height ?? this.canvasH / 20;
     this.r = this.w * 0.05;
   }
 

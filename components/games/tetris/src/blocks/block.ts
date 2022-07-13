@@ -23,25 +23,27 @@ export class Block {
     this.options = options;
     this.canvasW = this.ctx.canvas.clientWidth;
     this.canvasH = this.ctx.canvas.clientHeight;
-    this.w = this.canvasW;
-    this.h = this.canvasH;
-    this.pt = this.options?.padding ?? 0;
-    this.pb = this.options?.padding ?? 0;
-    this.pl = this.options?.padding ?? 0;
-    this.pr = this.options?.padding ?? 0;
+    this.w = options.width ?? this.canvasW;
+    this.h = options.height ?? this.canvasH;
+    const padding = this.options?.padding;
+    const paddings = this.options?.paddings;
+    this.pt = paddings?.pt ?? padding ?? 0;
+    this.pb = paddings?.pb ?? padding ?? 0;
+    this.pl = paddings?.pl ?? padding ?? 0;
+    this.pr = paddings?.pr ?? padding ?? 0;
   }
 
-  get X() {
+  get X(): number {
     return (this.parent ? this.parent.topLeft.x : this.x) + this.pl;
   }
-  get Y() {
+  get Y(): number {
     return (this.parent ? this.parent.topLeft.y : this.y) + this.pt;
   }
-  get W() {
-    return this.w - this.pl - this.pr;
+  get W(): number {
+    return (this.parent ? this.parent.W : this.w) - this.pl - this.pr;
   }
-  get H() {
-    return this.h - this.pt - this.pb;
+  get H(): number {
+    return (this.parent ? this.parent.H : this.h) - this.pt - this.pb;
   }
   get topLeft(): XY {
     return { x: this.X, y: this.Y, xy: [this.X, this.Y] };
