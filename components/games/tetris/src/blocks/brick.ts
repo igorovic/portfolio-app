@@ -3,6 +3,7 @@ import { Block } from "./block";
 
 function Brick(ctx: CanvasRenderingContext2D, params: BlockOptions = {}) {
   const options: BlockOptions = {
+    name: "brick",
     shape: "squareRounded",
     width: ctx.canvas.clientWidth / 10,
     height: ctx.canvas.clientHeight / 20,

@@ -1,5 +1,6 @@
 import type { Block } from "./blocks/block";
 import Brick from "./blocks/brick";
+import Line from "./blocks/line";
 import { DevTools } from "./devtools";
 import { Maybe } from "./types";
 
@@ -133,7 +134,7 @@ export class TetrisEngine {
       currentBlock?.render(this.context);
 
       if (this.touchBottom(currentBlock)) {
-        this.blocks.set("currentBlock", Brick(this.ctx));
+        this.blocks.set("currentBlock", Line(this.ctx));
       }
     }
 

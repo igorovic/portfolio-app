@@ -6,35 +6,16 @@ function Line(ctx: CanvasRenderingContext2D) {
   const w = ctx.canvas.clientWidth / 10;
   const h = ctx.canvas.clientHeight / 20;
   const options: BlockOptions = {
+    name: "Line",
+    layout: "horizontal",
     width: w * 4,
     height: h,
   };
   const line = new Block(options, [
-    Brick(ctx, { width: w }),
-    Brick(ctx, {
-      width: w,
-      height: h,
-      position: {
-        x: w,
-        y: 0,
-      },
-    }),
-    Brick(ctx, {
-      width: w,
-      height: h,
-      position: {
-        x: w * 2,
-        y: 0,
-      },
-    }),
-    Brick(ctx, {
-      width: w,
-      height: h,
-      position: {
-        x: w * 3,
-        y: 0,
-      },
-    }),
+    Brick(ctx, { name: "b1" }),
+    Brick(ctx, { name: "b2" }),
+    Brick(ctx, { name: "b3" }),
+    Brick(ctx, { name: "b4" }),
   ]);
   return line;
 }

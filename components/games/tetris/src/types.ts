@@ -2,12 +2,6 @@ export type Maybe<T> = T | undefined | null;
 export interface CanvasContext extends CanvasRenderingContext2D {}
 export type MaybeContext = Maybe<CanvasContext>;
 export type XY = { x: number; y: number; xy: [number, number] };
-export type Constraints = {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-};
 
 type CanvasRowsCols = {
   cols: number;
@@ -21,7 +15,9 @@ type CanvasSize = {
 type CanvasSizeRowsCols = CanvasRowsCols & CanvasSize;
 
 export type BlockOptions = {
+  name?: string;
   shape?: "squareRounded" | "square";
+  layout?: "horizontal" | "vertical";
   position?: {
     x: number;
     y: number;

@@ -1,9 +1,5 @@
-import { TetrisEngine } from "../engine";
-import { BlockOptions, Constraints, XY } from "../types";
+import { BlockOptions, XY } from "../types";
 import { render } from "./renderer";
-import { isCanvasContext } from "./utils";
-
-type Parent = CanvasRenderingContext2D | Block;
 
 export class Block {
   // origin is top left corner
@@ -15,11 +11,12 @@ export class Block {
   pl: number;
   pr: number;
   cornerRadius: number;
+  order: number = 0;
 
   options: BlockOptions;
   children: Array<Block> = [];
   parent: Block | null = null;
-
+  name: string = "Block";
   constructor(options: BlockOptions, children: Block[] = []) {
     this.options = options;
     const padding = this.options?.padding;
@@ -29,19 +26,28 @@ export class Block {
     this.pb = paddings?.pb ?? padding ?? 0;
     this.pl = paddings?.pl ?? padding ?? 0;
     this.pr = paddings?.pr ?? padding ?? 0;
-    if (this.options.position) {
+    this.name = this.options?.name ? this.options.name : this.name;
+    /* if (this.options.position) {
       (this.x = this.options.position.x), (this.y = this.options.position.y);
-    }
-    this.children = children.map((C) => {
+    } */
+    this.children = children.map((C, idx) => {
       C.parent = this;
       C.x = this.X;
       C.y = this.Y;
+      C.order = idx;
       return C;
     });
   }
 
   get X(): number {
     if (this.parent) {
+      if (
+        this.parent.children.length > 1 &&
+        this.parent.options.layout === "horizontal"
+      ) {
+        // children equaliy distributed
+        return this.parent.X + this.w * this.order;
+      }
       return this.parent.X + this.pl;
     }
     return this.x + this.pl;
@@ -55,7 +61,14 @@ export class Block {
   get w(): number {
     let _w = 0;
     if (this.parent) {
-      _w = this.parent.topRight.x - this.parent.topLeft.x;
+      if (
+        this.parent.children.length > 1 &&
+        this.parent.options.layout === "horizontal"
+      ) {
+        _w =
+          (this.parent.topRight.x - this.parent.topLeft.x) /
+          this.parent.children.length;
+      } else _w = this.parent.topRight.x - this.parent.topLeft.x;
     } else {
       _w = this.options.width ?? 0;
     }
@@ -109,5 +122,4 @@ export class Block {
   moveDown(y: number) {
     this.y += y;
   }
-  name: string = "Block";
 }
