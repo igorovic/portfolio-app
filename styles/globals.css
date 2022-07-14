@@ -22,6 +22,14 @@
   
 }
 @layer components {
+  .canva-toolbox { 
+    .mantine-NumberInput-root{
+      @apply flex gap-2 items-center;
+    }
+    .mantine-NumberInput-wrapper > input{
+      max-width: 4em;
+    }
+  }
   .drawer-section-title{
     @apply text-base md:text-lg font-semibold text-gray-700;
   }

@@ -6,23 +6,37 @@ import NavLink from "./NavLink";
 import { useNavbarOpened } from "./store";
 import { useRouter } from "next/router";
 
+type AppLink = { text: string; href: string };
+
+type AppLinkComponentProps = {
+  links: AppLink[];
+};
+
+const AppLinkComponent = ({ links }: AppLinkComponentProps) => {
+  return (
+    <>
+      {links.map((props) => (
+        <NavLink key={props.href} {...props} />
+      ))}
+    </>
+  );
+};
+
 type AppShellNavbarProps = Omit<NavbarProps, "children">;
 function AppShellNavbar(props: AppShellNavbarProps) {
   const { pathname } = useRouter();
-
   const { t } = useTranslation("appshell");
   const [opened] = useNavbarOpened();
-  const links = [{ text: t("Image preview"), href: "/app/media-preview" }].map(
-    (props) => <NavLink key={props.href} {...props} />
-  );
+  const medias = [{ text: t("Image preview"), href: "/app/media-preview" }];
   const socials = [{ text: "Instagram", href: "/app/instagram" }];
-  const socialLinks = socials.map((props) => (
-    <NavLink key={props.href} {...props} />
-  ));
-  const socialLinksHrefs = socials.map((S) => S.href);
-  const initialItem = socialLinksHrefs.some((s) => s.startsWith(pathname))
-    ? 1
-    : 0;
+  const canvas = [{ text: "Canva", href: "/app/canva" }];
+  let initialItem = 0;
+  [...medias, ...socials, ...canvas]
+    .map((S) => S.href)
+    .some((s, idx) => {
+      initialItem = idx;
+      return s.startsWith(pathname);
+    });
 
   return (
     <Navbar hidden={!opened} p="xs" {...props}>
@@ -30,10 +44,13 @@ function AppShellNavbar(props: AppShellNavbarProps) {
       <Navbar.Section>
         <Accordion initialItem={initialItem}>
           <Accordion.Item sx={{ border: 0 }} label="Media files">
-            {links}
+            <AppLinkComponent links={medias} />
           </Accordion.Item>
           <Accordion.Item sx={{ border: 0 }} label="Socials">
-            {socialLinks}
+            <AppLinkComponent links={socials} />
+          </Accordion.Item>
+          <Accordion.Item sx={{ border: 0 }} label="Canva">
+            <AppLinkComponent links={canvas} />
           </Accordion.Item>
         </Accordion>
       </Navbar.Section>
