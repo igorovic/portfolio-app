@@ -78,7 +78,10 @@ function svgRectPath(o: any): Path2D {
   Q ${bl.x} ${bl.y} ${bl.x} ${bl.y - o.rbl}
   V ${tl.y + o.rtl}
   Q ${tl.x} ${tl.y} ${tl.x + o.rtl} ${tl.y}
-  `;
+  `
+    .replaceAll("\n", "")
+    .replaceAll("\r", "");
+
   console.debug(svgPath);
   return new Path2D(svgPath);
 }
