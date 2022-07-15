@@ -23,6 +23,35 @@ type ToolBoxProps = {
   canvasId: string;
 };
 
+const FillColorComponent = () => {
+  const dispatch = useAppDispatch();
+  const fill = useFill();
+
+  return (
+    <ColorPicker
+      format="rgba"
+      value={fill}
+      onChange={(color) => {
+        dispatch(setFill(color));
+      }}
+    />
+  );
+};
+
+const StrokeColorComponent = () => {
+  const dispatch = useAppDispatch();
+  const stroke = useStroke();
+  return (
+    <ColorPicker
+      format="rgba"
+      value={stroke}
+      onChange={(color) => {
+        dispatch(setStroke(color));
+      }}
+    />
+  );
+};
+
 function ToolBox({ canvasId }: ToolBoxProps) {
   const dispatch = useAppDispatch();
   const selectedShapeK = useSelectedShapeKey();
@@ -30,8 +59,7 @@ function ToolBox({ canvasId }: ToolBoxProps) {
   const Y = useY();
   const W = useW();
   const H = useH();
-  const fill = useFill();
-  const stroke = useStroke();
+
   const rtl = useCornerRadius();
   const updateProperty = (el: HTMLInputElement) => {
     if (el.value === undefined || el.value === null) return;
@@ -118,21 +146,9 @@ function ToolBox({ canvasId }: ToolBoxProps) {
                 />
               </div>
               <h3 className="font-semibold test-xl py-2">Fill</h3>
-              <ColorPicker
-                format="rgba"
-                value={fill}
-                onChange={(color) => {
-                  dispatch(setFill(color));
-                }}
-              />
+              <FillColorComponent />
               <h3 className="font-semibold test-xl py-2">Stroke</h3>
-              <ColorPicker
-                format="rgba"
-                value={stroke}
-                onChange={(color) => {
-                  dispatch(setStroke(color));
-                }}
-              />
+              <StrokeColorComponent />
             </>
           ) : null}
         </Accordion.Item>

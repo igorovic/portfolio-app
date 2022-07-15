@@ -127,13 +127,13 @@ export const useFill = () =>
   useAppSelector((state) =>
     state.board.selectedShape
       ? state.board.shapesRepository[state.board.selectedShape].fill
-      : initialShape.fill
+      : "rgba(255,255,255,0)"
   );
 export const useStroke = () =>
   useAppSelector((state) =>
     state.board.selectedShape
       ? state.board.shapesRepository[state.board.selectedShape].stroke
-      : initialShape.stroke
+      : "#000000"
   );
 export const useCornerRadius = () =>
   useAppSelector((state) =>
