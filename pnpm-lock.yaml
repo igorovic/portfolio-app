@@ -26,7 +26,7 @@ specifiers:
   jotai: ^1.7.4
   next: 12.2.2
   next-auth: ^4.10.0
-  next-i18next: ^11.0.0
+  next-i18next: ^11.1.1
   nodemailer: ^6.7.7
   postcss: ^8.4.14
   postcss-nesting: ^10.1.10
@@ -40,7 +40,7 @@ specifiers:
   swr: ^1.3.0
   tailwindcss: ^3.1.6
   typescript: 4.7.4
-  use-debounce: ^8.0.1
+  use-debounce: ^8.0.2
 
 dependencies:
   '@logtail/node': 0.1.12
@@ -60,7 +60,7 @@ dependencies:
   jotai: 1.7.4_react@18.2.0
   next: 12.2.2_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.10.0_mnimnj2pdeccz5uivmdmoly3tq
-  next-i18next: 11.0.0_7gpduzaz4csxytrukenoyuq3te
+  next-i18next: 11.1.1_7gpduzaz4csxytrukenoyuq3te
   nodemailer: 6.7.7
   probe-image-size: 7.2.3
   react: 18.2.0
@@ -70,7 +70,7 @@ dependencies:
   react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
   sharp: 0.30.7
   swr: 1.3.0_react@18.2.0
-  use-debounce: 8.0.1_react@18.2.0
+  use-debounce: 8.0.2_react@18.2.0
 
 devDependencies:
   '@types/cookie': 0.5.1
@@ -1932,10 +1932,6 @@ packages:
       htmlparser2: 6.1.0
     dev: false
 
-  /html-escaper/2.0.2:
-    resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
-    dev: false
-
   /html-parse-stringify/3.0.1:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
     dependencies:
@@ -1982,8 +1978,8 @@ packages:
     resolution: {integrity: sha512-/MfAGMP0jHonV966uFf9PkWWuDjPYLIcsipnSO3NxpNtAgRUKLTwvm85fEmsF6hGeu0zbZiCQ3W74jwO6K9uXA==}
     dev: false
 
-  /i18next/21.8.11:
-    resolution: {integrity: sha512-+s8N6kQShwNK+Ua/+VsS/Sji24NUJJLBk9QIucygj1f97f4hPNDWmLP9fQCI4d5+XLfXJ3JctX4g+zJla967Vw==}
+  /i18next/21.8.14:
+    resolution: {integrity: sha512-4Yi+DtexvMm/Yw3Q9fllzY12SgLk+Mcmar+rCAccsOPul/2UmnBzoHbTGn/L48IPkFcmrNaH7xTLboBWIbH6pw==}
     dependencies:
       '@babel/runtime': 7.18.6
     dev: false
@@ -2445,8 +2441,8 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /next-i18next/11.0.0_7gpduzaz4csxytrukenoyuq3te:
-    resolution: {integrity: sha512-phxbQiZGSJTTBE2FI4+BnqFZl88AI2V+6MrEQnT9aPFAXq/fATQ/F0pOUM3J7kU4nEeCfn3hjISq+ygGHlEz0g==}
+  /next-i18next/11.1.1_7gpduzaz4csxytrukenoyuq3te:
+    resolution: {integrity: sha512-msffPxyaU7oM5s55taIlvhSbVa8E62tXbuFZr+4myrhALQzRY+N8ExurJG33LvM9GbcwQazzXt1yeNYUynm4qQ==}
     engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
@@ -2456,11 +2452,11 @@ packages:
       '@types/hoist-non-react-statics': 3.3.1
       core-js: 3.23.3
       hoist-non-react-statics: 3.3.2
-      i18next: 21.8.11
+      i18next: 21.8.14
       i18next-fs-backend: 1.1.4
       next: 12.2.2_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
-      react-i18next: 11.17.4_vth7g6zw6lco7clwxal23of2km
+      react-i18next: 11.18.1_76fbphthii3jxinh3ka5k7ds7q
     transitivePeerDependencies:
       - react-dom
       - react-native
@@ -2908,8 +2904,8 @@ packages:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
     dev: false
 
-  /react-i18next/11.17.4_vth7g6zw6lco7clwxal23of2km:
-    resolution: {integrity: sha512-LswEIl8KNDTP4Wk3c22XDstbR++Vc4BZyNwvGFGaYbYDjdDLkHDLwrgd7DN28f8jufFHaYhQvCG5YWLxFhRt/g==}
+  /react-i18next/11.18.1_76fbphthii3jxinh3ka5k7ds7q:
+    resolution: {integrity: sha512-S8cl4mvIOSA7OQCE5jNy2yhv705Vwi+7PinpqKIYcBmX/trJtHKqrf6CL67WJSA8crr2JU+oxE9jn9DQIrQezg==}
     peerDependencies:
       i18next: '>= 19.0.0'
       react: '>= 16.8.0'
@@ -2922,9 +2918,8 @@ packages:
         optional: true
     dependencies:
       '@babel/runtime': 7.18.6
-      html-escaper: 2.0.2
       html-parse-stringify: 3.0.1
-      i18next: 21.8.11
+      i18next: 21.8.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
     dev: false
@@ -3562,8 +3557,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /use-debounce/8.0.1_react@18.2.0:
-    resolution: {integrity: sha512-6tGAFJKJ0qCalecaV7/gm/M6n238nmitNppvR89ff1yfwSFjwFKR7IQZzIZf1KZRQhqNireBzytzU6jgb29oVg==}
+  /use-debounce/8.0.2_react@18.2.0:
+    resolution: {integrity: sha512-4yCQ4FmlmYNpcHXJk1E19chO1X58fH4+QrwKpa5nkx3d7szHR3MjheRgECLvHivp3ClUqEom+SHOGB9zBz+qlw==}
     engines: {node: '>= 10.0.0'}
     peerDependencies:
       react: '>=16.8.0'

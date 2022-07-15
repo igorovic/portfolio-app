@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import shapeReducer from "./features/shapeSlice";
+
+import boardReducer from "./features/boardSlice";
 
 export const store = configureStore({
-  reducer: { shape: shapeReducer },
+  reducer: { board: boardReducer },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

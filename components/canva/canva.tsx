@@ -3,12 +3,21 @@ import React from "react";
 import ToolBox from "./ToolBox";
 import { store } from "./store";
 import { Provider } from "react-redux";
-import { handleClick, render } from "./render";
-import { canvasId } from "./constants";
+import {
+  mouseDownHandler,
+  shapeDragHandler,
+  mouseUpHandler,
+  addRect,
+  render,
+} from "./render";
+import { canvasId, initialShape } from "./constants";
+import { useAppDispatch } from "lib/app/hooks";
+import { resetBoard } from "./features/boardSlice";
 
 function Canva() {
   const canvaRef = React.useRef<HTMLCanvasElement>(null);
   const ctxRef = React.useRef<CanvasRenderingContext2D | null>(null);
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
     ctxRef.current = (
@@ -22,8 +31,16 @@ function Canva() {
 
   React.useEffect(() => {
     const canva = canvaRef.current;
-    canva?.addEventListener("click", handleClick);
-    return () => canva?.removeEventListener("click", handleClick);
+
+    canva?.addEventListener("mousedown", mouseDownHandler);
+    canva?.addEventListener("mouseup", mouseUpHandler);
+    canva?.addEventListener("mousemove", shapeDragHandler);
+
+    return () => {
+      canva?.removeEventListener("mousedown", mouseDownHandler);
+      canva?.removeEventListener("mouseup", mouseUpHandler);
+      canva?.removeEventListener("mousemove", shapeDragHandler);
+    };
   });
 
   return (
@@ -42,6 +59,13 @@ function Canva() {
         <div className="flex flex-wrap gap-2">
           <Button
             onClick={() => {
+              addRect();
+            }}
+          >
+            add rect
+          </Button>
+          <Button
+            onClick={() => {
               const ctx = ctxRef.current;
               ctx?.clearRect(
                 0,
@@ -49,6 +73,7 @@ function Canva() {
                 ctx.canvas.clientWidth,
                 ctx.canvas.clientHeight
               );
+              dispatch(resetBoard());
             }}
           >
             reset
