@@ -181,18 +181,21 @@ function svgRectPath(o: any): string {
   const bl = bottomLeft(o);
   const br = bottomRight(o);
   const svgPath = `
-  M ${tl.x + o.rtl} ${tl.y} 
-  H ${tr.x - o.rtr} 
-  Q ${tr.x} ${tr.y} ${tr.x} ${tr.y + o.rtr} 
-  V ${br.y - o.rbr} 
-  Q ${br.x} ${br.y} ${br.x - o.rbr} ${br.y}
-  H ${bl.x + o.rbl} 
-  Q ${bl.x} ${bl.y} ${bl.x} ${bl.y - o.rbl}
-  V ${tl.y + o.rtl}
-  Q ${tl.x} ${tl.y} ${tl.x + o.rtl} ${tl.y}
+  M${tl.x + o.rtl},${tl.y}
+  H${tr.x - o.rtr} 
+  Q${tr.x},${tr.y},${tr.x},${tr.y + o.rtr}
+  V${br.y - o.rbr}
+  Q${br.x},${br.y},${br.x - o.rbr},${br.y}
+  H${bl.x + o.rbl}
+  Q${bl.x},${bl.y},${bl.x},${bl.y - o.rbl}
+  V${tl.y + o.rtl}
+  Q${tl.x},${tl.y},${tl.x + o.rtl},${tl.y}
+  Z
   `
     .replaceAll("\n", "")
-    .replaceAll("\r", "");
+    .replaceAll("\r", "")
+    .replaceAll(" ", "");
+
   return svgPath;
 }
 
