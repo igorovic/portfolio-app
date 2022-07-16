@@ -17,7 +17,7 @@ import {
 import cookie from "cookie";
 import { logtail } from "lib/logtail";
 type Query = {
-  instagram: string[];
+  facebook: string[];
   code?: string;
   state?: string;
 };
@@ -25,15 +25,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  const { instagram, code } = req.query as Query;
-  const route = instagram[0];
+  const { facebook, code } = req.query as Query;
+  const route = facebook[0];
   const instagramUidCookieName = "dyve-instagram-uid";
   const instagramAccessTokenCookieName = "dyve.instagram-token";
   const domain = getDomain();
   try {
     if (route === "authorize") {
       const params: InstagramAuthorizeQueryParams = {
-        client_id: String(process.env.INSTAGRAM_APP_ID),
+        client_id: String(process.env.FACEBOOK_BUISINESS_APP_ID),
         redirect_uri: `https://${domain}/api/instagram/callback`,
         scope: "user_profile,user_media",
         response_type: "code",
@@ -51,8 +51,8 @@ export default async function handler(
     } else if (route === "callback") {
       if (code) {
         const body: InstagramAccessTokenQueryParams = {
-          client_id: String(process.env.INSTAGRAM_APP_ID),
-          client_secret: String(process.env.INSTAGRAM_SECRET),
+          client_id: String(process.env.FACEBOOK_BUISINESS_APP_ID),
+          client_secret: String(process.env.FACEBOOK_BUISINESS_SECRET),
           redirect_uri: `https://${domain}/api/instagram/callback`,
           code,
           grant_type: "authorization_code",
@@ -70,7 +70,7 @@ export default async function handler(
         if (R.data?.access_token) {
           const params: InstagramLonglivedAccessToeknQueryParams = {
             grant_type: "ig_exchange_token",
-            client_secret: String(process.env.INSTAGRAM_SECRET),
+            client_secret: String(process.env.FACEBOOK_BUISINESS_SECRET),
             access_token: R.data.access_token,
           };
           const A = await instagramGraphClient.get("/access_token", { params });
