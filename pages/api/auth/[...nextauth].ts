@@ -9,7 +9,7 @@ import { UpstashRedisAdapter } from "@next-auth/upstash-redis-adapter";
 import GitHubProvider from "next-auth/providers/github";
 
 import { client as redis } from "lib/redis";
-import { redisPrefix } from "contants";
+import { redisPrefix } from "app.contants";
 
 export default NextAuth({
   adapter: UpstashRedisAdapter(redis, {
@@ -22,8 +22,9 @@ export default NextAuth({
       clientSecret: process.env.APPLE_SECRET ?? "",
     }), */
     FacebookProvider({
-      clientId: process.env.FACEBOOK_APP_ID ?? "",
-      clientSecret: process.env.FACEBOOK_SECRET ?? "",
+      // facebook business app requires https
+      clientId: process.env.FACEBOOK_BUISINESS_APP_ID ?? "",
+      clientSecret: process.env.FACEBOOK_BUISINESS_SECRET ?? "",
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_ID ?? "",

@@ -3,6 +3,7 @@
   "private": false,
   "scripts": {
     "dev": "next dev",
+    "dev:ssl": "concurrently -k \"caddy run\" \"next dev\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -53,6 +54,7 @@
     "@types/react": "18.0.15",
     "@types/react-redux": "^7.1.24",
     "autoprefixer": "^10.4.7",
+    "concurrently": "^7.2.2",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",
     "postcss": "^8.4.14",

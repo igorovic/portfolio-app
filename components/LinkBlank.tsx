@@ -8,7 +8,9 @@ interface LinkBlankProps {
 function LinkBlank({ href, children }: PropsWithChildren<LinkBlankProps>) {
   return (
     <Link href={href}>
-      <a target={"_blank"}>{children}</a>
+      <a target={"_blank"} rel="noreferrer">
+        {children}
+      </a>
     </Link>
   );
 }

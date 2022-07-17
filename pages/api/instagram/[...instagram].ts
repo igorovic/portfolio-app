@@ -16,6 +16,11 @@ import {
 } from "lib/instagram/types";
 import cookie from "cookie";
 import { logtail } from "lib/logtail";
+import {
+  instagramAccessTokenCookieName,
+  instagramUidCookieName,
+} from "app.contants";
+import { setInstagramUserIdCookie } from "lib/core/backend";
 type Query = {
   instagram: string[];
   code?: string;
@@ -27,8 +32,7 @@ export default async function handler(
 ) {
   const { instagram, code } = req.query as Query;
   const route = instagram[0];
-  const instagramUidCookieName = "dyve-instagram-uid";
-  const instagramAccessTokenCookieName = "dyve.instagram-token";
+
   const domain = getDomain();
   try {
     if (route === "authorize") {
@@ -77,15 +81,7 @@ export default async function handler(
 
           if (A.data) {
             const { access_token, expires_in } = A.data;
-            const instaUserCookie = cookie.serialize(
-              instagramUidCookieName,
-              String(R.data?.user_id),
-              {
-                httpOnly: false,
-                sameSite: "lax",
-                path: "/",
-              }
-            );
+            setInstagramUserIdCookie(res, String(R.data?.user_id));
 
             const instaTokenCookie = cookie.serialize(
               instagramAccessTokenCookieName,
@@ -100,7 +96,6 @@ export default async function handler(
               }
             );
 
-            res.setHeader("Set-Cookie", instaUserCookie);
             res.setHeader("Set-Cookie", instaTokenCookie);
             return res.status(302).redirect("/app/instagram");
           }

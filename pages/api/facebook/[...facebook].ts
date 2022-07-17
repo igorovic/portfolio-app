@@ -8,127 +8,68 @@ import {
 } from "lib/instagram";
 
 import { getDomain } from "lib/vercel";
+import { FacebookRerequestQueryParams } from "lib/facebook/types";
 import {
-  InstagramAuthorizeQueryParams,
-  InstagramAccessTokenQueryParams,
-  InstagramAccessTokenResponse,
-  InstagramLonglivedAccessToeknQueryParams,
-} from "lib/instagram/types";
-import cookie from "cookie";
-import { logtail } from "lib/logtail";
+  NextApiRequestWithToken,
+  requireAuthentication,
+  setInstagramUserIdCookie,
+} from "lib/core/backend";
+import { fbAccounts, fbPermissions } from "lib/facebook";
+
 type Query = {
   facebook: string[];
-  code?: string;
-  state?: string;
 };
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
-  const { facebook, code } = req.query as Query;
+  const { facebook } = req.query as Query;
   const route = facebook[0];
-  const instagramUidCookieName = "dyve-instagram-uid";
-  const instagramAccessTokenCookieName = "dyve.instagram-token";
   const domain = getDomain();
+
   try {
-    if (route === "authorize") {
-      const params: InstagramAuthorizeQueryParams = {
+    if (route === "rerequest") {
+      // request additional permissions
+      const params: FacebookRerequestQueryParams = {
         client_id: String(process.env.FACEBOOK_BUISINESS_APP_ID),
-        redirect_uri: `https://${domain}/api/instagram/callback`,
-        scope: "user_profile,user_media",
-        response_type: "code",
-        state: "1",
+        redirect_uri: `https://${domain}/api/auth/callback/facebook`,
+        auth_type: "rerequest",
+        scope: "pages_show_list,instagram_basic,instagram_manage_comments",
       };
-      logtail.debug("instagram authorize", {
-        InstagramAuthorizeQueryParams: params,
-      });
       const urlParams = new URLSearchParams(params);
       const url = new URL(
-        `/oauth/authorize?${urlParams.toString()}`,
-        instagramApiUrl
+        `/v14.0/dialog/oauth?${urlParams.toString()}`,
+        "https://www.facebook.com"
       );
-      return res.status(302).redirect(url.toString());
-    } else if (route === "callback") {
-      if (code) {
-        const body: InstagramAccessTokenQueryParams = {
-          client_id: String(process.env.FACEBOOK_BUISINESS_APP_ID),
-          client_secret: String(process.env.FACEBOOK_BUISINESS_SECRET),
-          redirect_uri: `https://${domain}/api/instagram/callback`,
-          code,
-          grant_type: "authorization_code",
-        };
-        // get access token
-        const R = await instagramClient.post<InstagramAccessTokenResponse>(
-          "/oauth/access_token",
-          body,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        );
-        if (R.data?.access_token) {
-          const params: InstagramLonglivedAccessToeknQueryParams = {
-            grant_type: "ig_exchange_token",
-            client_secret: String(process.env.FACEBOOK_BUISINESS_SECRET),
-            access_token: R.data.access_token,
-          };
-          const A = await instagramGraphClient.get("/access_token", { params });
-
-          if (A.data) {
-            const { access_token, expires_in } = A.data;
-            const instaUserCookie = cookie.serialize(
-              instagramUidCookieName,
-              String(R.data?.user_id),
-              {
-                httpOnly: false,
-                sameSite: "lax",
-                path: "/",
-              }
-            );
-
-            const instaTokenCookie = cookie.serialize(
-              instagramAccessTokenCookieName,
-              access_token,
-              {
-                secure: true,
-                httpOnly: true,
-                path: "/",
-                expires: new Date(
-                  new Date().getTime() + (expires_in - 600) * 1000
-                ),
-              }
-            );
-
-            res.setHeader("Set-Cookie", instaUserCookie);
-            res.setHeader("Set-Cookie", instaTokenCookie);
-            return res.status(302).redirect("/app/instagram");
-          }
+      return res.status(307).redirect(url.toString());
+    } else if (route === "permissions") {
+      await requireAuthentication(req, res);
+      const token = (req as NextApiRequestWithToken).token;
+      if (token) {
+        const { data } = await fbPermissions(token);
+        if (data) {
+          return res.json({ permissions: data.data });
         }
       }
-    } else if (route === "mymedia") {
-      const instagramUid = req.cookies[instagramUidCookieName] ?? "";
-      const instagramToken = req.cookies[instagramAccessTokenCookieName] ?? "";
-
-      if (!instagramToken) {
-        return res.json({
-          error: "Missing Instagram access token",
-          code: "ACCESSTOKEN_MISSING",
+    } else if (route === "accounts") {
+      await requireAuthentication(req, res);
+      const token = (req as NextApiRequestWithToken).token;
+      if (!token) return;
+      const R = await fbAccounts(token);
+      let instagram_business_id = "";
+      if (R.data.data) {
+        R.data.data.some((account) => {
+          if (account.instagram_business_account?.id) {
+            instagram_business_id = account.instagram_business_account?.id;
+            return true;
+          }
+          return false;
         });
       }
-      const media = await getUserMedia(instagramUid, instagramToken || "");
-      return res.json({ data: media });
-    } else if (route === "me") {
-      const instagramToken = req.cookies[instagramAccessTokenCookieName] ?? "";
-
-      if (!instagramToken) {
-        return res.json({
-          error: "Missing Instagram access token",
-          code: "ACCESSTOKEN_MISSING",
-        });
+      if (instagram_business_id) {
+        setInstagramUserIdCookie(res, instagram_business_id);
       }
-      const { data } = await getProfile(instagramToken);
-      return res.json({ data });
+      if (R.data.data) return res.json({ accounts: R.data.data });
     }
   } catch (err: any) {
     console.debug(err?.response?.data);

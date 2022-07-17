@@ -1,15 +1,18 @@
+import React from "react";
 import useSWR from "swr";
 import Image from "next/image";
 import type { InstagramMedia, InstagramUser } from "lib/instagram";
 import { Button, Loader } from "@mantine/core";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
+import BusinessAccount from "./BusinessAccount";
 interface ApiResponse<T> {
   data?: T;
   error?: string;
   code?: string;
   errorDetails?: string;
 }
+
 const mediaFetcher = async () =>
   fetch("/api/instagram/mymedia", { credentials: "same-origin" }).then((r) =>
     r.json()
@@ -48,15 +51,26 @@ function Instagram() {
   }
   if (data?.error && data?.code === "ACCESSTOKEN_MISSING") {
     return (
-      <p>
-        <Button
-          onClick={() => {
-            router.push("/api/instagram/authorize");
-          }}
-        >
-          {t("connect to instagram")}
-        </Button>
-      </p>
+      <div className="flex gap-4">
+        <div>
+          <p className="text-base font-semibold">
+            {t("personal")} {t("account")}
+          </p>
+          <Button
+            onClick={() => {
+              router.push("/api/instagram/authorize");
+            }}
+          >
+            {t("connect")}
+          </Button>
+        </div>
+        <div>
+          <p className="text-base font-semibold">
+            {t("business")} {t("account")}
+          </p>
+          <BusinessAccount />
+        </div>
+      </div>
     );
   }
 

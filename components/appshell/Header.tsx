@@ -3,7 +3,7 @@ import NextLink from "next/link";
 import { ActionIcon, Header, Burger, MediaQuery } from "@mantine/core";
 import { IconBrandGithub } from "@tabler/icons";
 
-import { repositoryUrl } from "contants";
+import { repositoryUrl } from "app.contants";
 import SignIn from "components/SignIn";
 import { useNavbarOpened } from "./store";
 

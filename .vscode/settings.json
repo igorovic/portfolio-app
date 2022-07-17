@@ -15,5 +15,8 @@
     "eslint.validate": [
         "typescript",
         "typescriptreact"
+    ],
+    "cSpell.words": [
+        "hmget"
     ]
 }
