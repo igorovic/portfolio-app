@@ -11,7 +11,7 @@ specifiers:
   '@types/cookie': ^0.5.1
   '@types/d3-path': ^3.0.0
   '@types/d3-shape': ^3.1.0
-  '@types/node': 18.0.5
+  '@types/node': 18.0.6
   '@types/probe-image-size': ^7.2.0
   '@types/react': 18.0.15
   '@types/react-redux': ^7.1.24
@@ -31,7 +31,7 @@ specifiers:
   jotai: ^1.7.5
   next: 12.2.2
   next-auth: ^4.10.0
-  next-i18next: ^11.2.0
+  next-i18next: ^11.2.1
   nodemailer: ^6.7.7
   postcss: ^8.4.14
   postcss-nesting: ^10.1.10
@@ -68,7 +68,7 @@ dependencies:
   jotai: 1.7.5_react@18.2.0
   next: 12.2.2_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.10.0_mnimnj2pdeccz5uivmdmoly3tq
-  next-i18next: 11.2.0_7gpduzaz4csxytrukenoyuq3te
+  next-i18next: 11.2.1_7gpduzaz4csxytrukenoyuq3te
   nodemailer: 6.7.7
   probe-image-size: 7.2.3
   react: 18.2.0
@@ -84,7 +84,7 @@ devDependencies:
   '@types/cookie': 0.5.1
   '@types/d3-path': 3.0.0
   '@types/d3-shape': 3.1.0
-  '@types/node': 18.0.5
+  '@types/node': 18.0.6
   '@types/probe-image-size': 7.2.0
   '@types/react': 18.0.15
   '@types/react-redux': 7.1.24
@@ -705,18 +705,18 @@ packages:
   /@types/needle/2.5.3:
     resolution: {integrity: sha512-RwgTwMRaedfyCBe5SSWMpm1Yqzc5UPZEMw0eAd09OSyV93nLRj9/evMGZmgFeHKzUOd4xxtHvgtc+rjcBjI1Qg==}
     dependencies:
-      '@types/node': 18.0.5
+      '@types/node': 18.0.6
     dev: true
 
-  /@types/node/18.0.5:
-    resolution: {integrity: sha512-En7tneq+j0qAiVwysBD79y86MT3ModuoIJbe7JXp+sb5UAjInSShmK3nXXMioBzfF7rXC12hv12d4IyCVwN4dA==}
+  /@types/node/18.0.6:
+    resolution: {integrity: sha512-/xUq6H2aQm261exT6iZTMifUySEt4GR5KX8eYyY+C4MSNPqSh9oNIP7tz2GLKTlFaiBbgZNxffoR3CVRG+cljw==}
     dev: true
 
   /@types/probe-image-size/7.2.0:
     resolution: {integrity: sha512-R5H3vw62gHNHrn+JGZbKejb+Z2D/6E5UNVlhCzIaBBLroMQMOFqy5Pap2gM+ZZHdqBtVU0/cx/M6to+mOJcoew==}
     dependencies:
       '@types/needle': 2.5.3
-      '@types/node': 18.0.5
+      '@types/node': 18.0.6
     dev: true
 
   /@types/prop-types/15.7.5:
@@ -2732,8 +2732,8 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /next-i18next/11.2.0_7gpduzaz4csxytrukenoyuq3te:
-    resolution: {integrity: sha512-QNPx+S0UY7dmOXiggggfxi7i6IA27C6atIHL6eWZCn/lAjxiM70M6NFl8ZA91bvT6ekhE1pHenxdru3lp+ch5g==}
+  /next-i18next/11.2.1_7gpduzaz4csxytrukenoyuq3te:
+    resolution: {integrity: sha512-6isvEGLp7jJvIAmXPZ7o5oV5gszze59iiZwWPotlxXbue26WCQBE8xF0dK8xndUo+OtErM6VFtTl+z7gW0fFVw==}
     engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
