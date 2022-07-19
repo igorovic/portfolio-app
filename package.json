@@ -20,7 +20,7 @@
     "@next-auth/upstash-redis-adapter": "^3.0.0",
     "@reduxjs/toolkit": "^1.8.3",
     "@tabler/icons": "^1.76.0",
-    "@upstash/redis": "^1.9.0",
+    "@upstash/redis": "^1.10.0",
     "axios": "^0.27.2",
     "clsx": "^1.2.1",
     "cookie": "^0.5.0",
