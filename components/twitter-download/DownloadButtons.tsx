@@ -26,7 +26,9 @@ function DownloadButtons({ tweet }: DownloadButtonsProps) {
 
   let variants: Variant[] = [];
   tweet.includes.media.forEach((media) => {
-    variants.push(...media.variants);
+    if (media && Array.isArray(media.variants)) {
+      variants.push(...media.variants);
+    }
   });
   variants = variants.map((V) => {
     const pathname = new URL(V.url).pathname;
@@ -55,6 +57,14 @@ function DownloadButtons({ tweet }: DownloadButtonsProps) {
         a.click();
       });
   };
+  if (variants.length === 0) {
+    return (
+      <p>
+        Something went wrong. We could not find any suitable media file to
+        download.
+      </p>
+    );
+  }
   return (
     <div>
       {variants.map((variant, idx) => {
