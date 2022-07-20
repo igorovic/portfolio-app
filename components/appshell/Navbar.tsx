@@ -28,7 +28,10 @@ function AppShellNavbar(props: AppShellNavbarProps) {
   const { t } = useTranslation("appshell");
   const [opened] = useNavbarOpened();
   const medias = [{ text: t("Image preview"), href: "/app/media-preview" }];
-  const socials = [{ text: "Instagram", href: "/app/instagram" }];
+  const socials = [
+    { text: "Instagram", href: "/app/instagram" },
+    { text: "Twitter downloaded", href: "/app/twitter-download" },
+  ];
   const canvas = [{ text: "Canva", href: "/app/canva" }];
   let initialItem = 0;
   [...medias, ...socials, ...canvas]

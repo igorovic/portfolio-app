@@ -8,11 +8,11 @@ function NavLink({ text, href }: NavLinkProps) {
   return (
     <NextLink href={href}>
       <UnstyledButton
-        className="block hover:bg-slate-100"
+        className="block hover:bg-slate-100 my-2"
         //@ts-ignore errors since @react/type@18.0.4
         component="a"
       >
-        <span className="text-ellipsis overflow-hidden whitespace-nowrap">
+        <span className="text-ellipsis overflow-hidden whitespace-nowrap text-lg">
           {text}
         </span>
       </UnstyledButton>
