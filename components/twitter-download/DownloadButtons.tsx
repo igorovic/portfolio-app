@@ -1,5 +1,5 @@
 import { Button } from "@mantine/core";
-
+import { useTranslation } from "next-i18next";
 interface Variant {
   content_type: string;
   url: string;
@@ -22,28 +22,31 @@ interface DownloadButtonsProps {
     | undefined;
 }
 function DownloadButtons({ tweet }: DownloadButtonsProps) {
+  const { t } = useTranslation("twitter-download/tdl");
   if (!tweet) return null;
 
   let variants: Variant[] = [];
-  tweet.includes.media.forEach((media) => {
-    if (media && Array.isArray(media.variants)) {
-      variants.push(...media.variants);
-    }
-  });
-  variants = variants.map((V) => {
-    const pathname = new URL(V.url).pathname;
-    const filename =
-      pathname.split("/").at(-1) ?? `video-${new Date().getMilliseconds()}`;
-    const R = pathname.match(/.*\/(?<size>[0-9]{1,4}x[0-9]{1,4}).*/);
-    let width: number | undefined = undefined;
-    let height: number | undefined = undefined;
-    if (R && R.groups && R.groups?.size) {
-      const [w, h] = R.groups.size.toLowerCase().split("x");
-      width = parseInt(w);
-      height = parseInt(h);
-    }
-    return { ...V, filename, width, height };
-  });
+  if (tweet && tweet?.includes?.media) {
+    tweet.includes.media.forEach((media) => {
+      if (media && Array.isArray(media.variants)) {
+        variants.push(...media.variants);
+      }
+    });
+    variants = variants.map((V) => {
+      const pathname = new URL(V.url).pathname;
+      const filename =
+        pathname.split("/").at(-1) ?? `video-${new Date().getMilliseconds()}`;
+      const R = pathname.match(/.*\/(?<size>[0-9]{1,4}x[0-9]{1,4}).*/);
+      let width: number | undefined = undefined;
+      let height: number | undefined = undefined;
+      if (R && R.groups && R.groups?.size) {
+        const [w, h] = R.groups.size.toLowerCase().split("x");
+        width = parseInt(w);
+        height = parseInt(h);
+      }
+      return { ...V, filename, width, height };
+    });
+  }
 
   const downloadHandler = async (variant: Variant) => {
     fetch(variant.url)
@@ -59,10 +62,10 @@ function DownloadButtons({ tweet }: DownloadButtonsProps) {
   };
   if (variants.length === 0) {
     return (
-      <p>
-        Something went wrong. We could not find any suitable media file to
-        download.
-      </p>
+      <div className="my-2">
+        <p>{t("something went wrong")}</p>
+        <i>{t("private-tweet")}</i>
+      </div>
     );
   }
   return (
@@ -70,16 +73,23 @@ function DownloadButtons({ tweet }: DownloadButtonsProps) {
       {variants.map((variant, idx) => {
         if (/video\/.*/gm.test(variant.content_type)) {
           return (
-            <div className="flex flex-shrink-0 basis-0 py-4">
-              <span className="mx-4">{variant.filename}</span>
-              <span className="mx-2">
-                {variant.width}x{variant.height}
-              </span>
+            <div className="grid grid-flow-col basis-0 py-4 w-max">
+              <div className="flex flex-col w-max mr-4 min-w-[24ch]">
+                <span className="text-base font-semibold">
+                  {variant.filename}
+                </span>
+                <span className="text-sm">
+                  {variant.width}x{variant.height}
+                </span>
+              </div>
+
               <Button
                 key={variant.url}
                 onClick={() => {
                   downloadHandler(variant);
                 }}
+                fullWidth={false}
+                size={"md"}
               >
                 download
               </Button>

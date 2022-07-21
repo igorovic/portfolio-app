@@ -12,6 +12,7 @@ function TwitterDl() {
   const [url, setUrl] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [tweet, setTweet] = useState<any>(null);
+  const [loading, setLoading] = useState(false);
 
   const { t } = useTranslation("common");
   const { t: t2 } = useTranslation("validation-errors");
@@ -45,11 +46,13 @@ function TwitterDl() {
     const u = new URL(url);
     const tweetId = u.pathname.split("/").at(-1);
     console.debug(tweetId);
+    setLoading(true);
     fetch(`/api/twitter/get/${tweetId}`)
       .then((response) => response.json())
       .then((tweet) => {
         console.debug(tweet);
         setTweet(tweet);
+        setLoading(false);
       });
   }, [url]);
   return (
@@ -60,7 +63,12 @@ function TwitterDl() {
         label={<span className="capitalize">{t("link")}</span>}
         onChange={changeHandler}
       />
-      <Button disabled={!url} className="mt-4" onClick={fetchMedia}>
+      <Button
+        disabled={!url}
+        className="mt-4"
+        onClick={fetchMedia}
+        loading={loading}
+      >
         {t("prepare")}
       </Button>
       <div>
