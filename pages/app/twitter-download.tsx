@@ -30,6 +30,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
         "footer",
         "appshell",
         "validation-errors",
+        "twitter-download/tdl",
       ])),
       // Will be passed to the page component as props
     },
