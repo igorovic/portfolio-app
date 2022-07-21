@@ -62,6 +62,11 @@ function TwitterDl() {
         icon={<IconBrandTwitter />}
         label={<span className="capitalize">{t("link")}</span>}
         onChange={changeHandler}
+        onKeyUp={(e) => {
+          if (e.key === "Enter") {
+            fetchMedia();
+          }
+        }}
       />
       <Button
         disabled={!url}
