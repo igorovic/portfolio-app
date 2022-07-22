@@ -1,9 +1,8 @@
+import { Suspense } from "react";
 import { GetStaticPropsContext, NextPage } from "next";
 import AppShellLayout from "components/layout/appshellLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-//import MediaPreview from "components/MediaPreview";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
 
 const TwitterDl = dynamic(
   () => import("../../components/twitter-download/TwitterDl"),
@@ -14,8 +13,9 @@ const TwitterDl = dynamic(
 const TwitterDownloadPage: NextPage<any> = () => {
   return (
     <AppShellLayout>
-      <Suspense fallback={<p>...loading</p>}></Suspense>
-      <TwitterDl />
+      <Suspense fallback={<p>...loading</p>}>
+        <TwitterDl />
+      </Suspense>
     </AppShellLayout>
   );
 };
