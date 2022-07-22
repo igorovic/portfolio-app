@@ -1,0 +1,3506 @@
+{
+    "version": {
+        "json_export": "175",
+        "page_segmentation": "5",
+        "schema": "1.1.0",
+        "structure": "1.989.0",
+        "table_structure": "5"
+    },
+    "extended_metadata": {
+        "ID_instance": "40 E8 0C 22 A9 B4 B2 11 0A 00 67 45 8B 6B C6 23 ",
+        "ID_permanent": "37 41 20 41 31 20 30 42 20 32 32 20 41 39 20 42 34 20 42 32 20 31 31 20 30 41 20 30 30 20 36 37 20 34 35 20 38 42 20 36 42 20 43 36 20 32 33 20 ",
+        "pdf_version": "2.0",
+        "pdfa_compliance_level": "",
+        "is_encrypted": false,
+        "has_acroform": false,
+        "is_digitally_signed": false,
+        "pdfua_compliance_level": "",
+        "page_count": 1,
+        "has_embedded_files": false,
+        "is_certified": false,
+        "is_XFA": false,
+        "language": "en"
+    },
+    "elements": [
+        {
+            "Bounds": [
+                21.600006103515625,
+                764.7929992675781,
+                130.49221801757812,
+                828.4089965820312
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        789.3769989013672,
+                        93.13980102539062,
+                        828.4089965820312
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/P/Span",
+                    "Text": "RAM ",
+                    "TextSize": 28
+                },
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        764.7929992675781,
+                        130.49221801757812,
+                        802.0610046386719
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/P",
+                    "Text": "KUMAR ",
+                    "TextSize": 28
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/P",
+            "attributes": {
+                "LineHeight": 26,
+                "SpaceAfter": 9
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                742.7398986816406,
+                172.53408813476562,
+                762.2559051513672
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Title",
+            "Text": "XXPOSITION/TITLEXX ",
+            "TextSize": 14,
+            "attributes": {
+                "LineHeight": 16.75,
+                "SpaceAfter": 18
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                692.5854034423828,
+                56.10600280761719,
+                705.1313934326172
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P",
+            "Text": "SKILLS ",
+            "TextSize": 9,
+            "attributes": {
+                "LineHeight": 10.75
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                630.9687957763672,
+                189.4300537109375,
+                692.2787933349609
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[2]",
+            "Text": "Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 9.625,
+                "TextAlign": "Justify"
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                610.3285980224609,
+                151.26666259765625,
+                622.8746032714844
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[3]",
+            "Text": "TRAINING & CERTIFICATONS ",
+            "TextSize": 9,
+            "attributes": {
+                "LineHeight": 10.75
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                536.7088012695312,
+                161.4700469970703,
+                610.018798828125
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        596.7088012695312,
+                        25.140045166015625,
+                        610.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        25.139999389648438,
+                        596.7088012695312,
+                        114.8800048828125,
+                        610.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI/LBody",
+                    "Text": " MCSE Certification ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        28.080001831054688,
+                        584.7088012695312,
+                        99.21998596191406,
+                        598.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI/LBody/Span",
+                    "Text": "Microsoft, 2015 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        25.139999389648438,
+                        584.7088012695312,
+                        114.8800048828125,
+                        610.018798828125
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI/LBody"
+                },
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        584.7088012695312,
+                        114.8800048828125,
+                        610.018798828125
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        572.7088012695312,
+                        25.140045166015625,
+                        586.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[2]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        25.139999389648438,
+                        572.7088012695312,
+                        114.8800048828125,
+                        586.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[2]/LBody/Span",
+                    "Text": " MCSE Certification ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        28.080001831054688,
+                        560.7088012695312,
+                        161.4700469970703,
+                        574.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[2]/LBody",
+                    "Text": "Microsoft, completed by 2015 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        25.139999389648438,
+                        560.7088012695312,
+                        161.4700469970703,
+                        586.018798828125
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[2]/LBody"
+                },
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        560.7088012695312,
+                        161.4700469970703,
+                        586.018798828125
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[2]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        548.7088012695312,
+                        25.140045166015625,
+                        562.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[3]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        25.139999389648438,
+                        548.7088012695312,
+                        114.8800048828125,
+                        562.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[3]/LBody",
+                    "Text": " MCSE Certification ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        28.080001831054688,
+                        536.7088012695312,
+                        71.41999816894531,
+                        550.018798828125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[3]/LBody/Span",
+                    "Text": "Microsoft ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        25.139999389648438,
+                        536.7088012695312,
+                        114.8800048828125,
+                        562.018798828125
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[3]/LBody"
+                },
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        536.7088012695312,
+                        114.8800048828125,
+                        562.018798828125
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/L/LI[3]",
+                    "attributes": {
+                        "LineHeight": 12,
+                        "SpaceAfter": 9.75
+                    }
+                }
+            ],
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/L"
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                516.0715942382812,
+                114.60330200195312,
+                528.6175994873047
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[4]",
+            "Text": "AWARDS & HONORS ",
+            "TextSize": 9,
+            "attributes": {
+                "LineHeight": 10.75
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                454.45530700683594,
+                189.4300537109375,
+                515.7653045654297
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[5]",
+            "Text": "Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 9.625,
+                "TextAlign": "Justify"
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                433.81520080566406,
+                137.1060028076172,
+                446.3612060546875
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[6]",
+            "Text": "COMPUTER PROFICENCY ",
+            "TextSize": 9,
+            "attributes": {
+                "LineHeight": 10.75
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                420.19529724121094,
+                98.318603515625,
+                433.5052947998047
+            ],
+            "ClipBounds": [
+                21.600006103515625,
+                420.19529724121094,
+                98.318603515625,
+                433.5052947998047
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        420.19529724121094,
+                        73.10806274414062,
+                        433.5052947998047
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[7]",
+                    "Text": "Word 2010 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        77.06010437011719,
+                        424.0522003173828,
+                        98.318603515625,
+                        429.9481964111328
+                    ],
+                    "ClipBounds": [
+                        77.06010437011719,
+                        424.0522003173828,
+                        98.318603515625,
+                        429.9481964111328
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[7]/Figure",
+                    "attributes": {
+                        "BBox": [
+                            77.27689999999711,
+                            424.1869999999908,
+                            98.15599999999904,
+                            429.7069999999949
+                        ]
+                    },
+                    "filePaths": [
+                        "figure\\fileoutpart0.png"
+                    ]
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[7]",
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                408.19529724121094,
+                73.85006713867188,
+                421.5052947998047
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[8]",
+            "Text": "Excel 2010 ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                396.19529724121094,
+                128.2666015625,
+                409.5052947998047
+            ],
+            "ClipBounds": [
+                21.600006103515625,
+                396.19529724121094,
+                128.2666015625,
+                409.5052947998047
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        396.19529724121094,
+                        103.31005859375,
+                        409.5052947998047
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[9]",
+                    "Text": "Power Point 2010 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        107.00810241699219,
+                        399.951904296875,
+                        128.2666015625,
+                        405.847900390625
+                    ],
+                    "ClipBounds": [
+                        107.00810241699219,
+                        399.951904296875,
+                        128.2666015625,
+                        405.847900390625
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[9]/Figure",
+                    "attributes": {
+                        "BBox": [
+                            107.27599999999802,
+                            400.0679999999993,
+                            128.15499999999884,
+                            405.5879999999888
+                        ]
+                    },
+                    "filePaths": [
+                        "figure\\fileoutpart1.png"
+                    ]
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[9]",
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                384.19529724121094,
+                77.87539672851562,
+                397.5052947998047
+            ],
+            "ClipBounds": [
+                21.600006103515625,
+                384.19529724121094,
+                77.87539672851562,
+                397.5052947998047
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        384.19529724121094,
+                        52.720001220703125,
+                        397.5052947998047
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[10]",
+                    "Text": "Tally 9 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        56.61700439453125,
+                        388.19700622558594,
+                        77.87539672851562,
+                        394.09300231933594
+                    ],
+                    "ClipBounds": [
+                        56.61700439453125,
+                        388.19700622558594,
+                        77.87539672851562,
+                        394.09300231933594
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[10]/Figure",
+                    "attributes": {
+                        "BBox": [
+                            56.877699999999095,
+                            388.30799999999,
+                            77.7567999999992,
+                            393.82799999999406
+                        ]
+                    },
+                    "filePaths": [
+                        "figure\\fileoutpart2.png"
+                    ]
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[10]",
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                372.19529724121094,
+                159.09449768066406,
+                385.5052947998047
+            ],
+            "ClipBounds": [
+                21.600006103515625,
+                372.19529724121094,
+                159.09449768066406,
+                385.5052947998047
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        372.19529724121094,
+                        126.11004638671875,
+                        385.5052947998047
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[11]",
+                    "Text": "Adobe Photoshop CS4 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        130.15480041503906,
+                        375.9149932861328,
+                        159.09449768066406,
+                        381.8110046386719
+                    ],
+                    "ClipBounds": [
+                        130.15480041503906,
+                        375.9149932861328,
+                        159.09449768066406,
+                        381.8110046386719
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[11]/Figure",
+                    "attributes": {
+                        "BBox": [
+                            130.43499999999767,
+                            376.0689999999886,
+                            158.99399999999878,
+                            381.58899999999267
+                        ]
+                    },
+                    "filePaths": [
+                        "figure\\fileoutpart3.png"
+                    ]
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[11]",
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 10.125
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                351.1539001464844,
+                81.60307312011719,
+                363.6999053955078
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[12]",
+            "Text": "LANGUAGES ",
+            "TextSize": 9,
+            "attributes": {
+                "LineHeight": 10.75
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                337.53729248046875,
+                73.23629760742188,
+                350.84730529785156
+            ],
+            "ClipBounds": [
+                21.600006103515625,
+                337.53729248046875,
+                73.23629760742188,
+                350.84730529785156
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        337.53729248046875,
+                        47.160003662109375,
+                        350.84730529785156
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[13]",
+                    "Text": "Hindi ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        51.97779846191406,
+                        341.3908996582031,
+                        73.23629760742188,
+                        347.2868957519531
+                    ],
+                    "ClipBounds": [
+                        51.97779846191406,
+                        341.3908996582031,
+                        73.23629760742188,
+                        347.2868957519531
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[13]/Figure",
+                    "attributes": {
+                        "BBox": [
+                            52.19789999999921,
+                            341.50999999999476,
+                            73.0769999999975,
+                            347.02999999999884
+                        ]
+                    },
+                    "filePaths": [
+                        "figure\\fileoutpart4.png"
+                    ]
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[13]",
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                325.53729248046875,
+                90.24980163574219,
+                338.84730529785156
+            ],
+            "ClipBounds": [
+                21.600006103515625,
+                325.53729248046875,
+                90.24980163574219,
+                338.84730529785156
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        325.53729248046875,
+                        57.170074462890625,
+                        338.84730529785156
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[14]",
+                    "Text": "English ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        61.31010437011719,
+                        329.6138000488281,
+                        90.24980163574219,
+                        335.5097961425781
+                    ],
+                    "ClipBounds": [
+                        61.31010437011719,
+                        329.6138000488281,
+                        90.24980163574219,
+                        335.5097961425781
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[14]/Figure",
+                    "attributes": {
+                        "BBox": [
+                            61.55749999999898,
+                            329.7509999999893,
+                            90.11629999999786,
+                            335.27099999999336
+                        ]
+                    },
+                    "filePaths": [
+                        "figure\\fileoutpart5.png"
+                    ]
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[14]",
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                313.53729248046875,
+                93.57449340820312,
+                326.84730529785156
+            ],
+            "ClipBounds": [
+                21.600006103515625,
+                313.53729248046875,
+                93.57449340820312,
+                326.84730529785156
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        21.600006103515625,
+                        313.53729248046875,
+                        60.5,
+                        326.84730529785156
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[15]",
+                    "Text": "German ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        64.63479614257812,
+                        317.2908020019531,
+                        93.57449340820312,
+                        323.1867980957031
+                    ],
+                    "ClipBounds": [
+                        64.63479614257812,
+                        317.2908020019531,
+                        93.57449340820312,
+                        323.1867980957031
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect/Aside/P[15]/Figure",
+                    "attributes": {
+                        "BBox": [
+                            64.91739999999845,
+                            317.3909999999887,
+                            93.47619999999733,
+                            322.9109999999928
+                        ]
+                    },
+                    "filePaths": [
+                        "figure\\fileoutpart6.png"
+                    ]
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[15]",
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 10
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                292.61790466308594,
+                158.11105346679688,
+                305.1638946533203
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[16]",
+            "Text": "PROFESSIONAL AFFILIATIONS ",
+            "TextSize": 9,
+            "attributes": {
+                "LineHeight": 10.75
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                231.00360107421875,
+                189.4300537109375,
+                292.3135986328125
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[17]",
+            "Text": "Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 9.75,
+                "TextAlign": "Justify"
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                210.3634033203125,
+                126.95489501953125,
+                222.90939331054688
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[18]",
+            "Text": "PERSONAL INTERESTS ",
+            "TextSize": 9,
+            "attributes": {
+                "LineHeight": 10.75
+            }
+        },
+        {
+            "Bounds": [
+                21.600006103515625,
+                148.7469024658203,
+                189.4300537109375,
+                210.05690002441406
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/Aside/P[19]",
+            "Text": "Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti Lorem ipsum dolor sit amet conse siti ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12,
+                "TextAlign": "Justify"
+            }
+        },
+        {
+            "Bounds": [
+                507.54949951171875,
+                773.7595062255859,
+                576.4595642089844,
+                823.0695037841797
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/P[2]",
+            "Text": "xAddress1x xAddress2x xCityx, xStatex xCountryx ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 12,
+                "TextAlign": "End"
+            }
+        },
+        {
+            "Bounds": [
+                462.3894958496094,
+                737.2494964599609,
+                576.4495697021484,
+                763.1894989013672
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        492.9595031738281,
+                        749.2494964599609,
+                        505.929443359375,
+                        763.1894989013672
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/P[3]/Sub/Span",
+                    "Text": "Tel",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        492.9595031738281,
+                        749.2494964599609,
+                        576.4394683837891,
+                        763.1894989013672
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/P[3]/Sub",
+                    "Text": " +00.00000000 ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        462.3894958496094,
+                        737.2494964599609,
+                        489.0694885253906,
+                        751.1894989013672
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/P[3]/Sub[2]/Span",
+                    "Text": "Email",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        462.3894958496094,
+                        737.2494964599609,
+                        576.4495697021484,
+                        751.1894989013672
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect/P[3]/Sub[2]",
+                    "Text": " xxxxxxx@xxx.com ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect/P[3]",
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                702.6414031982422,
+                352.91351318359375,
+                719.3694000244141
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[2]/H1",
+            "Text": "PROFILE • ABOUT ME ",
+            "TextSize": 12,
+            "attributes": {
+                "LineHeight": 14.375,
+                "SpaceAfter": 9.125
+            }
+        },
+        {
+            "Bounds": [
+                223.16000366210938,
+                610.8069000244141,
+                571.1089324951172,
+                696.1168975830078
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[2]/P",
+            "Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Prae-sent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante. ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 12.875
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                582.2899017333984,
+                354.4964904785156,
+                599.0178985595703
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[3]/H1",
+            "Text": "CAREER HIGHLIGHTS ",
+            "TextSize": 12,
+            "attributes": {
+                "LineHeight": 14.375,
+                "SpaceAfter": 9.125
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                502.4571990966797,
+                552.6663970947266,
+                575.7671966552734
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        562.4571990966797,
+                        226.69644165039062,
+                        575.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        562.4571990966797,
+                        552.6663970947266,
+                        575.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        562.4571990966797,
+                        552.6663970947266,
+                        575.7671966552734
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        550.4571990966797,
+                        226.69644165039062,
+                        563.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[2]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        550.4571990966797,
+                        552.6663970947266,
+                        563.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[2]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        550.4571990966797,
+                        552.6663970947266,
+                        563.7671966552734
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[2]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        538.4571990966797,
+                        226.69644165039062,
+                        551.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[3]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        538.4571990966797,
+                        549.8863983154297,
+                        551.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[3]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        229.6363983154297,
+                        526.4571990966797,
+                        398.58644104003906,
+                        539.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[3]/LBody/Span",
+                    "Text": "uis sem at nibh elementum imperdiet. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        526.4571990966797,
+                        549.8863983154297,
+                        551.7671966552734
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[3]/LBody"
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        526.4571990966797,
+                        549.8863983154297,
+                        551.7671966552734
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[3]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        514.4571990966797,
+                        226.69644165039062,
+                        527.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[4]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        514.4571990966797,
+                        552.6663970947266,
+                        527.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[4]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        514.4571990966797,
+                        552.6663970947266,
+                        527.7671966552734
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[4]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        502.4571990966797,
+                        226.69644165039062,
+                        515.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[5]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        502.4571990966797,
+                        292.54640197753906,
+                        515.7671966552734
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[5]/LBody",
+                    "Text": " Lorem ipsum. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        502.4571990966797,
+                        292.54640197753906,
+                        515.7671966552734
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[3]/L/LI[5]",
+                    "attributes": {
+                        "LineHeight": 12,
+                        "SpaceAfter": 7.125
+                    }
+                }
+            ],
+            "Page": 0,
+            "Path": "//Document/Sect[3]/L"
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                479.60740661621094,
+                345.1723937988281,
+                496.3354034423828
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/H1",
+            "Text": "WORK EXPERIENCE ",
+            "TextSize": 12,
+            "attributes": {
+                "LineHeight": 14.375,
+                "SpaceAfter": 9.125
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                459.2646942138672,
+                268.5574645996094,
+                473.20469665527344
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect/H2",
+            "Text": "xxTitlexx ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                447.7747039794922,
+                315.3963928222656,
+                461.08470153808594
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect/P",
+            "Text": "xxCompanyNamexx ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                499.4333038330078,
+                452.28070068359375,
+                575.8973541259766,
+                472.62469482421875
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        499.4333038330078,
+                        461.4727020263672,
+                        575.8972930908203,
+                        472.62469482421875
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/P[2]/Sub",
+                    "Text": "April 2014 - Current ",
+                    "TextSize": 8,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        520.7693023681641,
+                        452.28070068359375,
+                        575.8973541259766,
+                        462.92869567871094
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/P[2]/Sub[2]",
+                    "Text": "xCityx, xStatex ",
+                    "TextSize": 8,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect/P[2]",
+            "attributes": {
+                "LineHeight": 9.625,
+                "SpaceAfter": 6.875,
+                "TextAlign": "End"
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                420.7646942138672,
+                543.8464050292969,
+                446.07470703125
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect/P[3]",
+            "Text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                384.7646942138672,
+                555.7263946533203,
+                422.07470703125
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        408.7646942138672,
+                        226.69644165039062,
+                        422.07470703125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        408.7646942138672,
+                        412.0594024658203,
+                        422.07470703125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        408.7646942138672,
+                        412.0594024658203,
+                        422.07470703125
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        396.7646942138672,
+                        226.69644165039062,
+                        410.07470703125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI[2]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        396.7646942138672,
+                        555.7263946533203,
+                        410.07470703125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI[2]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.  ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        396.7646942138672,
+                        555.7263946533203,
+                        410.07470703125
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI[2]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        384.7646942138672,
+                        226.69644165039062,
+                        398.07470703125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI[3]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        384.7646942138672,
+                        467.056396484375,
+                        398.07470703125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI[3]/LBody",
+                    "Text": " Nulla quis sem at nibh elementum imperdiet dolor sit. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        384.7646942138672,
+                        467.056396484375,
+                        398.07470703125
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect/L/LI[3]",
+                    "attributes": {
+                        "LineHeight": 12,
+                        "SpaceAfter": 10.25
+                    }
+                }
+            ],
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect/L"
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                362.1390075683594,
+                268.5574645996094,
+                376.07899475097656
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[2]/H2",
+            "Text": "xxTitlexx ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                350.6490020751953,
+                315.3963928222656,
+                363.95899963378906
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[2]/L/LI/LBody",
+            "Text": "xxCompanyNamexx ",
+            "TextSize": 10
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                350.6490020751953,
+                315.3963928222656,
+                363.95899963378906
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[2]/L/LI",
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                350.6490020751953,
+                315.3963928222656,
+                363.95899963378906
+            ],
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[2]/L"
+        },
+        {
+            "Bounds": [
+                472.7341003417969,
+                355.1549987792969,
+                575.9021453857422,
+                375.4989929199219
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        472.7341003417969,
+                        364.3470001220703,
+                        575.8948822021484,
+                        375.4989929199219
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/P/Sub",
+                    "Text": "October 2011 - March 2014 ",
+                    "TextSize": 8,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        520.7740936279297,
+                        355.1549987792969,
+                        575.9021453857422,
+                        365.80299377441406
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/P/Sub[2]",
+                    "Text": "xCityx, xStatex ",
+                    "TextSize": 8,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[2]/P",
+            "attributes": {
+                "LineHeight": 9.625,
+                "TextAlign": "End"
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                275.63470458984375,
+                567.9363250732422,
+                348.9447021484375
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        335.63470458984375,
+                        226.69644165039062,
+                        348.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        335.63470458984375,
+                        412.0594024658203,
+                        348.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        335.63470458984375,
+                        412.0594024658203,
+                        348.9447021484375
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        323.63470458984375,
+                        226.69644165039062,
+                        336.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[2]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        323.63470458984375,
+                        552.6663970947266,
+                        336.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[2]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        323.63470458984375,
+                        552.6663970947266,
+                        336.9447021484375
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[2]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        311.63470458984375,
+                        226.69644165039062,
+                        324.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[3]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        311.63470458984375,
+                        567.9363250732422,
+                        324.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[3]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetuer adipiscing elit ean commodo ligula",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        299.63470458984375,
+                        357.66644287109375,
+                        312.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[3]/LBody/Span",
+                    "Text": "  sectetuer adipiscing elit ean. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        299.63470458984375,
+                        567.9363250732422,
+                        324.9447021484375
+                    ],
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[3]/LBody"
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        299.63470458984375,
+                        567.9363250732422,
+                        324.9447021484375
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[3]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        287.63470458984375,
+                        226.69644165039062,
+                        300.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[4]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        287.63470458984375,
+                        412.0594024658203,
+                        300.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[4]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        287.63470458984375,
+                        412.0594024658203,
+                        300.9447021484375
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[4]",
+                    "attributes": {
+                        "LineHeight": 12
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        275.63470458984375,
+                        226.69644165039062,
+                        288.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[5]/Lbl",
+                    "Text": "▪",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        226.69639587402344,
+                        275.63470458984375,
+                        552.6663970947266,
+                        288.9447021484375
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "Identity-H",
+                        "family_name": "Arial MT",
+                        "font_type": "CIDFontType2",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "JEPBVA+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[5]/LBody",
+                    "Text": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        275.63470458984375,
+                        552.6663970947266,
+                        288.9447021484375
+                    ],
+                    "Lang": "en",
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[2]/L[2]/LI[5]",
+                    "attributes": {
+                        "LineHeight": 12,
+                        "SpaceAfter": 10.125
+                    }
+                }
+            ],
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[2]/L[2]"
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                253.064697265625,
+                268.5574645996094,
+                267.00469970703125
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[3]/H2",
+            "Text": "xxTitlexx ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                241.57470703125,
+                315.3963928222656,
+                254.88470458984375
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[3]/P",
+            "Text": "xxCompanyNamexx ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12
+            }
+        },
+        {
+            "Bounds": [
+                465.6221008300781,
+                246.08299255371094,
+                575.9021453857422,
+                266.427001953125
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        465.6221008300781,
+                        255.27499389648438,
+                        575.8956909179688,
+                        266.427001953125
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[3]/P[2]",
+                    "Text": "October 2009 - October 2011 ",
+                    "TextSize": 8
+                },
+                {
+                    "Bounds": [
+                        520.7740936279297,
+                        246.08299255371094,
+                        575.9021453857422,
+                        256.7310028076172
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[4]/Sect[3]/P[2]/Span",
+                    "Text": "xCityx, xStatex ",
+                    "TextSize": 8
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[3]/P[2]",
+            "attributes": {
+                "LineHeight": 9.625,
+                "SpaceAfter": 7,
+                "TextAlign": "End"
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                178.564697265625,
+                575.5534362792969,
+                239.87469482421875
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial MT",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "FTRDRI+ArialMT",
+                "subset": true,
+                "weight": 400
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[4]/Sect[3]/P[3]",
+            "Text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ",
+            "TextSize": 10,
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 7.125
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                155.7187042236328,
+                296.93849182128906,
+                172.4467010498047
+            ],
+            "Font": {
+                "alt_family_name": "Arial",
+                "embedded": true,
+                "encoding": "WinAnsiEncoding",
+                "family_name": "Arial",
+                "font_type": "TrueType",
+                "italic": false,
+                "monospaced": false,
+                "name": "OJCFNQ+Arial-BoldMT",
+                "subset": true,
+                "weight": 700
+            },
+            "HasClip": false,
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[5]/H1",
+            "Text": "EDUCATION ",
+            "TextSize": 12,
+            "attributes": {
+                "LineHeight": 14.375,
+                "SpaceAfter": 9.25
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                99.84480285644531,
+                474.5403289794922,
+                149.27479553222656
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        135.3347930908203,
+                        474.5403289794922,
+                        149.27479553222656
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub",
+                    "Text": "Masters, Business Administration",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        383.9403533935547,
+                        135.8448028564453,
+                        389.50035095214844,
+                        149.15480041503906
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub/Span",
+                    "Text": ", ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        389.50035095214844,
+                        135.8448028564453,
+                        474.5403289794922,
+                        149.15480041503906
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub/Span[2]",
+                    "Text": "xstatusx July 2010 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        123.84480285644531,
+                        417.6864318847656,
+                        137.15480041503906
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub[2]",
+                    "Text": "Symbiosis Institute of Management Studies ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        111.84480285644531,
+                        392.64646911621094,
+                        125.15480041503906
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub[3]",
+                    "Text": "xBoardx ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        262.61639404296875,
+                        111.84480285644531,
+                        268.1763916015625,
+                        125.15480041503906
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub[3]/Span",
+                    "Text": "–",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        111.84480285644531,
+                        392.64646911621094,
+                        125.15480041503906
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub[3]",
+                    "Text": " xMarks 00%x, xDivision 0x ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        99.84480285644531,
+                        336.3543701171875,
+                        113.15480041503906
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P/Sub[4]",
+                    "Text": "West Pune, Maharashtra ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[5]/P",
+            "attributes": {
+                "LineHeight": 12,
+                "SpaceAfter": 10
+            }
+        },
+        {
+            "Bounds": [
+                223.15640258789062,
+                41.78480529785156,
+                426.4283905029297,
+                91.21479797363281
+            ],
+            "Kids": [
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        77.27479553222656,
+                        416.92637634277344,
+                        91.21479797363281
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "OJCFNQ+Arial-BoldMT",
+                        "subset": true,
+                        "weight": 700
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub",
+                    "Text": "Bachelor, Technology",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        326.32640075683594,
+                        77.78480529785156,
+                        331.8863983154297,
+                        91.09480285644531
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub/Span",
+                    "Text": ", ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        331.8863983154297,
+                        77.78480529785156,
+                        416.92637634277344,
+                        91.09480285644531
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub/Span[2]",
+                    "Text": "xstatusx July 2008 ",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        65.78480529785156,
+                        426.4283905029297,
+                        79.09480285644531
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub[2]",
+                    "Text": "Deccan College of Engineering & Technology ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        53.78480529785156,
+                        333.74647521972656,
+                        67.09480285644531
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub[3]",
+                    "Text": "xBoardx ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        262.61639404296875,
+                        53.78480529785156,
+                        268.1763916015625,
+                        67.09480285644531
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub[3]/Span",
+                    "Text": "–",
+                    "TextSize": 10
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        53.78480529785156,
+                        333.74647521972656,
+                        67.09480285644531
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub[3]",
+                    "Text": " xMarks 00%x ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                },
+                {
+                    "Bounds": [
+                        223.15640258789062,
+                        41.78480529785156,
+                        326.1932830810547,
+                        55.09480285644531
+                    ],
+                    "Font": {
+                        "alt_family_name": "Arial",
+                        "embedded": true,
+                        "encoding": "WinAnsiEncoding",
+                        "family_name": "Arial MT",
+                        "font_type": "TrueType",
+                        "italic": false,
+                        "monospaced": false,
+                        "name": "FTRDRI+ArialMT",
+                        "subset": true,
+                        "weight": 400
+                    },
+                    "HasClip": false,
+                    "Page": 0,
+                    "Path": "//Document/Sect[5]/P[2]/Sub[4]",
+                    "Text": "Hyderabad, Telangana ",
+                    "TextSize": 10,
+                    "attributes": {
+                        "Placement": "Block"
+                    }
+                }
+            ],
+            "Lang": "en",
+            "Page": 0,
+            "Path": "//Document/Sect[5]/P[2]",
+            "attributes": {
+                "LineHeight": 12
+            }
+        }
+    ],
+    "pages": [
+        {
+            "boxes": {
+                "CropBox": [
+                    0,
+                    0,
+                    595.2760009765625,
+                    841.8900146484375
+                ],
+                "MediaBox": [
+                    0,
+                    0,
+                    595.2760009765625,
+                    841.8900146484375
+                ]
+            },
+            "height": 841.8900146484375,
+            "is_scanned": false,
+            "page_number": 0,
+            "rotation": 0,
+            "width": 595.2760009765625
+        }
+    ]
+}
