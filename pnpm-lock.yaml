@@ -7,7 +7,11 @@ specifiers:
   '@mantine/next': ^4.2.12
   '@next-auth/upstash-redis-adapter': ^3.0.1
   '@reduxjs/toolkit': ^1.8.3
+<<<<<<< HEAD
   '@tabler/icons': ^1.78.0
+=======
+  '@tabler/icons': ^1.77.0
+>>>>>>> 601d643 (chore update deps)
   '@types/cookie': ^0.5.1
   '@types/d3-path': ^3.0.0
   '@types/d3-shape': ^3.1.0
@@ -30,10 +34,16 @@ specifiers:
   formik: ^2.2.9
   ioredis: ^5.2.2
   jotai: ^1.7.6
+<<<<<<< HEAD
   jszip: ^3.10.0
   next: 12.2.3
   next-auth: ^4.10.2
   next-i18next: ^11.3.0
+=======
+  next: 12.2.3
+  next-auth: ^4.10.2
+  next-i18next: ^11.2.2
+>>>>>>> 601d643 (chore update deps)
   nodemailer: ^6.7.7
   postcss: ^8.4.14
   postcss-nesting: ^10.1.10
@@ -58,7 +68,11 @@ dependencies:
   '@mantine/next': 4.2.12_ojkeujfq2n6rybiqiybg34xbbu
   '@next-auth/upstash-redis-adapter': 3.0.1_puzpbaleh6a3ssxhczaxaxwb74
   '@reduxjs/toolkit': 1.8.3_kkwg4cbsojnjnupd3btipussee
+<<<<<<< HEAD
   '@tabler/icons': 1.78.0_biqbaboplfbrettd7655fr4n2y
+=======
+  '@tabler/icons': 1.77.0_biqbaboplfbrettd7655fr4n2y
+>>>>>>> 601d643 (chore update deps)
   '@upstash/redis': 1.10.1
   axios: 0.27.2
   clsx: 1.2.1
@@ -70,10 +84,16 @@ dependencies:
   formik: 2.2.9_react@18.2.0
   ioredis: 5.2.2
   jotai: 1.7.6_react@18.2.0
+<<<<<<< HEAD
   jszip: 3.10.0
   next: 12.2.3_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.10.2_mnimnj2pdeccz5uivmdmoly3tq
   next-i18next: 11.3.0_53oqlnqnxhbetdy4ljlkkvmoby
+=======
+  next: 12.2.3_biqbaboplfbrettd7655fr4n2y
+  next-auth: 4.10.2_mnimnj2pdeccz5uivmdmoly3tq
+  next-i18next: 11.2.2_53oqlnqnxhbetdy4ljlkkvmoby
+>>>>>>> 601d643 (chore update deps)
   nodemailer: 6.7.7
   probe-image-size: 7.2.3
   react: 18.2.0
@@ -671,8 +691,13 @@ packages:
       tslib: 2.4.0
     dev: false
 
+<<<<<<< HEAD
   /@tabler/icons/1.78.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-Aq4mHpQcvJSRb0+m1azJPDs/0ZvyoR1da8JmLMzVfObS1tRcJYsvuxBJfYCreFtBT33w4PtBTD+7J+2hk8JTQw==}
+=======
+  /@tabler/icons/1.77.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-zSCw3SEVYKPq5M3KgZFXatQYhyFLEJUoyFDAswSglH36JmqYIXp9qgahpcEVh4wpNhjshBLL/7/SuLU/ZIKsFQ==}
+>>>>>>> 601d643 (chore update deps)
     peerDependencies:
       react: ^16.x || 17.x || 18.x
       react-dom: ^16.x || 17.x || 18.x
@@ -2813,8 +2838,13 @@ packages:
       uuid: 8.3.2
     dev: false
 
+<<<<<<< HEAD
   /next-i18next/11.3.0_53oqlnqnxhbetdy4ljlkkvmoby:
     resolution: {integrity: sha512-xl0oIRtiVrk9ZaWBRUbNk/prva4Htdu59o9rFWzd9ax/KemaDVuTTuBZTQMkmXohUQk/MJ7w1rV/mICL6TzyGw==}
+=======
+  /next-i18next/11.2.2_53oqlnqnxhbetdy4ljlkkvmoby:
+    resolution: {integrity: sha512-ylZBtZnNxI6WBt/BMG1caCwzM/ZS6lp2ZepzoMZxB45eTsnuRV+NyNz4ALqybWbuktwlQ85sT0uoT36hLTv4oQ==}
+>>>>>>> 601d643 (chore update deps)
     engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
