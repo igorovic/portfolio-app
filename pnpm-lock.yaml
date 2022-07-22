@@ -2735,6 +2735,7 @@ packages:
       object.assign: 4.1.2
     dev: true
 
+<<<<<<< HEAD
   /jszip/3.10.0:
     resolution: {integrity: sha512-LDfVtOLtOxb9RXkYOwPyNBTQDL4eUbqahtoY6x07GiDJHwSYvn8sHHIw8wINImV3MqbMNve2gSuM1DDqEKk09Q==}
     dependencies:
@@ -2742,6 +2743,21 @@ packages:
       pako: 1.0.11
       readable-stream: 2.3.7
       setimmediate: 1.0.5
+=======
+  /jwa/1.4.1:
+    resolution: {integrity: sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA==}
+    dependencies:
+      buffer-equal-constant-time: 1.0.1
+      ecdsa-sig-formatter: 1.0.11
+      safe-buffer: 5.2.1
+    dev: false
+
+  /jws/3.2.2:
+    resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
+    dependencies:
+      jwa: 1.4.1
+      safe-buffer: 5.2.1
+>>>>>>> b063661 (wip)
     dev: false
 
   /keypress/0.1.0:
@@ -2968,6 +2984,10 @@ packages:
       sax: 1.2.4
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /nested-error-stacks/2.1.1:
+    resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: false
 
   /next-auth/4.10.2_mnimnj2pdeccz5uivmdmoly3tq:
