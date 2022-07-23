@@ -11,15 +11,9 @@ function BrowserZip() {
       .then((r) => r.arrayBuffer())
       .then(async (buf) => {
         const zip = await jsZip.loadAsync(buf);
-<<<<<<< HEAD
         console.log(zip);
         const greetings = await zip.file("greetings.json")?.async("string");
         console.log(greetings);
-=======
-        console.debug(zip);
-        const greetings = await zip.file("greetings.json")?.async("string");
-        console.debug(greetings);
->>>>>>> be07679 (feat: extract zip in browser)
         const corgi = await zip.file("corgi.jpeg")?.async("blob");
         if (corgi) {
           setImgSrc(URL.createObjectURL(corgi));
