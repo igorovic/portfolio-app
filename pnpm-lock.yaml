@@ -29,11 +29,11 @@ specifiers:
   eslint: 8.20.0
   eslint-config-next: 12.2.3
   formik: ^2.2.9
-  ioredis: ^5.2.1
+  ioredis: ^5.2.2
   jotai: ^1.7.6
   next: 12.2.3
   next-auth: ^4.10.2
-  next-i18next: ^11.2.2
+  next-i18next: ^11.3.0
   nodemailer: ^6.7.7
   postcss: ^8.4.14
   postcss-nesting: ^10.1.10
@@ -69,11 +69,11 @@ dependencies:
   d3-shape: 3.1.0
   daisyui: 2.19.1_ugi4xkrfysqkt4c4y6hkyfj344
   formik: 2.2.9_react@18.2.0
-  ioredis: 5.2.1
+  ioredis: 5.2.2
   jotai: 1.7.6_react@18.2.0
   next: 12.2.3_biqbaboplfbrettd7655fr4n2y
   next-auth: 4.10.2_mnimnj2pdeccz5uivmdmoly3tq
-  next-i18next: 11.2.2_53oqlnqnxhbetdy4ljlkkvmoby
+  next-i18next: 11.3.0_53oqlnqnxhbetdy4ljlkkvmoby
   nodemailer: 6.7.7
   probe-image-size: 7.2.3
   react: 18.2.0
@@ -2480,8 +2480,8 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
-  /ioredis/5.2.1:
-    resolution: {integrity: sha512-+rgPUIawiT+L3am9FbUcwjI7R7KtLDUSJNYWF82NZmlUXCZELws7iJkVDuECQoNUHqZTf/EGn3uw9IA+PlBiyg==}
+  /ioredis/5.2.2:
+    resolution: {integrity: sha512-wryKc1ur8PcCmNwfcGkw5evouzpbDXxxkMkzPK8wl4xQfQf7lHe11Jotell5ikMVAtikXJEu/OJVaoV51BggRQ==}
     engines: {node: '>=12.22.0'}
     dependencies:
       '@ioredis/commands': 1.2.0
@@ -2964,10 +2964,6 @@ packages:
       - supports-color
     dev: false
 
-  /nested-error-stacks/2.1.1:
-    resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
-    dev: false
-
   /next-auth/4.10.2_mnimnj2pdeccz5uivmdmoly3tq:
     resolution: {integrity: sha512-9XeP3faA5M3LneNJuzZCrmyR1ONYVH+pNQTozLBlpzXSkVRCgy+PTLAojOGkCo5v5MWcCZNTNHUOQL6gIcYwEQ==}
     engines: {node: ^12.19.0 || ^14.15.0 || ^16.13.0}
@@ -2993,8 +2989,8 @@ packages:
       uuid: 8.3.2
     dev: false
 
-  /next-i18next/11.2.2_53oqlnqnxhbetdy4ljlkkvmoby:
-    resolution: {integrity: sha512-ylZBtZnNxI6WBt/BMG1caCwzM/ZS6lp2ZepzoMZxB45eTsnuRV+NyNz4ALqybWbuktwlQ85sT0uoT36hLTv4oQ==}
+  /next-i18next/11.3.0_53oqlnqnxhbetdy4ljlkkvmoby:
+    resolution: {integrity: sha512-xl0oIRtiVrk9ZaWBRUbNk/prva4Htdu59o9rFWzd9ax/KemaDVuTTuBZTQMkmXohUQk/MJ7w1rV/mICL6TzyGw==}
     engines: {node: '>=12'}
     peerDependencies:
       next: '>= 10.0.0'
