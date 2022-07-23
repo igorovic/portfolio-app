@@ -36,6 +36,7 @@ specifiers:
   next-auth: ^4.10.2
   next-i18next: ^11.3.0
   nodemailer: ^6.7.7
+  pdfjs-dist: ^2.14.305
   postcss: ^8.4.14
   postcss-nesting: ^10.1.10
   probe-image-size: ^7.2.3
@@ -48,6 +49,7 @@ specifiers:
   swr: ^1.3.0
   tailwindcss: ^3.1.6
   twitter-api-sdk: ^1.1.0
+  two.js: ^0.8.10
   typescript: 4.7.4
   use-debounce: ^8.0.2
   zod: ^3.17.10
@@ -77,6 +79,7 @@ dependencies:
   next-auth: 4.10.2_mnimnj2pdeccz5uivmdmoly3tq
   next-i18next: 11.3.0_53oqlnqnxhbetdy4ljlkkvmoby
   nodemailer: 6.7.7
+  pdfjs-dist: 2.14.305
   probe-image-size: 7.2.3
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -86,6 +89,7 @@ dependencies:
   sharp: 0.30.7
   swr: 1.3.0_react@18.2.0
   twitter-api-sdk: 1.1.0
+  two.js: 0.8.10
   use-debounce: 8.0.2_react@18.2.0
   zod: 3.17.10
 
@@ -1689,6 +1693,10 @@ packages:
       domelementtype: 2.3.0
     dev: false
 
+  /dommatrix/1.0.3:
+    resolution: {integrity: sha512-l32Xp/TLgWb8ReqbVJAFIvXmY7go4nTxxlWiAFyhoQw9RKEOHBZNnyGvJWqDVSPmq3Y9HlM4npqF/T6VMOXhww==}
+    dev: false
+
   /domutils/2.8.0:
     resolution: {integrity: sha512-w96Cjofp72M5IIhpjgobBimYEfoPjx1Vx0BSX9P30WBdZW2WIKU0T1Bd0kz2eNZ9ikjKgHbEyKx8BB6H1L3h3A==}
     dependencies:
@@ -3275,6 +3283,18 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /pdfjs-dist/2.14.305:
+    resolution: {integrity: sha512-5f7i25J1dKIBczhgfxEgNxfYNIxXEdxqo6Qb4ehY7Ja+p6AI4uUmk/OcVGXfRGm2ys5iaJJhJUwBFwv6Jl/Qww==}
+    peerDependencies:
+      worker-loader: ^3.0.8
+    peerDependenciesMeta:
+      worker-loader:
+        optional: true
+    dependencies:
+      dommatrix: 1.0.3
+      web-streams-polyfill: 3.2.1
+    dev: false
+
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
 
@@ -4166,6 +4186,10 @@ packages:
       - encoding
     dev: false
 
+  /two.js/0.8.10:
+    resolution: {integrity: sha512-Rg0jn1n/0MWdDBrW47L245GWlWpbWlJ3Cv8xFlP05pSFqUT0Wn6w4yaOcxUCzAJQGRGdtmXOW3UI2W0LEEUD9Q==}
+    dev: false
+
   /type-check/0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
@@ -4310,6 +4334,11 @@ packages:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
     dependencies:
       loose-envify: 1.4.0
+    dev: false
+
+  /web-streams-polyfill/3.2.1:
+    resolution: {integrity: sha512-e0MO3wdXWKrLbL0DgGnUV7WHVuw9OUvL4hjgnPkIeEvESk74gAITi5G606JtZPp39cd8HA9VQzCIvA49LpPN5Q==}
+    engines: {node: '>= 8'}
     dev: false
 
   /webidl-conversions/3.0.1:
