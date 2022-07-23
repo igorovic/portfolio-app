@@ -23,9 +23,13 @@ function PdfEmbed() {
     if (!pageRef.current) return;
     const page = pageRef.current;
     const canvas = document.getElementById(canvasId) as HTMLCanvasElement;
-    const viewport = page.getViewport({ scale: zoom });
+    let viewport = page.getViewport({ scale: 1 });
+    const w_scale = canvas.clientWidth / viewport.width;
+    viewport = page.getViewport({ scale: w_scale });
     canvas.width = viewport.width;
     canvas.height = viewport.height;
+    console.debug("w_scale", w_scale);
+
     const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
     const renderTask = page.render({
       canvasContext: ctx,
@@ -89,7 +93,12 @@ function PdfEmbed() {
           onChangeEnd={() => render()}
         />
       </div>
-      <canvas id={canvasId} width={600} height={600}></canvas>
+      <canvas
+        id={canvasId}
+        width={600}
+        height={600}
+        className="w-full h-full"
+      ></canvas>
     </>
   );
 }
