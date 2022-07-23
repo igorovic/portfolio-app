@@ -1,8 +1,8 @@
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { GetStaticPropsContext, NextPage } from "next";
 import AppShellLayout from "components/layout/appshellLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import dynamic from "next/dynamic";
 
 const TwitterDl = dynamic(
   () => import("../../components/twitter-download/TwitterDl"),
