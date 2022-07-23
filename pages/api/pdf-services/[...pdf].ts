@@ -32,5 +32,4 @@ export default async function handler(
       errorDetails: err?.error,
     });
   }
-  return res.end();
 }
