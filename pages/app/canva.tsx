@@ -4,12 +4,13 @@ import AppShellLayout from "components/layout/appshellLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import dynamic from "next/dynamic";
 
-const CanvaComponent = dynamic(() => import("../../components/canva/canva"), {
+const CanvaComponent = dynamic(() => import("../../features/canva/canva"), {
   suspense: true,
 });
 const CanvaPage: NextPage<any> = () => {
   return (
     <AppShellLayout>
+      <p className="pb-4">Playing with HTML Canvas</p>
       <Suspense fallback={<p>...loading</p>}>
         <CanvaComponent />
       </Suspense>

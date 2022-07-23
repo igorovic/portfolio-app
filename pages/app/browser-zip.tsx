@@ -4,23 +4,23 @@ import { GetStaticPropsContext, NextPage } from "next";
 import AppShellLayout from "components/layout/appshellLayout";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-const TwitterDl = dynamic(
-  () => import("../../components/twitter-download/TwitterDl"),
+const BrowserZip = dynamic(
+  () => import("../../features/browser-zip/BrowserZip"),
   {
     suspense: true,
   }
 );
-const TwitterDownloadPage: NextPage<any> = () => {
+const BrowserZipPage: NextPage<any> = () => {
   return (
     <AppShellLayout>
       <Suspense fallback={<p>...loading</p>}>
-        <TwitterDl />
+        <BrowserZip />
       </Suspense>
     </AppShellLayout>
   );
 };
 
-export default TwitterDownloadPage;
+export default BrowserZipPage;
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   return {
@@ -29,8 +29,6 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
         "common",
         "footer",
         "appshell",
-        "validation-errors",
-        "twitter-download/tdl",
       ])),
       // Will be passed to the page component as props
     },
