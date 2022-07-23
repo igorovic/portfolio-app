@@ -93,8 +93,17 @@ function ToolBox({ canvasId }: ToolBoxProps) {
     updateProperty(e.target);
   };
   return (
-    <div className="absolute border w-80 rounded-sm top-0 right-2 p-2 canva-toolbox">
-      <Accordion initialItem={0}>
+    <div
+      className="absolute border w-80 rounded-sm top-0 right-2 p-2 canva-toolbox bg-white"
+      // somehow tailwindcss right-2 is not applied
+      style={{ right: "4px" }}
+    >
+      <Accordion
+        initialItem={0}
+        sx={() => ({
+          backgroundColor: "#fff",
+        })}
+      >
         <Accordion.Item label="Toolbox" sx={{ border: 0 }}>
           {selectedShapeK ? (
             <>

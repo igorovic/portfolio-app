@@ -44,8 +44,8 @@ function Canva() {
   });
 
   return (
-    <Provider store={store}>
-      <div className="relative">
+    <div className="relative w-full">
+      <Provider store={store}>
         <ToolBox canvasId={canvasId} />
         <canvas
           ref={canvaRef}
@@ -93,8 +93,8 @@ function Canva() {
             restore
           </Button>
         </div>
-      </div>
-    </Provider>
+      </Provider>
+    </div>
   );
 }
 
