@@ -11,9 +11,9 @@ function BrowserZip() {
       .then((r) => r.arrayBuffer())
       .then(async (buf) => {
         const zip = await jsZip.loadAsync(buf);
-        console.debug(zip);
+        console.log(zip);
         const greetings = await zip.file("greetings.json")?.async("string");
-        console.debug(greetings);
+        console.log(greetings);
         const corgi = await zip.file("corgi.jpeg")?.async("blob");
         if (corgi) {
           setImgSrc(URL.createObjectURL(corgi));
