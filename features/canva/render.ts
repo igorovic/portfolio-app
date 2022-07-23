@@ -23,6 +23,14 @@ const updateXYWH = (x: number, y: number, w: number, h: number) =>
   store.dispatch(setXYWH({ x, y, w, h }));
 const currentShapeKey = () => store.getState().board.selectedShape;
 
+const getContext2D = () => {
+  if (typeof window !== "undefined" && !ctx) {
+    ctx = (document?.getElementById(canvasId) as HTMLCanvasElement)?.getContext(
+      "2d"
+    );
+  }
+};
+
 function currentShape() {
   const state = store.getState();
   return state.board.selectedShape
@@ -30,11 +38,7 @@ function currentShape() {
     : null;
 }
 
-if (typeof window !== "undefined") {
-  ctx = (document?.getElementById(canvasId) as HTMLCanvasElement)?.getContext(
-    "2d"
-  );
-}
+getContext2D();
 
 export function handleClick(e: MouseEvent) {
   for (let [key, shape] of items().entries()) {
@@ -99,6 +103,7 @@ function resizeHandler(e: MouseEvent) {
 }
 
 export function addRect() {
+  getContext2D();
   store.dispatch(addShape([newShapeKey(), initialShape]));
 }
 
