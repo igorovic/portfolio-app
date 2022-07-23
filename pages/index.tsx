@@ -1,6 +1,6 @@
-import { Counter } from "components/Counter";
 import type { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -12,8 +12,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="container">
-        <h1>Start writing your app</h1>
-        <Counter />
+        <h1 className="text-xl font-bold my-10">Go to app</h1>
+        <Link href={"/app"}>
+          <a className="my-8 py-2 px-4 rounded-md bg-orange-300">Open app</a>
+        </Link>
       </main>
     </div>
   );
