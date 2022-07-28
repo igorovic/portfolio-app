@@ -33,11 +33,11 @@ function AppShellNavbar(props: AppShellNavbarProps) {
     { text: "Twitter downloaded", href: "/app/twitter-download" },
   ];
   const canvas = [{ text: "Canva", href: "/app/canva" }];
-  let initialItem = 0;
+  let initialItem = "0";
   [...medias, ...socials, ...canvas]
     .map((S) => S.href)
     .some((s, idx) => {
-      initialItem = idx;
+      initialItem = String(idx);
       return s.startsWith(pathname);
     });
 
@@ -45,15 +45,24 @@ function AppShellNavbar(props: AppShellNavbarProps) {
     <Navbar hidden={!opened} p="xs" {...props}>
       {/* <span className="drawer-section-title">{t("Media files")}</span> */}
       <Navbar.Section>
-        <Accordion initialItem={initialItem}>
-          <Accordion.Item sx={{ border: 0 }} label="Media files">
-            <AppLinkComponent links={medias} />
+        <Accordion defaultValue={initialItem}>
+          <Accordion.Item sx={{ border: 0 }} value="0">
+            <Accordion.Control>Media files</Accordion.Control>
+            <Accordion.Panel>
+              <AppLinkComponent links={medias} />
+            </Accordion.Panel>
           </Accordion.Item>
-          <Accordion.Item sx={{ border: 0 }} label="Socials">
-            <AppLinkComponent links={socials} />
+          <Accordion.Item sx={{ border: 0 }} value="1">
+            <Accordion.Control>Socials</Accordion.Control>
+            <Accordion.Panel>
+              <AppLinkComponent links={socials} />
+            </Accordion.Panel>
           </Accordion.Item>
-          <Accordion.Item sx={{ border: 0 }} label="Canva">
-            <AppLinkComponent links={canvas} />
+          <Accordion.Item sx={{ border: 0 }} value="2">
+            <Accordion.Control>Canva</Accordion.Control>
+            <Accordion.Panel>
+              <AppLinkComponent links={canvas} />
+            </Accordion.Panel>
           </Accordion.Item>
         </Accordion>
       </Navbar.Section>

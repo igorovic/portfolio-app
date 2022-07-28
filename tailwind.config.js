@@ -2,6 +2,7 @@
 const twColors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: "#__next",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -29,5 +30,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: [/* require("daisyui") */],
 };

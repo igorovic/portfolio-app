@@ -29,14 +29,19 @@ function SignIn() {
 
   if (session) {
     return (
-      <Menu control={<MenuControl user={session?.user} />}>
-        <Menu.Label className="font-semibold text-center">
-          {session.user?.email}
-        </Menu.Label>
-        <Divider />
-        <UnstyledButton className="mx-4" onClick={() => signOut()}>
-          {t("signout")}
-        </UnstyledButton>
+      <Menu>
+        <Menu.Target>
+          <MenuControl user={session?.user} />
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Label className="font-semibold text-center">
+            {session.user?.email}
+          </Menu.Label>
+          <Divider />
+          <UnstyledButton className="mx-4" onClick={() => signOut()}>
+            {t("signout")}
+          </UnstyledButton>
+        </Menu.Dropdown>
       </Menu>
     );
   }
