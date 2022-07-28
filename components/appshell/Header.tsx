@@ -34,7 +34,7 @@ function AppShellHeader() {
               <IconBrandGithub />
             </ActionIcon>
           </NextLink>
-          <SignIn />
+          {/* <SignIn /> */}
         </div>
       </div>
     </Header>

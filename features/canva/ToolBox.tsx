@@ -95,67 +95,70 @@ function ToolBox({ canvasId }: ToolBoxProps) {
   return (
     <div className="absolute border w-80 rounded-sm top-0 right-2 p-2 canva-toolbox bg-white">
       <Accordion
-        initialItem={0}
+        defaultValue={String(0)}
         sx={() => ({
           backgroundColor: "#fff",
         })}
       >
-        <Accordion.Item label="Toolbox" sx={{ border: 0 }}>
-          {selectedShapeK ? (
-            <>
-              <p>selected shape: {selectedShapeK}</p>
-              <div className="grid grid-cols-2 gap-2">
-                <NumberInput
-                  label="X"
-                  name="x"
-                  value={X}
-                  hideControls
-                  onKeyUpCapture={keyupHandler}
-                  onBlur={blurHandler}
-                />
-                <NumberInput
-                  label="Y"
-                  name="y"
-                  value={Y}
-                  hideControls
-                  onKeyUpCapture={keyupHandler}
-                  onBlur={blurHandler}
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <NumberInput
-                  label="W"
-                  name="w"
-                  value={W}
-                  hideControls
-                  onKeyUpCapture={keyupHandler}
-                  onBlur={blurHandler}
-                />
-                <NumberInput
-                  label="H"
-                  name="h"
-                  value={H}
-                  hideControls
-                  onKeyUpCapture={keyupHandler}
-                  onBlur={blurHandler}
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-2">
-                <NumberInput
-                  label="R"
-                  name="rtl"
-                  value={rtl}
-                  hideControls
-                  onKeyUpCapture={keyupHandler}
-                  onBlur={blurHandler}
-                />
-              </div>
-              <h3 className="font-semibold test-xl py-2">Fill</h3>
-              <FillColorComponent />
-              <h3 className="font-semibold test-xl py-2">Stroke</h3>
-              <StrokeColorComponent />
-            </>
-          ) : null}
+        <Accordion.Item value="0" sx={{ border: 0 }}>
+          <Accordion.Control>Toolbox</Accordion.Control>
+          <Accordion.Panel>
+            {selectedShapeK ? (
+              <>
+                <p>selected shape: {selectedShapeK}</p>
+                <div className="grid grid-cols-2 gap-2">
+                  <NumberInput
+                    label="X"
+                    name="x"
+                    value={X}
+                    hideControls
+                    onKeyUpCapture={keyupHandler}
+                    onBlur={blurHandler}
+                  />
+                  <NumberInput
+                    label="Y"
+                    name="y"
+                    value={Y}
+                    hideControls
+                    onKeyUpCapture={keyupHandler}
+                    onBlur={blurHandler}
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <NumberInput
+                    label="W"
+                    name="w"
+                    value={W}
+                    hideControls
+                    onKeyUpCapture={keyupHandler}
+                    onBlur={blurHandler}
+                  />
+                  <NumberInput
+                    label="H"
+                    name="h"
+                    value={H}
+                    hideControls
+                    onKeyUpCapture={keyupHandler}
+                    onBlur={blurHandler}
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <NumberInput
+                    label="R"
+                    name="rtl"
+                    value={rtl}
+                    hideControls
+                    onKeyUpCapture={keyupHandler}
+                    onBlur={blurHandler}
+                  />
+                </div>
+                <h3 className="font-semibold test-xl py-2">Fill</h3>
+                <FillColorComponent />
+                <h3 className="font-semibold test-xl py-2">Stroke</h3>
+                <StrokeColorComponent />
+              </>
+            ) : null}
+          </Accordion.Panel>
         </Accordion.Item>
       </Accordion>
     </div>

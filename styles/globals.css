@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 
-.mantine-Button-filled {
-  background-color: #228be6;
-}
 
-@layer base {
+
+@layer base { 
   body {
     height: 100vh;
   }
@@ -22,6 +20,9 @@
   
 }
 @layer components {
+  .mantine-Button-root {
+    /* background-color: inherit; */
+  }
   .canva-toolbox { 
     .mantine-NumberInput-root{
       @apply flex gap-2 items-center;

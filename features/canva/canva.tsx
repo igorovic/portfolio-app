@@ -86,6 +86,9 @@ function Canva() {
             save
           </Button>
           <Button
+            /* sx={() => ({
+              backgroundColor: "red",
+            })} */
             onClick={() => {
               ctxRef.current?.restore();
             }}
