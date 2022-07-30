@@ -50,7 +50,7 @@ specifiers:
   react-router-dom: "6"
   sharp: ^0.30.7
   swr: ^1.3.0
-  tailwindcss: ^3.1.6
+  tailwindcss: ^3.1.7
   ts-node: ^10.9.1
   twitter-api-sdk: ^1.1.0
   two.js: ^0.8.10
@@ -74,7 +74,7 @@ dependencies:
   d3: 7.6.1
   d3-path: 3.0.1
   d3-shape: 3.1.0
-  daisyui: 2.20.0_fgqzvxpz7ngmev6eakog5djgby
+  daisyui: 2.20.0_thitsfsxlulbq4oy2w24thgkti
   formik: 2.2.9_react@18.2.0
   ioredis: 5.2.2
   jotai: 1.7.6_react@18.2.0
@@ -114,7 +114,7 @@ devDependencies:
   eslint-config-next: 12.2.3_he2ccbldppg44uulnyq4rwocfa
   postcss: 8.4.14
   postcss-nesting: 10.1.10_postcss@8.4.14
-  tailwindcss: 3.1.6_ts-node@10.9.1
+  tailwindcss: 3.1.7_ts-node@10.9.1
   ts-node: 10.9.1_cyi3jronpmwutj7hw2n2p72xty
   typescript: 4.7.4
 
@@ -1724,8 +1724,8 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      browserslist: 4.21.1
-      caniuse-lite: 1.0.30001363
+      browserslist: 4.21.3
+      caniuse-lite: 1.0.30001373
       fraction.js: 4.2.0
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -1828,10 +1828,10 @@ packages:
     engines: { node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7 }
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001363
-      electron-to-chromium: 1.4.177
-      node-releases: 2.0.5
-      update-browserslist-db: 1.0.4_browserslist@4.21.1
+      caniuse-lite: 1.0.30001373
+      electron-to-chromium: 1.4.206
+      node-releases: 2.0.6
+      update-browserslist-db: 1.0.5_browserslist@4.21.3
 
   /buffer-equal-constant-time/1.0.1:
     resolution:
@@ -2602,12 +2602,12 @@ packages:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
     dependencies:
-      autoprefixer: 10.4.7_postcss@8.4.14
+      autoprefixer: 10.4.8_postcss@8.4.14
       color: 4.2.3
       css-selector-tokenizer: 0.8.0
       postcss: 8.4.14
       postcss-js: 4.0.0_postcss@8.4.14
-      tailwindcss: 3.1.6_ts-node@10.9.1
+      tailwindcss: 3.1.7_ts-node@10.9.1
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -5289,7 +5289,7 @@ packages:
       ts-node:
         optional: true
     dependencies:
-      lilconfig: 2.0.5
+      lilconfig: 2.0.6
       postcss: 8.4.14
       ts-node: 10.9.1_cyi3jronpmwutj7hw2n2p72xty
       yaml: 1.10.2
@@ -6349,7 +6349,7 @@ packages:
       fast-glob: 3.2.11
       glob-parent: 6.0.2
       is-glob: 4.0.3
-      lilconfig: 2.0.5
+      lilconfig: 2.0.6
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.0.0
@@ -6641,7 +6641,7 @@ packages:
     peerDependencies:
       browserslist: ">= 4.21.0"
     dependencies:
-      browserslist: 4.21.1
+      browserslist: 4.21.3
       escalade: 3.1.1
       picocolors: 1.0.0
 
