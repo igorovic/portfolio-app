@@ -16,6 +16,10 @@ const Home: NextPage = () => {
         <Link href={"/app"}>
           <a className="my-8 py-2 px-4 rounded-md bg-orange-300">Open app</a>
         </Link>
+        <h2>3D preview</h2>
+        <Link href={"/three-share"}>
+          <a className="my-8 py-2 px-4 rounded-md bg-orange-300">3D preview</a>
+        </Link>
       </main>
     </div>
   );
