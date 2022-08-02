@@ -27,7 +27,10 @@ function AppShellNavbar(props: AppShellNavbarProps) {
   const { pathname } = useRouter();
   const { t } = useTranslation("appshell");
   const [opened] = useNavbarOpened();
-  const medias = [{ text: t("Image preview"), href: "/app/media-preview" }];
+  const medias = [
+    { text: t("Image preview"), href: "/app/media-preview" },
+    { text: "Gifs to MP4", href: "/app/gif-to-mp4" },
+  ];
   const socials = [
     { text: "Instagram", href: "/app/instagram" },
     { text: "Twitter downloaded", href: "/app/twitter-download" },

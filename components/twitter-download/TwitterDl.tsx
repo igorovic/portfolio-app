@@ -1,13 +1,13 @@
 import { ChangeEventHandler, useCallback, useState } from "react";
-import { Button, TextInput } from "@mantine/core";
+import { Button } from "@mantine/core";
 import { IconBrandTwitter } from "@tabler/icons";
 import { useTranslation } from "next-i18next";
 import { z } from "zod";
 import DownloadButtons from "./DownloadButtons";
+import UrlInput from "components/inputs/UrlInput";
 const urlSchemaTwitter = z
   .string()
-  .url()
-  .refine((val) => /http.?:\/\/twitter.com\/.*/gm.test(val));
+  .refine((val) => /[htps:\/]{7,8}twitter.com\/.*/gm.test(val));
 function TwitterDl() {
   const [url, setUrl] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -57,10 +57,10 @@ function TwitterDl() {
   }, [url]);
   return (
     <div>
-      <TextInput
-        error={error}
+      <UrlInput
         icon={<IconBrandTwitter />}
         label={<span className="capitalize">{t("link")}</span>}
+        error={error}
         onChange={changeHandler}
         onKeyUp={(e) => {
           if (e.key === "Enter") {

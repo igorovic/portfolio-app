@@ -55,6 +55,7 @@ function DownloadButtons({ tweet }: DownloadButtonsProps) {
         const f = new File([b], variant.filename ?? "video");
         const a = document.createElement("a");
         a.href = URL.createObjectURL(f);
+        a.style.display = "none";
         a.download = variant.filename as string;
         document.body.appendChild(a);
         a.click();
