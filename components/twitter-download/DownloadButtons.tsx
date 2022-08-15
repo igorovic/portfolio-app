@@ -74,7 +74,10 @@ function DownloadButtons({ tweet }: DownloadButtonsProps) {
       {variants.map((variant, idx) => {
         if (/video\/.*/gm.test(variant.content_type)) {
           return (
-            <div className="grid grid-flow-col basis-0 py-4 w-max">
+            <div
+              key={`${variant.filename}-${idx}`}
+              className="grid grid-flow-col basis-0 py-4 w-max"
+            >
               <div className="flex flex-col w-max mr-4 min-w-[24ch]">
                 <span className="text-base font-semibold">
                   {variant.filename}

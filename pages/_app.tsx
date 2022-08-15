@@ -6,20 +6,19 @@ import store from "lib/app/store";
 import { MantineProvider, createEmotionCache } from "@mantine/core";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
-const emCache = createEmotionCache({
-  key: "mantine",
-  prepend: false,
-});
+import { emCache } from "../lib/emotionCache";
+
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
     <>
       <Head>
         <title>demo dyve.ch</title>
+        <meta name="emotion-insertion-point2" content="" />
       </Head>
       <Provider store={store}>
         <MantineProvider
-          withGlobalStyles={true}
-          withNormalizeCSS={false}
+          withGlobalStyles={false}
+          //withNormalizeCSS={false}
           emotionCache={emCache}
           theme={{
             /** Put your mantine theme override here */

@@ -85,8 +85,8 @@ function ToolBox({ canvasId }: ToolBoxProps) {
   };
   const keyupHandler: React.KeyboardEventHandler<HTMLInputElement> = (e) => {
     if (e.key === "Enter") {
-      updateProperty(e.target);
-      e.target.blur();
+      updateProperty(e.currentTarget);
+      e.currentTarget.blur();
     }
   };
   const blurHandler: React.FocusEventHandler<HTMLInputElement> = (e) => {
