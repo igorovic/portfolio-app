@@ -1,9 +1,33 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
-import { createGetInitialProps } from "@mantine/next";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
+import { ServerStyles, createStylesServer } from "@mantine/next";
+import { emCache } from "lib/emotionCache";
 
-const getInitialProps = createGetInitialProps();
+const stylesServer = createStylesServer(emCache());
+
 class MyDocument extends Document {
-  static getInitialProps = getInitialProps;
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+
+    // Add your app specific logic here
+
+    return {
+      ...initialProps,
+      styles: [
+        initialProps.styles,
+        <ServerStyles
+          html={initialProps.html}
+          server={stylesServer}
+          key="mantine"
+        />,
+      ],
+    };
+  }
   render() {
     return (
       <Html data-theme="light">

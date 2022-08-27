@@ -3,33 +3,32 @@ import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import store from "lib/app/store";
-import { MantineProvider, createEmotionCache } from "@mantine/core";
+import { MantineProvider } from "@mantine/core";
 import { SessionProvider } from "next-auth/react";
 import Head from "next/head";
-const emCache = createEmotionCache({
-  key: "mantine",
-  prepend: false,
-});
+import { emCache } from "lib/emotionCache";
+
 function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
+  const cache = emCache();
   return (
     <>
       <Head>
         <title>demo dyve.ch</title>
       </Head>
       <Provider store={store}>
-        <MantineProvider
-          withGlobalStyles={true}
-          withNormalizeCSS={false}
-          emotionCache={emCache}
-          theme={{
-            /** Put your mantine theme override here */
-            colorScheme: "light",
-          }}
-        >
-          <SessionProvider session={session}>
+        <SessionProvider session={session}>
+          <MantineProvider
+            emotionCache={cache}
+            withGlobalStyles={true}
+            withNormalizeCSS={false}
+            theme={{
+              /** Put your mantine theme override here */
+              colorScheme: "light",
+            }}
+          >
             <Component {...pageProps} />
-          </SessionProvider>
-        </MantineProvider>
+          </MantineProvider>
+        </SessionProvider>
       </Provider>
     </>
   );

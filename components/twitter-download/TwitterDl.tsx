@@ -73,6 +73,7 @@ function TwitterDl() {
         className="mt-4"
         onClick={fetchMedia}
         loading={loading}
+        sx={{ backgroundColor: "rebeccapurple" }}
       >
         {t("prepare")}
       </Button>
