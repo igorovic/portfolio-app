@@ -5,20 +5,15 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import {
-  //createGetInitialProps,
-  ServerStyles,
-  createStylesServer,
-} from "@mantine/next";
+import { ServerStyles, createStylesServer } from "@mantine/next";
 import { emCache } from "lib/emotionCache";
 
-//const getInitialProps = createGetInitialProps();
 const stylesServer = createStylesServer(emCache);
 class MyDocument extends Document {
-  //static getInitialProps = getInitialProps;
-
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
+
+    // Add your app specific logic here
 
     return {
       ...initialProps,
@@ -38,7 +33,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/png" href="/favicon.png" />
           <meta name="description" content="dyve.ch demo app" />
-          <meta name="emotion-insertion-point3" content="" />
+          <meta name="emotion-insertion-point" content="" />
         </Head>
         <body>
           <Main />
