@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@adobe/pdfservices-node-sdk': ^2.2.3
   '@emotion/cache': ^11.10.3
+  '@emotion/css': ^11.10.0
   '@emotion/react': ^11.10.0
   '@emotion/server': ^11.10.0
   '@emotion/sheet': ^1.2.0
@@ -59,6 +60,7 @@ specifiers:
   react-responsive: 9.0.0-beta.10
   react-router-dom: '6'
   recast: ^0.21.2
+  remeda: ^1.1.0
   sharp: ^0.30.7
   slugify: ^1.6.5
   stylis-plugin-rtl: ^2.1.1
@@ -75,8 +77,9 @@ specifiers:
 dependencies:
   '@adobe/pdfservices-node-sdk': 2.2.3
   '@emotion/cache': 11.10.3
+  '@emotion/css': 11.10.0
   '@emotion/react': 11.10.0_ug65io7jkbhmo4fihdmbrh3ina
-  '@emotion/server': 11.10.0
+  '@emotion/server': 11.10.0_@emotion+css@11.10.0
   '@emotion/sheet': 1.2.0
   '@logtail/node': 0.1.12
   '@mantine/core': 5.2.3_uz3hmck5bf5bg7hhupn5uzbbra
@@ -116,6 +119,7 @@ dependencies:
   react-responsive: 9.0.0-beta.10_react@18.2.0
   react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
   recast: 0.21.2
+  remeda: 1.1.0
   sharp: 0.30.7
   slugify: 1.6.5
   stylis-plugin-rtl: 2.1.1
@@ -286,6 +290,21 @@ packages:
       stylis: 4.0.13
     dev: false
 
+  /@emotion/css/11.10.0:
+    resolution: {integrity: sha512-dH9f+kSCucc8ilMg0MUA1AemabcyzYpe5EKX24F528PJjD7HyIY/VBNJHxfUdc8l400h2ncAjR6yEDu+DBj2cg==}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+    dependencies:
+      '@emotion/babel-plugin': 11.10.0
+      '@emotion/cache': 11.10.3
+      '@emotion/serialize': 1.1.0
+      '@emotion/sheet': 1.2.0
+      '@emotion/utils': 1.2.0
+    dev: false
+
   /@emotion/hash/0.9.0:
     resolution: {integrity: sha512-14FtKiHhy2QoPIzdTcvh//8OyBlknNs2nXRwIhG904opCby3l+9Xaf/wuPvICBF0rc1ZCNBd3nKe9cd2mecVkQ==}
     dev: false
@@ -327,7 +346,7 @@ packages:
       csstype: 3.1.0
     dev: false
 
-  /@emotion/server/11.10.0:
+  /@emotion/server/11.10.0_@emotion+css@11.10.0:
     resolution: {integrity: sha512-MTvJ21JPo9aS02GdjFW4nhdwOi2tNNpMmAM/YED0pkxzjDNi5WbiTwXqaCnvLc2Lr8NFtjhT0az1vTJyLIHYcw==}
     peerDependencies:
       '@emotion/css': ^11.0.0-rc.0
@@ -335,6 +354,7 @@ packages:
       '@emotion/css':
         optional: true
     dependencies:
+      '@emotion/css': 11.10.0
       '@emotion/utils': 1.2.0
       html-tokenize: 2.0.1
       multipipe: 1.0.2
@@ -541,7 +561,7 @@ packages:
       react-dom: '>=16.8.0'
     dependencies:
       '@emotion/react': 11.10.0_ug65io7jkbhmo4fihdmbrh3ina
-      '@emotion/server': 11.10.0
+      '@emotion/server': 11.10.0_@emotion+css@11.10.0
       '@mantine/styles': 5.2.3_mg4fhtdxyo75pete66srcc5noa
       html-react-parser: 1.4.12_react@18.2.0
       react: 18.2.0
@@ -4389,6 +4409,10 @@ packages:
     resolution: {integrity: sha512-pq2bWo9mVD43nbts2wGv17XLiNLya+GklZ8kaDLV2Z08gDCsGpnKn9BFMepvWuHCbyVvY7J5o5+BVvoQbmlJLg==}
     engines: {node: '>=8'}
     dev: true
+
+  /remeda/1.1.0:
+    resolution: {integrity: sha512-dtPAM1fP1HEorGDYyJiZUYfgzswyey0S1sD1FpCOhfgmpTJmnLz32q2WeEB1EyNLMENJuXSKWY8Hrm1CKM9lpw==}
+    dev: false
 
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}

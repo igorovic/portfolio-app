@@ -8,7 +8,8 @@ import Document, {
 import { ServerStyles, createStylesServer } from "@mantine/next";
 import { emCache } from "lib/emotionCache";
 
-const stylesServer = createStylesServer(emCache);
+const stylesServer = createStylesServer(emCache());
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -22,7 +23,7 @@ class MyDocument extends Document {
         <ServerStyles
           html={initialProps.html}
           server={stylesServer}
-          key="styles"
+          key="mantine"
         />,
       ],
     };
@@ -33,7 +34,6 @@ class MyDocument extends Document {
         <Head>
           <link rel="icon" type="image/png" href="/favicon.png" />
           <meta name="description" content="dyve.ch demo app" />
-          <meta name="emotion-insertion-point" content="" />
         </Head>
         <body>
           <Main />
