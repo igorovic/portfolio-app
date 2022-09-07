@@ -1,3 +1,30 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react-three-fiber/async-func-name": "warn",
+    "react/no-unknown-property": [
+      "error",
+      {
+        "ignore": [
+          "position",
+          "receiveShadow",
+          "rotation",
+          "transparent",
+          "intensity",
+          "castShadow",
+          "shadow-mapSize",
+          "shadow-camera-far",
+          "shadow-camera-left",
+          "shadow-camera-right",
+          "shadow-camera-top",
+          "shadow-camera-bottom",
+          "args",
+          "attach"
+        ]
+      }
+    ]
+  },
+  "plugins": [
+    "eslint-plugin-react-three-fiber"
+  ]
 }

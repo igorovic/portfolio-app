@@ -35,7 +35,10 @@ function AppShellNavbar(props: AppShellNavbarProps) {
     { text: "Instagram", href: "/app/instagram" },
     { text: "Twitter downloaded", href: "/app/twitter-download" },
   ];
-  const canvas = [{ text: "Canva", href: "/app/canva" }];
+  const canvas = [
+    { text: "Canva", href: "/app/canva" },
+    { text: "3D editor", href: "/app/editor-3d" },
+  ];
   let initialItem = "0";
   [...medias, ...socials, ...canvas]
     .map((S) => S.href)
