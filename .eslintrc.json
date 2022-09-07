@@ -19,7 +19,8 @@
           "shadow-camera-top",
           "shadow-camera-bottom",
           "args",
-          "attach"
+          "attach",
+          "setFromPoints"
         ]
       }
     ]

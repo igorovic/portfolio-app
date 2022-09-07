@@ -2,7 +2,13 @@ import * as THREE from "three";
 
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame, ThreeElements, useThree } from "@react-three/fiber";
-import { OrbitControls, Center, softShadows, Sky } from "@react-three/drei";
+import {
+  OrbitControls,
+  Center,
+  softShadows,
+  Sky,
+  useHelper,
+} from "@react-three/drei";
 import { MeshPhongMaterial } from "three";
 softShadows();
 function Box(props: ThreeElements["mesh"]) {
@@ -28,12 +34,28 @@ function Box(props: ThreeElements["mesh"]) {
 }
 
 const Ground = () => {
+  const ref = useRef<THREE.Mesh>(null!);
   return (
     <>
-      <mesh scale={20} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh
+        ref={ref}
+        scale={20}
+        receiveShadow
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[0, 0, 0]}
+      >
         <planeGeometry />
         {/* <shadowMaterial transparent={false} opacity={0.5} /> */}
         <meshStandardMaterial color="#9BB9EB" />
+        <lineSegments>
+          <bufferGeometry
+            setFromPoints={[
+              new THREE.Vector3(1, 2, 3),
+              new THREE.Vector3(1, 2, 3),
+            ]}
+          />
+          <lineBasicMaterial color="#000000" opacity={1} />
+        </lineSegments>
       </mesh>
       {/* <mesh scale={20} receiveShadow rotation={[-Math.PI / 2, 0, 0]}>
         <planeGeometry />
