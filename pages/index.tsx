@@ -13,12 +13,12 @@ const Home: NextPage = () => {
 
       <main className="container">
         <h1 className="text-xl font-bold my-10">Go to app</h1>
-        <Link href={"/app"}>
-          <a className="my-8 py-2 px-4 rounded-md bg-orange-300">Open app</a>
+        <Link href={"/app"} className="my-8 py-2 px-4 rounded-md bg-orange-300">
+          Open app
         </Link>
         <h2>3D preview</h2>
-        <Link href={"/three-share"}>
-          <a className="my-8 py-2 px-4 rounded-md bg-orange-300">3D preview</a>
+        <Link href={"/three-share"} className="my-8 py-2 px-4 rounded-md bg-orange-300">
+          3D preview
         </Link>
       </main>
     </div>
