@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import type { InstagramMedia, InstagramUser } from "lib/instagram";
 import { Button, Loader } from "@mantine/core";
 import { useRouter } from "next/router";
