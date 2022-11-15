@@ -6,7 +6,7 @@ interface NavLinkProps {
 }
 function NavLink({ text, href }: NavLinkProps) {
   return (
-    <NextLink href={href}>
+    <NextLink href={href} legacyBehavior>
       <UnstyledButton
         className="block hover:bg-slate-100 my-2"
         //@ts-ignore errors since @react/type@18.0.4

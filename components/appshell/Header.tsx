@@ -23,7 +23,7 @@ function AppShellHeader() {
         </MediaQuery>
 
         <div className="flex flex-1 justify-end items-center gap-2">
-          <NextLink href={repositoryUrl} target="_blank" passHref>
+          <NextLink href={repositoryUrl} target="_blank" passHref legacyBehavior>
             <ActionIcon
               variant="outline"
               size="lg"
