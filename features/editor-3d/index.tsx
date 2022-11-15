@@ -49,6 +49,7 @@ const Ground = () => {
         <meshStandardMaterial color="#9BB9EB" />
         <lineSegments>
           <bufferGeometry
+            //@ts-ignore
             setFromPoints={[
               new THREE.Vector3(1, 2, 3),
               new THREE.Vector3(1, 2, 3),

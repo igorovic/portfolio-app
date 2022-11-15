@@ -15,14 +15,10 @@ let config = {
     DEBUG_NAMESPACES: String(process.env.DEBUG_NAMESPACES),
     CYPRESS: process.env.CYPRESS,
   },
-  experimental: {
-    images: {
-      allowFutureImage: true,
-    },
-  },
+
   images: {
-    domains: ["scontent.cdninstagram.com", "cdninstagram.com"]
-  }
+    domains: ["scontent.cdninstagram.com", "cdninstagram.com"],
+  },
   // react-router-dom SPA config
   // async rewrites() {
   //   return [
