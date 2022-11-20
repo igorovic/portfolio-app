@@ -29,6 +29,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+.env.edgedb
 
 # vercel
 .vercel
@@ -39,3 +40,6 @@ yarn-error.log*
 *.log
 
 .rollup.cache
+
+# certificates
+*.crt

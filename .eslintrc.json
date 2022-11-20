@@ -1,7 +1,7 @@
 {
   "extends": "next/core-web-vitals",
   "rules": {
-    "react-three-fiber/async-func-name": "warn",
+    //"react-three-fiber/async-func-name": "warn",
     "react/no-unknown-property": [
       "error",
       {
@@ -26,6 +26,7 @@
     ]
   },
   "plugins": [
-    "eslint-plugin-react-three-fiber"
+    // project's plugin 
+    //"eslint-plugin-react-three-fiber"
   ]
 }

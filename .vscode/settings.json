@@ -15,5 +15,9 @@
     "eslint.validate": [
         "typescript",
         "typescriptreact"
-    ]
+    ],
+    "files.associations": {
+        "*env.local": "env",
+        ".env.edgedb": "env"
+    }
 }
