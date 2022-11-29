@@ -2,8 +2,8 @@
 function SimplePdfEmbed() {
   return (
     <embed
-      width={600}
-      height={600}
+      width={"100%"}
+      height={"900px"}
       type="application/pdf"
       src="/REBELCAR.pdf#toolbar=0"
       style={{ objectFit: "cover" }}

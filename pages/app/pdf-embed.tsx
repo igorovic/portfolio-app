@@ -5,7 +5,8 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import AppShellLayout from "components/layout/appshellLayout";
 
 const PdfEmbed = dynamic(() => import("../../features/pdf-embed/PdfEmbed"), {
-  suspense: true,
+  suspense: false,
+  ssr: false,
 });
 
 const PdfEmbedPage: NextPage<any> = () => {

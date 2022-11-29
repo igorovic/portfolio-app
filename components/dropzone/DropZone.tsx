@@ -19,16 +19,19 @@ function DropZone({ onDrop, label }: DropZoneProps) {
         {label ? label : "drag and drop a media file here"}
       </span>
       <div
-        className="absolute w-full h-full"
+        className="absolute w-full h-full z-50"
         onDragLeave={(e) => {
+          console.debug("drag leave");
           e.preventDefault();
           setDragOver(false);
         }}
         onDragEnter={(e) => {
+          console.debug("drag enter");
           e.preventDefault();
           setDragOver(true);
         }}
         onDragOver={(e) => {
+          console.debug("drag over");
           e.preventDefault();
         }}
         onDragExit={(e) => {
