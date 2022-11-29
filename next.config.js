@@ -10,6 +10,9 @@ let config = {
   compiler: {
     reactRemoveProperties: !isDev,
   },
+  experimental: {
+    appDir: true,
+  },
   publicRuntimeConfig: {
     isDev,
     DEBUG_NAMESPACES: String(process.env.DEBUG_NAMESPACES),
