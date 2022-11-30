@@ -65,7 +65,7 @@ function PdfEmbed() {
     const canvasWrapper = document.getElementById(
       canvasWrapperId
     ) as HTMLDivElement;
-    let viewport = page.getViewport({ scale: zoom });
+    let viewport = page.getViewport({ scale: 2.5 });
     const w_scale = canvasRef.current!.clientWidth / viewport.width;
     wSclaeRef.current = w_scale;
     viewport = page.getViewport({ scale: w_scale });
