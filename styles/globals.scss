@@ -20,19 +20,15 @@
   
 }
 @layer components {
-  .mantine-Button-root {
-    /* background-color: inherit; */
+  
+  .mantine-NumberInput-root{
+    @apply flex gap-2 items-center;
   }
-  .canva-toolbox { 
-    .mantine-NumberInput-root{
-      @apply flex gap-2 items-center;
-    }
-    .mantine-NumberInput-label{
-      @apply font-mono;
-    }
-    .mantine-NumberInput-wrapper > input{
-      max-width: 4em;
-    }
+  .mantine-NumberInput-label{
+    @apply font-mono;
+  }
+  .mantine-NumberInput-wrapper > input{
+    max-width: 4em;
   }
   .drawer-section-title{
     @apply text-base md:text-lg font-semibold text-gray-700;
@@ -40,5 +36,13 @@
   .mantine-ActionIcon-outline{
     @apply border-gray-300;
   }
+  
 }
 
+.react-draggable {
+  position: absolute;
+  top: 0; left: 0;
+  [contenteditable="true"]:focus-visible{
+    outline: rgba(0,0,0,0.075) solid 1px;
+  }
+}

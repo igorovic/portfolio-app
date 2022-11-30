@@ -1,7 +1,8 @@
 import DropZone from "components/dropzone/DropZone";
 import { useAtom } from "jotai";
 import { useRouter } from "next/router";
-
+import Draggable from "react-draggable";
+import { InputBase, TextInput } from "@mantine/core";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { pdfUrlObject } from "./store";
 import * as pdfJs from "pdfjs-dist";
@@ -11,6 +12,7 @@ import { FieldInfo } from "./types";
 import { PDFInfo } from "./backend/pdf-lib";
 import { nanoid } from "nanoid";
 import { Maybe } from "types";
+import DraggableTextInput from "./components/DraggableTextInput";
 pdfJs.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.js";
 
 function inputType(field: FieldInfo) {
@@ -40,10 +42,14 @@ function removeInputsFromDocument(ids: string[]) {
 
 function PdfEmbed() {
   const canvasId = "pdfjs-canvas";
+  const canvasWrapperId = "pdfs-canvas-wrapper";
+  const [inputFields, setInputFields] = useState<any[]>([]);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { locale } = useRouter();
   const [pdfUrlObj, setPdfUrlObj] = useAtom(pdfUrlObject);
   console.debug(pdfUrlObj);
   const pageRef = useRef<pdfJs.PDFPageProxy | null>(null);
+  const viewPortRef = useRef<pdfJs.PageViewport | null>(null);
   const [zoom, setZoom] = useState(1);
   const twoRef = useRef<Two | null>(null);
   const wSclaeRef = useRef(1);
@@ -54,16 +60,24 @@ function PdfEmbed() {
     // Display page on the existing canvas with 100% scale.
     if (!pageRef.current) return;
     const page = pageRef.current;
-    const canvas = document.getElementById(canvasId) as HTMLCanvasElement;
-    let viewport = page.getViewport({ scale: 1 });
-    const w_scale = canvas.clientWidth / viewport.width;
+    //const canvas = document.getElementById(canvasId) as HTMLCanvasElement;
+
+    const canvasWrapper = document.getElementById(
+      canvasWrapperId
+    ) as HTMLDivElement;
+    let viewport = page.getViewport({ scale: zoom });
+    const w_scale = canvasRef.current!.clientWidth / viewport.width;
     wSclaeRef.current = w_scale;
     viewport = page.getViewport({ scale: w_scale });
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
+    viewPortRef.current = viewport;
+    canvasRef.current!.width = viewport.width;
+    canvasRef.current!.height = viewport.height;
+    canvasWrapper.style.setProperty("width", `${viewport.width}px`);
+    canvasWrapper.style.setProperty("height", `${viewport.height}px`);
+
     console.debug("w_scale", w_scale);
 
-    const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+    const ctx = canvasRef.current!.getContext("2d") as CanvasRenderingContext2D;
     const renderTask = page.render({
       canvasContext: ctx,
       viewport,
@@ -95,7 +109,7 @@ function PdfEmbed() {
     if (!twoRef.current) {
       twoRef.current = new Two({
         type: "canvas",
-        domElement: document.getElementById(canvasId) as HTMLCanvasElement,
+        domElement: canvasRef.current!,
       });
     }
   });
@@ -151,6 +165,10 @@ function PdfEmbed() {
     });
   }, [pdfUrlObj]);
 
+  const addField = useCallback(() => {
+    setInputFields((prev) => [...prev, { name: "field" }]);
+  }, []);
+
   return (
     <>
       <DropZone onDrop={onDrop} label="drag and drop pdf here" />
@@ -158,10 +176,11 @@ function PdfEmbed() {
         <Button onClick={() => render()}>re-render</Button>
 
         <Button onClick={pdfInfo}>generate form</Button>
+        <Button onClick={addField}>addField</Button>
       </div>
-      <div>
+      <div className="py-4">
         <Slider
-          defaultValue={1}
+          defaultValue={viewPortRef.current?.scale ?? 1}
           min={0.1}
           max={4}
           label={(value) => value.toFixed(1)}
@@ -172,13 +191,23 @@ function PdfEmbed() {
         />
       </div>
       <div className="relative" ref={containerRef}>
-        <canvas
-          id={canvasId}
-          width={600}
-          height={600}
-          className="w-full h-full"
-          //style={{ width: "800px", height: "1200px", position: "relative" }}
-        ></canvas>
+        <div
+          id={canvasWrapperId}
+          className="absolute top-0 left-0 w-full h-full"
+          //style={{ width: "min-content", height: "min-content" }}
+        >
+          <canvas
+            id={canvasId}
+            ref={canvasRef}
+            width={600}
+            height={600}
+            className="w-full h-full"
+            //style={{ width: "800px", height: "1200px", position: "relative" }}
+          />
+          {inputFields.map((field, idx) => (
+            <DraggableTextInput key={`${field.name}-${idx}`} field={field} />
+          ))}
+        </div>
         {/* <input
           type={"text"}
           className="border absolute top-4 left-0 bg-red-400 z-50"
@@ -189,3 +218,13 @@ function PdfEmbed() {
 }
 
 export default PdfEmbed;
+
+/* (val) => {
+  if (viewPortRef.current?.scale) {
+    viewPortRef.current.scale = val;
+    const ctx = canvasRef.current!.getContext(
+      "2d"
+    ) as CanvasRenderingContext2D;
+    ctx!.scale(val, val);
+  }
+} */
