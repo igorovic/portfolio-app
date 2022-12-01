@@ -65,7 +65,7 @@ function PdfEmbed() {
     const canvasWrapper = document.getElementById(
       canvasWrapperId
     ) as HTMLDivElement;
-    let viewport = page.getViewport({ scale: 2.5 });
+    let viewport = page.getViewport({ scale: 1 });
     const w_scale = canvasRef.current!.clientWidth / viewport.width;
     wSclaeRef.current = w_scale;
     viewport = page.getViewport({ scale: w_scale });
@@ -186,7 +186,21 @@ function PdfEmbed() {
           label={(value) => value.toFixed(1)}
           step={0.1}
           styles={{ markLabel: { display: "none" } }}
-          onChange={setZoom}
+          onChange={(val) => {
+            console.debug("scale change ", val);
+            if (viewPortRef.current?.scale) {
+              viewPortRef.current.scale = val;
+              const page = pageRef.current;
+              const ctx = canvasRef.current!.getContext(
+                "2d"
+              ) as CanvasRenderingContext2D;
+
+              const renderTask = page?.render({
+                canvasContext: ctx,
+                viewport: viewPortRef.current,
+              });
+            }
+          }}
           onChangeEnd={() => render()}
         />
       </div>
