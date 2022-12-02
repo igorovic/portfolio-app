@@ -1,0 +1,7 @@
+.react-draggable {
+  position: absolute;
+  top: 0; left: 0;
+  [contenteditable="true"]:focus-visible{
+    outline: rgba(0,0,0,0.075) solid 1px;
+  }
+}

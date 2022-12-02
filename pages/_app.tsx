@@ -1,4 +1,5 @@
-import "../styles/globals.scss";
+import "../styles/globals.css";
+import "../styles/global.scss";
 import { Provider } from "react-redux";
 import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
